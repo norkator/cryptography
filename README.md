@@ -8,7 +8,7 @@ This repository will slowly get more and more cryptography code samples written 
 Methods are related to Cryptography android app cipher method collection. 
 Point of this repository is that users can modify and play with these methods in any way they want.
 
-Future goal after reaching many methods is to add same implementations with different language.
+Future goal after reaching many methods is to add same implementations with different languages.
 
 
 ### Installation
