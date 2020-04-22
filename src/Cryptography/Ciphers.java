@@ -1,6 +1,6 @@
-package Cryptography;
+package cryptography;
 
-import Cryptography.caesar.Caesar;
+import cryptography.caesar.Caesar;
 
 public class Ciphers {
 

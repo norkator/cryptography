@@ -1,9 +1,9 @@
-package Cryptography.caesar;
+package cryptography.caesar;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import Cryptography.Mode;
+import cryptography.Mode;
 
 public class CaesarJUnit {
 

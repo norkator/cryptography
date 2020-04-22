@@ -1,4 +1,4 @@
-package Cryptography;
+package cryptography;
 
 public enum Mode {
 	ENCRYPT,

@@ -1,6 +1,6 @@
-package Cryptography.caesar;
+package cryptography.caesar;
 
-import Cryptography.Mode;
+import cryptography.Mode;
 
 public class Caesar {
 
