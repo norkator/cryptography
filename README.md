@@ -2,6 +2,7 @@
   <a href="http://www.nitramite.com/"><img src="https://github.com/norkator/Cryptography/blob/master/img/cryptography_repository_image.png" alt="Cryptography"></a>
 </h1>
 
+
 # Cryptography
 
 This repository will slowly get more and more cryptography code samples written in Java. 
@@ -13,8 +14,11 @@ Future goal after reaching many methods is to add same implementations with diff
 
 ### Installation
 1. Download and install eclipse: https://www.eclipse.org/downloads/
-2. Open project in eclipse `File` - `Open projects from File System...`
-3. ... more instructions coming.
+2. Download project source code by either cloning it with git or by `Clone or download` menu `Download ZIP` option.
+2. Open project in Eclipse `File` - `Open projects from File System...`
+3. Navigate to `/src` - `cryptography` - `Ciphers.java` and start play with it. Rest of the folder structure
+has method specific code and tests files for running automated tests.
+
 
 ### Contributions
 
