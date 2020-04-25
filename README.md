@@ -9,8 +9,6 @@ This repository will slowly get more and more cryptography code samples written 
 Methods are related to Cryptography android app cipher method collection. 
 Point of this repository is that users can modify and play with these methods in any way they want.
 
-Future goal after reaching many methods is to add same implementations with different languages.
-
 
 ### Installation
 1. Download and install eclipse: https://www.eclipse.org/downloads/
@@ -18,6 +16,20 @@ Future goal after reaching many methods is to add same implementations with diff
 2. Open project in Eclipse `File` - `Open projects from File System...`
 3. Navigate to `/src` - `cryptography` - `Ciphers.java` and start play with it. Rest of the folder structure
 has method specific code and tests files for running automated tests.
+
+
+### Ciphers
+
+##### [Caesar](https://github.com/norkator/Cryptography/blob/master/src/cryptography/caesar/Caesar.java)
+##### [Scytale](https://github.com/norkator/Cryptography/blob/master/src/cryptography/scytale/Scytale.java)
+##### [Rail fence](https://github.com/norkator/Cryptography/blob/master/src/cryptography/railfence/RailFence.java)
+##### [Atbash](https://github.com/norkator/Cryptography/blob/master/src/cryptography/atbash/Atbash.java)
+
+
+### Notes
+
+Some ciphers or parts of ciphers originate from websites, tutorials, repositories or other sources. 
+There's unfortunately no links to original references.
 
 
 ### Contributions
