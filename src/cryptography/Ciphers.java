@@ -11,6 +11,9 @@ import cryptography.autokey.Autokey;
 import cryptography.beaufort.Beaufort;
 import cryptography.keyword.Keyword;
 import cryptography.vigenere.Vigenere;
+import cryptography.bacon.Bacon;
+import cryptography.chaocipher.Chaocipher;
+import cryptography.gronsfeld.Gronsfeld;
 
 public class Ciphers {
 
@@ -47,6 +50,20 @@ public class Ciphers {
 		// Vigenere
 		System.out.println("Vigenere encrypt: " + Vigenere.vigenere("TESTINGTHIS", "TEST", Mode.ENCRYPT));
 		System.out.println("Vigenere decrypt: " + Vigenere.vigenere("MIKMBRYMAMK", "TEST", Mode.DECRYPT));
+
+		// Bacon
+		System.out.println("Bacon encrypt: " + Bacon.bacon("HELLO", Mode.ENCRYPT));
+		System.out.println("Bacon decrypt: " + Bacon.bacon("AABBB AABAA ABABB ABABB ABBBA", Mode.DECRYPT));
+
+		// Chaocipher
+		System.out.println("Chaocipher encrypt: " + Chaocipher.chaocipher("HELLO", Mode.ENCRYPT,
+				"ABCDEFGHIJKLMNOPQRSTUVWXYZ", "ZYXWVUTSRQPONMLKJIHGFEDCBA"));
+		System.out.println("Chaocipher decrypt: " + Chaocipher.chaocipher("STMLH", Mode.DECRYPT,
+				"ABCDEFGHIJKLMNOPQRSTUVWXYZ", "ZYXWVUTSRQPONMLKJIHGFEDCBA"));
+
+		// Gronsfeld
+		System.out.println("Gronsfeld encrypt: " + Gronsfeld.gronsfeld("HELLO", "15243", Mode.ENCRYPT));
+		System.out.println("Gronsfeld decrypt: " + Gronsfeld.gronsfeld("IJNPR", "15243", Mode.DECRYPT));
 
 	}
 
