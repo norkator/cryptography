@@ -7,7 +7,10 @@
 
 This repository will slowly get more and more cryptography code samples written in Java. 
 Methods are related to Cryptography android app cipher method collection. 
-Point of this repository is that users can modify and play with these methods in any way they want.
+Point of this repository is that users can find everything in one place, modify code, play with these methods 
+in any way they want and this way learn how ciphers worked in the past and how they work these days.
+
+This repository is part of this Android application: [Google Play - Cryptography](https://play.google.com/store/apps/details?id=com.nitramite.cryptography)
 
 
 ### Installation
