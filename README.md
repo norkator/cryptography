@@ -25,8 +25,11 @@ has method specific code and tests files for running automated tests.
 
 ##### [Atbash](https://github.com/norkator/Cryptography/blob/master/src/cryptography/atbash/Atbash.java)
 ##### [Autokey](https://github.com/norkator/Cryptography/blob/master/src/cryptography/autokey/Autokey.java)
+##### [Bacon](https://github.com/norkator/Cryptography/blob/master/src/cryptography/bacon/Bacon.java)
 ##### [Beaufort](https://github.com/norkator/Cryptography/blob/master/src/cryptography/beaufort/Beaufort.java)
 ##### [Caesar](https://github.com/norkator/Cryptography/blob/master/src/cryptography/caesar/Caesar.java)
+##### [Chaocipher](https://github.com/norkator/Cryptography/blob/master/src/cryptography/chaocipher/Chaocipher.java)
+##### [Gronsfeld](https://github.com/norkator/Cryptography/blob/master/src/cryptography/gronsfeld/Gronsfeld.java)
 ##### [Keyword](https://github.com/norkator/Cryptography/blob/master/src/cryptography/keyword/Keyword.java)
 ##### [Rail fence](https://github.com/norkator/Cryptography/blob/master/src/cryptography/railfence/RailFence.java)
 ##### [Scytale](https://github.com/norkator/Cryptography/blob/master/src/cryptography/scytale/Scytale.java)
