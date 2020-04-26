@@ -12,7 +12,7 @@ public class CaesarTest {
 	@Test
 	public void runTest() {
 		assertEquals("KHOOR", Caesar.caesar("HELLO", 3, Mode.ENCRYPT));
-		assertEquals("HELLO", Caesar.caesar("KHOOR", 3, Mode.DECRYPT));	
+		assertEquals("HELLO", Caesar.caesar("KHOOR", 3, Mode.DECRYPT));
 	}
 
 }

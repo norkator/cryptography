@@ -2,3 +2,6 @@ caesar
 decrypt
 scytale
 atbash
+autokey
+beaufort
+vigenere

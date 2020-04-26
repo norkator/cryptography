@@ -7,16 +7,19 @@ import cryptography.atbash.Atbash;
 import cryptography.caesar.Caesar;
 import cryptography.railfence.RailFence;
 import cryptography.scytale.Scytale;
+import cryptography.autokey.Autokey;
+import cryptography.beaufort.Beaufort;
+import cryptography.keyword.Keyword;
+import cryptography.vigenere.Vigenere;
 
 public class Ciphers {
 
 	public static void main(String[] args) {
-	
-		
+
 		// Scytale
 		System.out.println("Scytale encrypt: " + Scytale.scytale("HELLO", Mode.ENCRYPT, 3));
 		System.out.println("Scytale decrypt: " + Scytale.scytale("HLEOL", Mode.DECRYPT, 3));
-		
+
 		// Caesar
 		System.out.println("Caesar encrypt: " + Caesar.caesar("HELLO", 3, Mode.ENCRYPT));
 		System.out.println("Caesar decrypt: " + Caesar.caesar("KHOOR", 3, Mode.DECRYPT));
@@ -28,8 +31,23 @@ public class Ciphers {
 		// Atbash
 		System.out.println("Atbash encrypt: " + Atbash.atbash("Helloworld", Mode.ENCRYPT));
 		System.out.println("Atbash decrypt: " + Atbash.atbash("svooldliow", Mode.DECRYPT));
-		
-		
+
+		// Autokey
+		System.out.println("Autokey encrypt: " + Autokey.autokey("TESTINGTHIS", "TEST", Mode.ENCRYPT));
+		System.out.println("Autokey decrypt: " + Autokey.autokey("MIKMBRYMPVY", "TEST", Mode.DECRYPT));
+
+		// Beaufort
+		System.out.println("Beaufort encrypt: " + Beaufort.beaufort("TESTINGTHIS", "TEST"));
+		System.out.println("Beaufort decrypt: " + Beaufort.beaufort("AAAALRMAMWA", "TEST"));
+
+		// Keyword
+		System.out.println("Keyword encrypt: " + Keyword.keyword("TESTINGTHIS", "TEST", Mode.ENCRYPT));
+		System.out.println("Keyword decrypt: " + Keyword.keyword("RBQRGLDRFGQ", "TEST", Mode.DECRYPT));
+
+		// Vigenere
+		System.out.println("Vigenere encrypt: " + Vigenere.vigenere("TESTINGTHIS", "TEST", Mode.ENCRYPT));
+		System.out.println("Vigenere decrypt: " + Vigenere.vigenere("MIKMBRYMAMK", "TEST", Mode.DECRYPT));
+
 	}
 
 }

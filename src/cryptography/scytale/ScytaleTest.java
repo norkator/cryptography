@@ -12,8 +12,7 @@ public class ScytaleTest {
 	@Test
 	public void runTest() {
 		assertEquals("HLEOL", Scytale.scytale("HELLO", Mode.ENCRYPT, 3));
-		assertEquals("HELLO", Scytale.scytale("HLEOL", Mode.DECRYPT, 3));	
+		assertEquals("HELLO", Scytale.scytale("HLEOL", Mode.DECRYPT, 3));
 	}
 
-	
 }

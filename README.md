@@ -20,10 +20,14 @@ has method specific code and tests files for running automated tests.
 
 ### Ciphers
 
-##### [Caesar](https://github.com/norkator/Cryptography/blob/master/src/cryptography/caesar/Caesar.java)
-##### [Scytale](https://github.com/norkator/Cryptography/blob/master/src/cryptography/scytale/Scytale.java)
-##### [Rail fence](https://github.com/norkator/Cryptography/blob/master/src/cryptography/railfence/RailFence.java)
 ##### [Atbash](https://github.com/norkator/Cryptography/blob/master/src/cryptography/atbash/Atbash.java)
+##### [Autokey](https://github.com/norkator/Cryptography/blob/master/src/cryptography/autokey/Autokey.java)
+##### [Beaufort](https://github.com/norkator/Cryptography/blob/master/src/cryptography/beaufort/Beaufort.java)
+##### [Caesar](https://github.com/norkator/Cryptography/blob/master/src/cryptography/caesar/Caesar.java)
+##### [Keyword](https://github.com/norkator/Cryptography/blob/master/src/cryptography/keyword/Keyword.java)
+##### [Rail fence](https://github.com/norkator/Cryptography/blob/master/src/cryptography/railfence/RailFence.java)
+##### [Scytale](https://github.com/norkator/Cryptography/blob/master/src/cryptography/scytale/Scytale.java)
+##### [Vigenere](https://github.com/norkator/Cryptography/blob/master/src/cryptography/vigenere/Vigenere.java)
 
 
 ### Notes
