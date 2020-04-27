@@ -14,14 +14,6 @@ In short words this repository is meant to be educational.
 This repository is part of this Android application: [Google Play - Cryptography](https://play.google.com/store/apps/details?id=com.nitramite.cryptography)
 
 
-### Installation
-1. Download and install eclipse: https://www.eclipse.org/downloads/
-2. Download project source code by either cloning it with git or by `Clone or download` menu `Download ZIP` option.
-2. Open project in Eclipse `File` - `Open projects from File System...`
-3. Navigate to `/src` - `cryptography` - `Ciphers.java` and start play with it. Rest of the folder structure
-has method specific code and tests files for running automated tests.
-
-
 ### Ciphers
 
 ##### [A1z26](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/a1z26/A1z26.java)
@@ -48,16 +40,35 @@ Coming later...
 
 ##### [Base32](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base32/Base32.java)
 ##### [Base64](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base64/Base64.java)
+##### [Base85](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base85/Base85.java)
+
+<br>
+<br>
+
+### Installation
+1. Download and install eclipse: https://www.eclipse.org/downloads/
+2. Download project source code by either cloning it with git or by `Clone or download` menu `Download ZIP` option.
+2. Open project in Eclipse `File` - `Open projects from File System...`
+3. Navigate to `/src` - `cryptography` - `Ciphers.java` and start play with it. Rest of the folder structure
+has method specific code and tests files for running automated tests.
+
+
+### Running tests
+1. Right click on `TestRunner.java`
+2. Click `Coverage As`
+3. Select `1 Java Application`
+4. If everything is fine result is `Tests success: true`
 
 
 ### External libraries
 
-##### commons-codec-1.10.jar, included due to base32 encoding method.
+##### commons-codec-1.10.jar
+Included for Base32 and Base64 encoding methods.
 
 
 ### Notes
 
-Some ciphers or parts of ciphers originate from websites, tutorials, repositories or other sources. 
+Some ciphers or parts of ciphers originate from web sites, tutorials, repositories or other sources. 
 There's unfortunately no links to original references.
 
 
