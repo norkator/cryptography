@@ -23,17 +23,20 @@ has method specific code and tests files for running automated tests.
 
 ### Ciphers
 
-##### [Atbash](https://github.com/norkator/Cryptography/blob/master/src/cryptography/atbash/Atbash.java)
-##### [Autokey](https://github.com/norkator/Cryptography/blob/master/src/cryptography/autokey/Autokey.java)
-##### [Bacon](https://github.com/norkator/Cryptography/blob/master/src/cryptography/bacon/Bacon.java)
-##### [Beaufort](https://github.com/norkator/Cryptography/blob/master/src/cryptography/beaufort/Beaufort.java)
-##### [Caesar](https://github.com/norkator/Cryptography/blob/master/src/cryptography/caesar/Caesar.java)
-##### [Chaocipher](https://github.com/norkator/Cryptography/blob/master/src/cryptography/chaocipher/Chaocipher.java)
-##### [Gronsfeld](https://github.com/norkator/Cryptography/blob/master/src/cryptography/gronsfeld/Gronsfeld.java)
-##### [Keyword](https://github.com/norkator/Cryptography/blob/master/src/cryptography/keyword/Keyword.java)
-##### [Rail fence](https://github.com/norkator/Cryptography/blob/master/src/cryptography/railfence/RailFence.java)
-##### [Scytale](https://github.com/norkator/Cryptography/blob/master/src/cryptography/scytale/Scytale.java)
-##### [Vigenere](https://github.com/norkator/Cryptography/blob/master/src/cryptography/vigenere/Vigenere.java)
+##### [A1z26](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/a1z26/A1z26.java)
+##### [Adfgvx](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/adfgvx/Adfgvx.java)
+##### [Atbash](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/atbash/Atbash.java)
+##### [Autokey](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/autokey/Autokey.java)
+##### [Bacon](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/bacon/Bacon.java)
+##### [Beaufort](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/beaufort/Beaufort.java)
+##### [Caesar](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/caesar/Caesar.java)
+##### [Chaocipher](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/chaocipher/Chaocipher.java)
+##### [Gronsfeld](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/gronsfeld/Gronsfeld.java)
+##### [Keyword](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/keyword/Keyword.java)
+##### [Playfair](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/playfair/Playfair.java)
+##### [Rail fence](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/railfence/RailFence.java)
+##### [Scytale](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/scytale/Scytale.java)
+##### [Vigenere](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/vigenere/Vigenere.java)
 
 
 ### Notes
