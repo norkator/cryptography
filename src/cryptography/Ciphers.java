@@ -3,20 +3,20 @@
  */
 package cryptography;
 
-import cryptography.atbash.Atbash;
-import cryptography.caesar.Caesar;
-import cryptography.railfence.RailFence;
-import cryptography.scytale.Scytale;
-import cryptography.autokey.Autokey;
-import cryptography.beaufort.Beaufort;
-import cryptography.keyword.Keyword;
-import cryptography.vigenere.Vigenere;
-import cryptography.bacon.Bacon;
-import cryptography.chaocipher.Chaocipher;
-import cryptography.gronsfeld.Gronsfeld;
-import cryptography.adfgvx.Adfgvx;
-import cryptography.a1z26.A1z26;
-import cryptography.playfair.Playfair;
+import cryptography.ciphers.atbash.Atbash;
+import cryptography.ciphers.caesar.Caesar;
+import cryptography.ciphers.railfence.RailFence;
+import cryptography.ciphers.scytale.Scytale;
+import cryptography.ciphers.autokey.Autokey;
+import cryptography.ciphers.beaufort.Beaufort;
+import cryptography.ciphers.keyword.Keyword;
+import cryptography.ciphers.vigenere.Vigenere;
+import cryptography.ciphers.bacon.Bacon;
+import cryptography.ciphers.chaocipher.Chaocipher;
+import cryptography.ciphers.gronsfeld.Gronsfeld;
+import cryptography.ciphers.adfgvx.Adfgvx;
+import cryptography.ciphers.a1z26.A1z26;
+import cryptography.ciphers.playfair.Playfair;
 
 public class Ciphers {
 

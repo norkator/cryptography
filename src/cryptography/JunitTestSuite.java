@@ -7,17 +7,20 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import cryptography.caesar.CaesarTest;
-import cryptography.chaocipher.ChaocipherTest;
-import cryptography.gronsfeld.GronsfeldTest;
-import cryptography.scytale.ScytaleTest;
-import cryptography.vigenere.VigenereTest;
-import cryptography.railfence.RailFenceTest;
-import cryptography.atbash.AtbashTest;
-import cryptography.autokey.AutokeyTest;
-import cryptography.bacon.BaconTest;
-import cryptography.beaufort.BeaufortTest;
-import cryptography.keyword.KeywordTest;
+import cryptography.ciphers.caesar.CaesarTest;
+import cryptography.ciphers.chaocipher.ChaocipherTest;
+import cryptography.ciphers.gronsfeld.GronsfeldTest;
+import cryptography.ciphers.scytale.ScytaleTest;
+import cryptography.ciphers.vigenere.VigenereTest;
+import cryptography.ciphers.railfence.RailFenceTest;
+import cryptography.ciphers.a1z26.A1z26Test;
+import cryptography.ciphers.adfgvx.AdfgvxTest;
+import cryptography.ciphers.atbash.AtbashTest;
+import cryptography.ciphers.autokey.AutokeyTest;
+import cryptography.ciphers.bacon.BaconTest;
+import cryptography.ciphers.beaufort.BeaufortTest;
+import cryptography.ciphers.keyword.KeywordTest;
+import cryptography.ciphers.playfair.PlayfairTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({
@@ -32,6 +35,9 @@ import cryptography.keyword.KeywordTest;
 	BaconTest.class,
 	ChaocipherTest.class,
 	GronsfeldTest.class,
+	A1z26Test.class,
+	AdfgvxTest.class,
+	PlayfairTest.class,
 })
 public class JunitTestSuite {
 
