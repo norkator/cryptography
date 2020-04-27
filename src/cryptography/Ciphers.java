@@ -3,17 +3,20 @@
  */
 package cryptography;
 
-import cryptography.atbash.Atbash;
-import cryptography.caesar.Caesar;
-import cryptography.railfence.RailFence;
-import cryptography.scytale.Scytale;
-import cryptography.autokey.Autokey;
-import cryptography.beaufort.Beaufort;
-import cryptography.keyword.Keyword;
-import cryptography.vigenere.Vigenere;
-import cryptography.bacon.Bacon;
-import cryptography.chaocipher.Chaocipher;
-import cryptography.gronsfeld.Gronsfeld;
+import cryptography.ciphers.atbash.Atbash;
+import cryptography.ciphers.caesar.Caesar;
+import cryptography.ciphers.railfence.RailFence;
+import cryptography.ciphers.scytale.Scytale;
+import cryptography.ciphers.autokey.Autokey;
+import cryptography.ciphers.beaufort.Beaufort;
+import cryptography.ciphers.keyword.Keyword;
+import cryptography.ciphers.vigenere.Vigenere;
+import cryptography.ciphers.bacon.Bacon;
+import cryptography.ciphers.chaocipher.Chaocipher;
+import cryptography.ciphers.gronsfeld.Gronsfeld;
+import cryptography.ciphers.adfgvx.Adfgvx;
+import cryptography.ciphers.a1z26.A1z26;
+import cryptography.ciphers.playfair.Playfair;
 
 public class Ciphers {
 
@@ -64,6 +67,18 @@ public class Ciphers {
 		// Gronsfeld
 		System.out.println("Gronsfeld encrypt: " + Gronsfeld.gronsfeld("HELLO", "15243", Mode.ENCRYPT));
 		System.out.println("Gronsfeld decrypt: " + Gronsfeld.gronsfeld("IJNPR", "15243", Mode.DECRYPT));
+
+		// Adfgvx
+		System.out.println("Adfgvx encrypt: " + Adfgvx.adfgvx("HELLOWORLD", Mode.ENCRYPT));
+		System.out.println("Adfgvx decrypt: " + Adfgvx.adfgvx("DDAVDXDXFFGVFFFXDXAG", Mode.DECRYPT));
+
+		// A1z26
+		System.out.println("A1z26 encrypt: " + A1z26.a1z26("HELLO", Mode.ENCRYPT));
+		System.out.println("A1z26 decrypt: " + A1z26.a1z26("8-5-12-12-15", Mode.DECRYPT));
+		
+		// Playfair
+		System.out.println("Playfair encrypt: " + Playfair.playfair("HELLOWORLDTEST", "ISFAIR", true, Mode.ENCRYPT));
+		System.out.println("Playfair decrypt: " + Playfair.playfair("MBQFHQVPFNEQCAQY", "ISFAIR", true, Mode.DECRYPT));
 
 	}
 
