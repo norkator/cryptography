@@ -6,9 +6,10 @@
 # Cryptography
 
 This repository will slowly get more and more cryptography code samples written in Java. 
-Methods are related to Cryptography android app cipher method collection. 
+Methods are related to Cryptography android application cipher method collection. 
 Point of this repository is that users can find everything in one place, modify code, play with these methods 
 in any way they want and this way learn how ciphers worked in the past and how they work these days.
+In short words this repository is meant to be educational.
 
 This repository is part of this Android application: [Google Play - Cryptography](https://play.google.com/store/apps/details?id=com.nitramite.cryptography)
 
@@ -37,6 +38,21 @@ has method specific code and tests files for running automated tests.
 ##### [Rail fence](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/railfence/RailFence.java)
 ##### [Scytale](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/scytale/Scytale.java)
 ##### [Vigenere](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/vigenere/Vigenere.java)
+
+
+### Hashes
+
+Coming later...
+
+### Encoding
+
+##### [Base32](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base32/Base32.java)
+##### [Base64](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base64/Base64.java)
+
+
+### External libraries
+
+##### commons-codec-1.10.jar, included due to base32 encoding method.
 
 
 ### Notes
