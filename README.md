@@ -43,7 +43,6 @@ Coming later...
 ##### [Base85](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base85/Base85.java)
 
 <br>
-<br>
 
 ### Installation
 1. Download and install eclipse: https://www.eclipse.org/downloads/
