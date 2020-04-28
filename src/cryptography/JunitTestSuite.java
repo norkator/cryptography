@@ -16,6 +16,7 @@ import cryptography.encoding.base32.Base32Test;
 import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
 import cryptography.encoding.base91.Base91Test;
+import cryptography.hashes.crc.CRCHashesTest;
 import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.ciphers.railfence.RailFenceTest;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
@@ -45,6 +46,7 @@ import cryptography.ciphers.playfair.PlayfairTest;
 	PlayfairTest.class,
 	// --------------------------
 	// Hashes
+	CRCHashesTest.class,
 	// --------------------------
 	// Encoding
 	Base32Test.class,

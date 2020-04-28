@@ -33,7 +33,7 @@ This repository is part of this Android application: [Google Play - Cryptography
 
 ### Hashes
 
-Coming later...
+##### [CRC - 8 / 16 / 24 / 32 / 64](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/crc/CRCHashes.java)
 
 ### Encoding
 
@@ -64,6 +64,10 @@ has method specific code and tests files for running automated tests.
 
 ##### commons-codec-1.10.jar
 Included for Base32 and Base64 encoding methods.
+
+##### jacksum-1.7.0 (jacksum.jar)
+Included for many hashing algorithms.
+You can find all source code and details here: https://jacksum.loefflmann.net/en/download.html
 
 
 ### Notes
