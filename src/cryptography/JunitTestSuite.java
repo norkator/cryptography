@@ -15,8 +15,9 @@ import cryptography.ciphers.vigenere.VigenereTest;
 import cryptography.encoding.base32.Base32Test;
 import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
+import cryptography.encoding.base91.Base91Test;
+import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.ciphers.railfence.RailFenceTest;
-import cryptography.ciphers.a1z26.A1z26Test;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
 import cryptography.ciphers.atbash.AtbashTest;
 import cryptography.ciphers.autokey.AutokeyTest;
@@ -40,7 +41,6 @@ import cryptography.ciphers.playfair.PlayfairTest;
 	BaconTest.class,
 	ChaocipherTest.class,
 	GronsfeldTest.class,
-	A1z26Test.class,
 	AdfgvxTest.class,
 	PlayfairTest.class,
 	// --------------------------
@@ -50,6 +50,8 @@ import cryptography.ciphers.playfair.PlayfairTest;
 	Base32Test.class,
 	Base64Test.class,
 	Base85Test.class,
+	Base91Test.class,
+	A1z26Test.class,
 })
 public class JunitTestSuite {
 

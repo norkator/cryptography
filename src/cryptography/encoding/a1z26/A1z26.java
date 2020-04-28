@@ -1,4 +1,4 @@
-package cryptography.ciphers.a1z26;
+package cryptography.encoding.a1z26;
 
 import cryptography.Mode;
 
@@ -15,7 +15,7 @@ public class A1z26 {
 			char[] alpha = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
 					'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
 
-			if (mode == Mode.ENCRYPT) {
+			if (mode == Mode.ENCODE) {
 				inputText = inputText.replace("-", "").replace(" ", "");
 				inputText = inputText.toUpperCase();
 				for (int i = 0; i < inputText.length(); i++) {
@@ -30,7 +30,7 @@ public class A1z26 {
 				}
 			}
 
-			if (mode == Mode.DECRYPT) {
+			if (mode == Mode.DECODE) {
 				try {
 					String[] a1z26Numbers = inputText.split("-");
 					for (String a1z26Number : a1z26Numbers) {
