@@ -16,7 +16,18 @@ import cryptography.encoding.base32.Base32Test;
 import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
 import cryptography.encoding.base91.Base91Test;
+import cryptography.hashes.adler.AdlerTest;
 import cryptography.hashes.crc.CRCHashesTest;
+import cryptography.hashes.elf.ELFTest;
+import cryptography.hashes.fcs.FCSTest;
+import cryptography.hashes.has.HASTest;
+import cryptography.hashes.md.MDHashesTest;
+import cryptography.hashes.ripemd.RIPEMDHashesTest;
+import cryptography.hashes.sha.SHAHashesTest;
+import cryptography.hashes.sum.SUMHashesTest;
+import cryptography.hashes.tiger.TigerHashesTest;
+import cryptography.hashes.whirlpool.WhirlpoolHashesTest;
+import cryptography.hashes.xor.XorTest;
 import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.ciphers.railfence.RailFenceTest;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
@@ -46,7 +57,18 @@ import cryptography.ciphers.playfair.PlayfairTest;
 	PlayfairTest.class,
 	// --------------------------
 	// Hashes
+	AdlerTest.class,
 	CRCHashesTest.class,
+	ELFTest.class,
+	FCSTest.class,
+	HASTest.class,
+	MDHashesTest.class,
+	RIPEMDHashesTest.class,
+	SHAHashesTest.class,
+	SUMHashesTest.class,
+	TigerHashesTest.class,
+	WhirlpoolHashesTest.class,
+	XorTest.class,
 	// --------------------------
 	// Encoding
 	Base32Test.class,
