@@ -1,10 +1,10 @@
-package cryptography.hashes.whirlpool;
+package cryptography.hashes.sha;
 
 import java.security.NoSuchAlgorithmException;
 import jonelo.jacksum.JacksumAPI;
 import jonelo.jacksum.algorithm.AbstractChecksum;
 
-public class WhirlpoolHashes {
+public class SHA {
 
 	public static void main(String[] args) {
 	}
@@ -22,16 +22,28 @@ public class WhirlpoolHashes {
 		return output;
 	}
 
-	public static String whirlpool0(String input) {
-		return jacksumAPI(input, "Whirlpool-0");
+	public static String sha0(String input) {
+		return jacksumAPI(input, "SHA-0");
 	}
 
-	public static String whirlpool1(String input) {
-		return jacksumAPI(input, "Whirlpool-1");
+	public static String sha1(String input) {
+		return jacksumAPI(input, "SHA-1");
 	}
 
-	public static String whirlpool(String input) {
-		return jacksumAPI(input, "Whirlpool");
+	public static String sha224(String input) {
+		return jacksumAPI(input, "SHA-224");
+	}
+
+	public static String sha256(String input) {
+		return jacksumAPI(input, "SHA-256");
+	}
+
+	public static String sha384(String input) {
+		return jacksumAPI(input, "SHA-384");
+	}
+
+	public static String sha512(String input) {
+		return jacksumAPI(input, "SHA-512");
 	}
 
 }

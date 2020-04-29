@@ -1,10 +1,10 @@
-package cryptography.hashes.ripemd;
+package cryptography.hashes.sum;
 
 import java.security.NoSuchAlgorithmException;
 import jonelo.jacksum.JacksumAPI;
 import jonelo.jacksum.algorithm.AbstractChecksum;
 
-public class RIPEMDHashes {
+public class SUM {
 
 	public static void main(String[] args) {
 	}
@@ -22,20 +22,20 @@ public class RIPEMDHashes {
 		return output;
 	}
 
-	public static String ripemd128(String input) {
-		return jacksumAPI(input, "RIPEMD-128");
+	public static String sum8(String input) {
+		return jacksumAPI(input, "sum8");
 	}
 
-	public static String ripemd160(String input) {
-		return jacksumAPI(input, "RIPEMD-160");
+	public static String sum16(String input) {
+		return jacksumAPI(input, "sum16");
 	}
 
-	public static String ripemd256(String input) {
-		return jacksumAPI(input, "RIPEMD-256");
+	public static String sum24(String input) {
+		return jacksumAPI(input, "sum24");
 	}
 
-	public static String ripemd320(String input) {
-		return jacksumAPI(input, "RIPEMD-320");
+	public static String sum32(String input) {
+		return jacksumAPI(input, "sum32");
 	}
 
 }

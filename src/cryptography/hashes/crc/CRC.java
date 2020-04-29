@@ -1,10 +1,10 @@
-package cryptography.hashes.md;
+package cryptography.hashes.crc;
 
 import java.security.NoSuchAlgorithmException;
 import jonelo.jacksum.JacksumAPI;
 import jonelo.jacksum.algorithm.AbstractChecksum;
 
-public class MDHashes {
+public class CRC {
 
 	public static void main(String[] args) {
 	}
@@ -22,16 +22,24 @@ public class MDHashes {
 		return output;
 	}
 
-	public static String md2(String input) {
-		return jacksumAPI(input, "MD2");
+	public static String crc8(String input) {
+		return jacksumAPI(input, "CRC-8");
 	}
 
-	public static String md4(String input) {
-		return jacksumAPI(input, "MD4");
+	public static String crc16(String input) {
+		return jacksumAPI(input, "CRC-16");
 	}
 
-	public static String md5(String input) {
-		return jacksumAPI(input, "MD5");
+	public static String crc24(String input) {
+		return jacksumAPI(input, "CRC-24");
+	}
+
+	public static String crc32(String input) {
+		return jacksumAPI(input, "CRC-32");
+	}
+
+	public static String crc64(String input) {
+		return jacksumAPI(input, "CRC-64");
 	}
 
 }

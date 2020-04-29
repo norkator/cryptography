@@ -5,5 +5,9 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="jar/commons-codec-1.10.jar"/>
 	<classpathentry kind="lib" path="jar/jacksum.jar"/>
+	<classpathentry kind="lib" path="jar/core-1.58.0.0.jar"/>
+	<classpathentry kind="lib" path="jar/prov-1.58.0.0.jar"/>
+	<classpathentry kind="lib" path="jar/bcpkix-jdk15on-1.58.0.0.jar"/>
+	<classpathentry kind="lib" path="jar/bcpg-jdk15on-1.58.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

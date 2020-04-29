@@ -1,10 +1,10 @@
-package cryptography.hashes.crc;
+package cryptography.hashes.whirlpool;
 
 import java.security.NoSuchAlgorithmException;
 import jonelo.jacksum.JacksumAPI;
 import jonelo.jacksum.algorithm.AbstractChecksum;
 
-public class CRCHashes {
+public class Whirlpool {
 
 	public static void main(String[] args) {
 	}
@@ -22,24 +22,16 @@ public class CRCHashes {
 		return output;
 	}
 
-	public static String crc8(String input) {
-		return jacksumAPI(input, "CRC-8");
+	public static String whirlpool0(String input) {
+		return jacksumAPI(input, "Whirlpool-0");
 	}
 
-	public static String crc16(String input) {
-		return jacksumAPI(input, "CRC-16");
+	public static String whirlpool1(String input) {
+		return jacksumAPI(input, "Whirlpool-1");
 	}
 
-	public static String crc24(String input) {
-		return jacksumAPI(input, "CRC-24");
-	}
-
-	public static String crc32(String input) {
-		return jacksumAPI(input, "CRC-32");
-	}
-
-	public static String crc64(String input) {
-		return jacksumAPI(input, "CRC-64");
+	public static String whirlpool(String input) {
+		return jacksumAPI(input, "Whirlpool");
 	}
 
 }

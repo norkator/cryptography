@@ -1,10 +1,10 @@
-package cryptography.hashes.sum;
+package cryptography.hashes.tiger;
 
 import java.security.NoSuchAlgorithmException;
 import jonelo.jacksum.JacksumAPI;
 import jonelo.jacksum.algorithm.AbstractChecksum;
 
-public class SUMHashes {
+public class Tiger {
 
 	public static void main(String[] args) {
 	}
@@ -22,20 +22,19 @@ public class SUMHashes {
 		return output;
 	}
 
-	public static String sum8(String input) {
-		return jacksumAPI(input, "sum8");
+	public static String tiger(String input) {
+		return jacksumAPI(input, "Tiger");
 	}
 
-	public static String sum16(String input) {
-		return jacksumAPI(input, "sum16");
+	public static String tiger2(String input) {
+		return jacksumAPI(input, "Tiger2");
+	}
+	
+	public static String tiger128(String input) {
+		return jacksumAPI(input, "Tiger-128");
 	}
 
-	public static String sum24(String input) {
-		return jacksumAPI(input, "sum24");
+	public static String tiger160(String input) {
+		return jacksumAPI(input, "Tiger-160");
 	}
-
-	public static String sum32(String input) {
-		return jacksumAPI(input, "sum32");
-	}
-
 }

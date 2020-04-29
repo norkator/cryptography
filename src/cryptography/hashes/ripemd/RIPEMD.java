@@ -1,10 +1,10 @@
-package cryptography.hashes.sha;
+package cryptography.hashes.ripemd;
 
 import java.security.NoSuchAlgorithmException;
 import jonelo.jacksum.JacksumAPI;
 import jonelo.jacksum.algorithm.AbstractChecksum;
 
-public class SHAHashes {
+public class RIPEMD {
 
 	public static void main(String[] args) {
 	}
@@ -22,28 +22,20 @@ public class SHAHashes {
 		return output;
 	}
 
-	public static String sha0(String input) {
-		return jacksumAPI(input, "SHA-0");
+	public static String ripemd128(String input) {
+		return jacksumAPI(input, "RIPEMD-128");
 	}
 
-	public static String sha1(String input) {
-		return jacksumAPI(input, "SHA-1");
+	public static String ripemd160(String input) {
+		return jacksumAPI(input, "RIPEMD-160");
 	}
 
-	public static String sha224(String input) {
-		return jacksumAPI(input, "SHA-224");
+	public static String ripemd256(String input) {
+		return jacksumAPI(input, "RIPEMD-256");
 	}
 
-	public static String sha256(String input) {
-		return jacksumAPI(input, "SHA-256");
-	}
-
-	public static String sha384(String input) {
-		return jacksumAPI(input, "SHA-384");
-	}
-
-	public static String sha512(String input) {
-		return jacksumAPI(input, "SHA-512");
+	public static String ripemd320(String input) {
+		return jacksumAPI(input, "RIPEMD-320");
 	}
 
 }
