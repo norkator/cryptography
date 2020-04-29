@@ -17,6 +17,11 @@ import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
 import cryptography.encoding.base91.Base91Test;
 import cryptography.hashes.crc.CRCHashesTest;
+import cryptography.hashes.md.MDHashesTest;
+import cryptography.hashes.ripemd.RIPEMDHashesTest;
+import cryptography.hashes.sha.SHAHashesTest;
+import cryptography.hashes.tiger.TigerHashesTest;
+import cryptography.hashes.whirlpool.WhirlpoolHashesTest;
 import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.ciphers.railfence.RailFenceTest;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
@@ -47,6 +52,11 @@ import cryptography.ciphers.playfair.PlayfairTest;
 	// --------------------------
 	// Hashes
 	CRCHashesTest.class,
+	MDHashesTest.class,
+	RIPEMDHashesTest.class,
+	SHAHashesTest.class,
+	TigerHashesTest.class,
+	WhirlpoolHashesTest.class,
 	// --------------------------
 	// Encoding
 	Base32Test.class,
