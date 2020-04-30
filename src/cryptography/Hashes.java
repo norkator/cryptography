@@ -122,6 +122,15 @@ public class Hashes {
 
 		// SHA2-224
 		System.out.println("SHA2-224 hash: " + SHA2.sha2_224("testing"));
+		
+		// SHA2-256
+		System.out.println("SHA2-256 hash: " + SHA2.sha2_256("testing"));
+		
+		// SHA2-384
+		System.out.println("SHA2-384 hash: " + SHA2.sha2_384("testing"));
+		
+		// SHA2-512
+		System.out.println("SHA2-512 hash: " + SHA2.sha2_512("testing"));
 
 	}
 
