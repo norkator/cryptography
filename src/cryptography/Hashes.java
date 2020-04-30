@@ -9,6 +9,7 @@ import cryptography.hashes.md.MD;
 import cryptography.hashes.ripemd.RIPEMD;
 import cryptography.hashes.sha.SHA;
 import cryptography.hashes.sha2.SHA2;
+import cryptography.hashes.sha3.SHA3;
 import cryptography.hashes.sum.SUM;
 import cryptography.hashes.tiger.Tiger;
 import cryptography.hashes.whirlpool.Whirlpool;
@@ -122,15 +123,27 @@ public class Hashes {
 
 		// SHA2-224
 		System.out.println("SHA2-224 hash: " + SHA2.sha2_224("testing"));
-		
+
 		// SHA2-256
 		System.out.println("SHA2-256 hash: " + SHA2.sha2_256("testing"));
-		
+
 		// SHA2-384
 		System.out.println("SHA2-384 hash: " + SHA2.sha2_384("testing"));
-		
+
 		// SHA2-512
 		System.out.println("SHA2-512 hash: " + SHA2.sha2_512("testing"));
+
+		// SHA3-224
+		System.out.println("SHA3-224 hash: " + SHA3.sha3_224("testing"));
+
+		// SHA3-256
+		System.out.println("SHA3-256 hash: " + SHA3.sha3_256("testing"));
+
+		// SHA3-384
+		System.out.println("SHA3-384 hash: " + SHA3.sha3_384("testing"));
+
+		// SHA3-512
+		System.out.println("SHA3-512 hash: " + SHA3.sha3_512("testing"));
 
 	}
 

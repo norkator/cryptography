@@ -25,6 +25,7 @@ import cryptography.hashes.md.MDTest;
 import cryptography.hashes.ripemd.RIPEMDTest;
 import cryptography.hashes.sha.SHATest;
 import cryptography.hashes.sha2.SHA2Test;
+import cryptography.hashes.sha3.SHA3Test;
 import cryptography.hashes.sum.SUMTest;
 import cryptography.hashes.tiger.TigerTest;
 import cryptography.hashes.whirlpool.WhirlpoolTest;
@@ -67,6 +68,7 @@ import cryptography.ciphers.playfair.PlayfairTest;
 	RIPEMDTest.class,
 	SHATest.class,
 	SHA2Test.class,
+	SHA3Test.class,
 	SUMTest.class,
 	TigerTest.class,
 	WhirlpoolTest.class,
