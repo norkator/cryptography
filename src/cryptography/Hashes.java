@@ -6,6 +6,7 @@ import cryptography.hashes.crc.CRC;
 import cryptography.hashes.elf.ELF;
 import cryptography.hashes.fcs.FCS;
 import cryptography.hashes.has.HAS;
+import cryptography.hashes.keccak.Keccak;
 import cryptography.hashes.md.MD;
 import cryptography.hashes.ripemd.RIPEMD;
 import cryptography.hashes.sha.SHA;
@@ -161,6 +162,15 @@ public class Hashes {
 
 		// SM3
 		System.out.println("SM3 hash: " + SM3.sm3Hash("testing"));
+
+		// Keccak-256
+		System.out.println("Keccak-256 hash: " + Keccak.keccak_256("testing"));
+
+		// Keccak-384
+		System.out.println("Keccak-384 hash: " + Keccak.keccak_384("testing"));
+
+		// Keccak-512
+		System.out.println("Keccak-512 hash: " + Keccak.keccak_512("testing"));
 
 	}
 

@@ -22,6 +22,7 @@ import cryptography.hashes.crc.CRCTest;
 import cryptography.hashes.elf.ELFTest;
 import cryptography.hashes.fcs.FCSTest;
 import cryptography.hashes.has.HASTest;
+import cryptography.hashes.keccak.KeccakTest;
 import cryptography.hashes.md.MDTest;
 import cryptography.hashes.ripemd.RIPEMDTest;
 import cryptography.hashes.sha.SHATest;
@@ -67,6 +68,7 @@ import cryptography.ciphers.playfair.PlayfairTest;
 	ELFTest.class,
 	FCSTest.class,
 	HASTest.class,
+	KeccakTest.class,
 	MDTest.class,
 	RIPEMDTest.class,
 	SHATest.class,
