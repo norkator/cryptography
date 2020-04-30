@@ -17,6 +17,7 @@ import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
 import cryptography.encoding.base91.Base91Test;
 import cryptography.hashes.adler.AdlerTest;
+import cryptography.hashes.blake2b.Blake2bTest;
 import cryptography.hashes.crc.CRCTest;
 import cryptography.hashes.elf.ELFTest;
 import cryptography.hashes.fcs.FCSTest;
@@ -26,6 +27,7 @@ import cryptography.hashes.ripemd.RIPEMDTest;
 import cryptography.hashes.sha.SHATest;
 import cryptography.hashes.sha2.SHA2Test;
 import cryptography.hashes.sha3.SHA3Test;
+import cryptography.hashes.sm3.SM3Test;
 import cryptography.hashes.sum.SUMTest;
 import cryptography.hashes.tiger.TigerTest;
 import cryptography.hashes.whirlpool.WhirlpoolTest;
@@ -60,6 +62,7 @@ import cryptography.ciphers.playfair.PlayfairTest;
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
+	Blake2bTest.class,
 	CRCTest.class,
 	ELFTest.class,
 	FCSTest.class,
@@ -69,6 +72,7 @@ import cryptography.ciphers.playfair.PlayfairTest;
 	SHATest.class,
 	SHA2Test.class,
 	SHA3Test.class,
+	SM3Test.class,
 	SUMTest.class,
 	TigerTest.class,
 	WhirlpoolTest.class,

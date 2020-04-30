@@ -1,6 +1,7 @@
 package cryptography;
 
 import cryptography.hashes.adler.Adler;
+import cryptography.hashes.blake2b.Blake2b;
 import cryptography.hashes.crc.CRC;
 import cryptography.hashes.elf.ELF;
 import cryptography.hashes.fcs.FCS;
@@ -10,6 +11,7 @@ import cryptography.hashes.ripemd.RIPEMD;
 import cryptography.hashes.sha.SHA;
 import cryptography.hashes.sha2.SHA2;
 import cryptography.hashes.sha3.SHA3;
+import cryptography.hashes.sm3.SM3;
 import cryptography.hashes.sum.SUM;
 import cryptography.hashes.tiger.Tiger;
 import cryptography.hashes.whirlpool.Whirlpool;
@@ -144,6 +146,21 @@ public class Hashes {
 
 		// SHA3-512
 		System.out.println("SHA3-512 hash: " + SHA3.sha3_512("testing"));
+
+		// Blake2b-160
+		System.out.println("Blake2b-160 hash: " + Blake2b.blake2b160("testing"));
+
+		// Blake2b-256
+		System.out.println("Blake2b-256 hash: " + Blake2b.blake2b256("testing"));
+
+		// Blake2b-384
+		System.out.println("Blake2b-384 hash: " + Blake2b.blake2b384("testing"));
+
+		// Blake2b-512
+		System.out.println("Blake2b-512 hash: " + Blake2b.blake2b512("testing"));
+
+		// SM3
+		System.out.println("SM3 hash: " + SM3.sm3Hash("testing"));
 
 	}
 
