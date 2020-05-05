@@ -117,4 +117,5 @@ You are free to optimize code, make new branch and create pull request when read
 
 ### Contributors
 
-None so far.
+* **SKR301** - *Added Morse* - [SKR301](https://github.com/SKR301)
+
