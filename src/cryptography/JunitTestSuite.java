@@ -16,6 +16,7 @@ import cryptography.encoding.base32.Base32Test;
 import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
 import cryptography.encoding.base91.Base91Test;
+import cryptography.encoding.morse.MorseTest;
 import cryptography.hashes.adler.AdlerTest;
 import cryptography.hashes.blake2b.Blake2bTest;
 import cryptography.hashes.crc.CRCTest;
@@ -81,11 +82,12 @@ import cryptography.ciphers.playfair.PlayfairTest;
 	XorTest.class,
 	// --------------------------
 	// Encoding
+	A1z26Test.class,
 	Base32Test.class,
 	Base64Test.class,
 	Base85Test.class,
 	Base91Test.class,
-	A1z26Test.class,
+	MorseTest.class,
 })
 public class JunitTestSuite {
 

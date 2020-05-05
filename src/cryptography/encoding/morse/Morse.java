@@ -8,6 +8,7 @@ public class Morse {
 		input=input.toUpperCase();
 		StringBuilder str = new StringBuilder();
 		if( mode == Mode.ENCODE ) {
+			input = input.replace(" ", "");
 			for(int a=0; a<input.length();a++) {
 				switch(input.charAt(a)) {
 					case 'A': str.append(".-");break;
@@ -46,7 +47,7 @@ public class Morse {
 					case '7': str.append("--...");break;
 					case '8': str.append("---..");break;
 					case '9': str.append("----.");break;
-					case ' ': str.append("   ");break;
+					case ' ': str.append("  ");break;
 				}
 				str.append(" ");
 			}

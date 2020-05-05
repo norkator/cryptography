@@ -5,6 +5,7 @@ import cryptography.encoding.base32.Base32;
 import cryptography.encoding.base64.Base64;
 import cryptography.encoding.base85.Base85;
 import cryptography.encoding.base91.Base91;
+import cryptography.encoding.morse.Morse;
 
 public class Encoding {
 
@@ -27,8 +28,12 @@ public class Encoding {
 		System.out.println("Base91 decode: " + Base91.base91("\"OdH0zJpE", Mode.DECODE));
 		
 		// A1z26
-		System.out.println("A1z26 encrypt: " + A1z26.a1z26("HELLO", Mode.ENCODE));
-		System.out.println("A1z26 decrypt: " + A1z26.a1z26("8-5-12-12-15", Mode.DECODE));
+		System.out.println("A1z26 encode: " + A1z26.a1z26("HELLO", Mode.ENCODE));
+		System.out.println("A1z26 decode: " + A1z26.a1z26("8-5-12-12-15", Mode.DECODE));
+		
+		// Morse
+		System.out.println("Morse encode: " +  Morse.morse("TESTING MORSE", Mode.ENCODE));
+		System.out.println("Morse decode: " +  Morse.morse("- . ... - .. -. --. -- --- .-. ... .", Mode.DECODE));
 		
 	}
 
