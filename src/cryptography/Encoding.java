@@ -5,6 +5,7 @@ import cryptography.encoding.base32.Base32;
 import cryptography.encoding.base64.Base64;
 import cryptography.encoding.base85.Base85;
 import cryptography.encoding.base91.Base91;
+import cryptography.encoding.huffman.Huffman;
 import cryptography.encoding.morse.Morse;
 
 public class Encoding {
@@ -34,6 +35,9 @@ public class Encoding {
 		// Morse
 		System.out.println("Morse encode: " +  Morse.morse("TESTING MORSE", Mode.ENCODE));
 		System.out.println("Morse decode: " +  Morse.morse("- . ... - .. -. --. -- --- .-. ... .", Mode.DECODE));
+		
+		// Huffman (only encoding)
+		System.out.println("Huffman encode: " +  Huffman.huffman("abcdbcdcdd", Mode.ENCODE));
 		
 	}
 
