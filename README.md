@@ -59,6 +59,7 @@ This repository is part of this Android application: [Google Play - Cryptography
 ##### [Base64](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base64/Base64.java)
 ##### [Base85](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base85/Base85.java)
 ##### [Base91](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base91/Base91.java)
+##### [Huffman](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/huffman/Huffman.java)
 ##### [Morse](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/morse/Morse.java)
 
 
@@ -117,5 +118,5 @@ You are free to optimize code, make new branch and create pull request when read
 
 ### Contributors
 
-* **SKR301** - *Added Morse* - [SKR301](https://github.com/SKR301)
+* **SKR301** - *Added Morse, Huffman* - [SKR301](https://github.com/SKR301)
 
