@@ -6,7 +6,6 @@ package cryptography.encoding.huffman;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import cryptography.Mode;
-import cryptography.encoding.huffman.Huffman;
 
 public class HuffmanTest {
 	@Test
