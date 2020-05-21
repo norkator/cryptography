@@ -118,5 +118,5 @@ You are free to optimize code, make new branch and create pull request when read
 
 ### Contributors
 
-* **SKR301** - *Added Morse, Huffman* - [SKR301](https://github.com/SKR301)
+* **Saurav Kumar** - *Added Morse, Huffman* - [SKR301](https://github.com/SKR301)
 
