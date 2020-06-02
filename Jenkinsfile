@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Unit Tests') {
       agent {
-        label 'apache'
+        label 'master'
       }
       steps {
         bat 'ant -f build.xml -v'
