@@ -9,6 +9,7 @@ import cryptography.ciphers.railfence.RailFence;
 import cryptography.ciphers.scytale.Scytale;
 import cryptography.ciphers.autokey.Autokey;
 import cryptography.ciphers.beaufort.Beaufort;
+import cryptography.ciphers.blowfish.Blowfish;
 import cryptography.ciphers.keyword.Keyword;
 import cryptography.ciphers.vigenere.Vigenere;
 import cryptography.ciphers.bacon.Bacon;
@@ -16,6 +17,7 @@ import cryptography.ciphers.chaocipher.Chaocipher;
 import cryptography.ciphers.gronsfeld.Gronsfeld;
 import cryptography.ciphers.adfgvx.Adfgvx;
 import cryptography.ciphers.playfair.Playfair;
+import cryptography.ciphers.porta.Porta;
 
 public class Ciphers {
 
@@ -74,6 +76,14 @@ public class Ciphers {
 		// Playfair
 		System.out.println("Playfair encrypt: " + Playfair.playfair("HELLOWORLDTEST", "ISFAIR", true, Mode.ENCRYPT));
 		System.out.println("Playfair decrypt: " + Playfair.playfair("MBQFHQVPFNEQCAQY", "ISFAIR", true, Mode.DECRYPT));
+		
+		// Porta
+		System.out.println("Porta encrypt: " + Porta.porta("PORTAEXAMPLE", "TEST"));
+		System.out.println("Porta decrypt: " + Porta.porta("GMIKWTBWVAUN", "TEST"));
+		
+		// Blowfish
+		System.out.println("Blowfish encrypt: " + Blowfish.blowfish("TESTING", Mode.ENCRYPT, "EXAMPLEKEY"));
+		System.out.println("Blowfish decrypt: " + Blowfish.blowfish("Dl+Cr1z8wRY=", Mode.DECRYPT, "EXAMPLEKEY"));
 	}
 
 }
