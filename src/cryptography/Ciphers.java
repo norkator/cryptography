@@ -9,6 +9,7 @@ import cryptography.ciphers.railfence.RailFence;
 import cryptography.ciphers.scytale.Scytale;
 import cryptography.ciphers.autokey.Autokey;
 import cryptography.ciphers.beaufort.Beaufort;
+import cryptography.ciphers.blowfish.Blowfish;
 import cryptography.ciphers.keyword.Keyword;
 import cryptography.ciphers.vigenere.Vigenere;
 import cryptography.ciphers.bacon.Bacon;
@@ -79,6 +80,10 @@ public class Ciphers {
 		// Porta
 		System.out.println("Porta encrypt: " + Porta.porta("PORTAEXAMPLE", "TEST"));
 		System.out.println("Porta decrypt: " + Porta.porta("GMIKWTBWVAUN", "TEST"));
+		
+		// Blowfish
+		System.out.println("Blowfish encrypt: " + Blowfish.blowfish("TESTING", Mode.ENCRYPT, "EXAMPLEKEY"));
+		System.out.println("Blowfish decrypt: " + Blowfish.blowfish("Dl+Cr1z8wRY=", Mode.DECRYPT, "EXAMPLEKEY"));
 	}
 
 }

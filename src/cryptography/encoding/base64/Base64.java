@@ -13,9 +13,11 @@ public class Base64 {
 		byte[] decode;
 
 		/*
-		 * Note, Cryptography application uses 'android.util.Base64;' implementation instead but works by the standard 
-		 * You can find Apache codec Base64 source code from link below
-		 * https://github.com/apache/commons-codec/blob/master/src/main/java/org/apache/commons/codec/binary/Base64.java
+		 * Note, Cryptography application uses 'android.util.Base64;' implementation
+		 * instead but works by the standard You can find Apache codec Base64 source
+		 * code from link below
+		 * https://github.com/apache/commons-codec/blob/master/src/main/java/org/apache/
+		 * commons/codec/binary/Base64.java
 		 */
 		org.apache.commons.codec.binary.Base64 base64 = new org.apache.commons.codec.binary.Base64();
 

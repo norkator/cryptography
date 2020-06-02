@@ -42,6 +42,7 @@ import cryptography.ciphers.atbash.AtbashTest;
 import cryptography.ciphers.autokey.AutokeyTest;
 import cryptography.ciphers.bacon.BaconTest;
 import cryptography.ciphers.beaufort.BeaufortTest;
+import cryptography.ciphers.blowfish.BlowfishTest;
 import cryptography.ciphers.keyword.KeywordTest;
 import cryptography.ciphers.playfair.PlayfairTest;
 import cryptography.ciphers.porta.PortaTest;
@@ -56,6 +57,7 @@ import cryptography.ciphers.porta.PortaTest;
 	AtbashTest.class,
 	AutokeyTest.class,
 	BeaufortTest.class,
+	BlowfishTest.class,
 	KeywordTest.class,
 	VigenereTest.class,
 	BaconTest.class,
