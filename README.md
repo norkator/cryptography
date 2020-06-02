@@ -1,6 +1,4 @@
-<h1 align="center">
-  <a href="http://www.nitramite.com/"><img src="https://github.com/norkator/Cryptography/blob/master/img/cryptography_repository_image.png" alt="Cryptography"></a>
-</h1>
+![Cryptography Image 1](./img/cryptography_repository_image.png) 
 
 
 # Cryptography
@@ -13,8 +11,24 @@ In short words this repository is meant to be educational.
 
 This repository is part of this Android application: [Google Play - Cryptography](https://play.google.com/store/apps/details?id=com.nitramite.cryptography)
 
+Table of contents
+=================
+* [Ciphers](#ciphers)
+* [Hashes](#hashes)
+* [Encoding](#encoding)
+* [Installation](#installation)
+* [Running tests](#running-tests)
+* [External libraries](#external-libraries)
+* [Notes](#notes)
+* [Contributions](#contributions)
+* [Authors](#authors)
+* [Contributors](#contributors)
+* [License](#license)
 
-### Ciphers
+<br>
+
+Ciphers
+============
 
 ##### [Adfgvx](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/adfgvx/Adfgvx.java)
 ##### [Atbash](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/atbash/Atbash.java)
@@ -31,7 +45,8 @@ This repository is part of this Android application: [Google Play - Cryptography
 ##### [Vigenere](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/vigenere/Vigenere.java)
 
 
-### Hashes
+Hashes
+============
 
 ##### [ADLER - 32](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/adler/Adler.java)
 ##### [Blake2b - 160 / 256 / 384 / 512](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/blake2b/Blake2b.java)
@@ -52,7 +67,8 @@ This repository is part of this Android application: [Google Play - Cryptography
 ##### [XOR - 8](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/xor/Xor.java)
 
 
-### Encoding
+Encoding
+============
 
 ##### [A1z26](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/a1z26/A1z26.java)
 ##### [Base32](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base32/Base32.java)
@@ -65,22 +81,35 @@ This repository is part of this Android application: [Google Play - Cryptography
 
 <br>
 
-### Installation
+Installation
+============
 1. Download and install eclipse: https://www.eclipse.org/downloads/
-2. Download project source code by either cloning it with git or by `Clone or download` menu `Download ZIP` option.
+2. Download project source code by either cloning it with Git or by `Clone or download` menu `Download ZIP` option.
 2. Open project in Eclipse `File` - `Open projects from File System...`
 3. Navigate to `/src` - `cryptography` - `Ciphers.java` and start play with it. Rest of the folder structure
 has method specific code and tests files for running automated tests.
 
+I warmly recommend watching basic Eclipse tutorials if you are new to the topic.
 
-### Running tests
+
+Running tests
+============
+
+##### Jenkins
+1. Make new branch.
+2. Push changes.
+3. Open pull request.
+4. Later tests are run by Jenkins automation.
+
+##### Manually
 1. Right click on `TestRunner.java`
 2. Click `Coverage As`
 3. Select `1 Java Application`
 4. If everything is fine result is `Tests success: true`
 
 
-### External libraries
+External libraries
+============
 
 ##### commons-codec-1.10.jar
 Included for Base32 and Base64 encoding methods.
@@ -92,31 +121,42 @@ You can find all source code and details here: https://jacksum.loefflmann.net/en
 ##### core-1.58.0.0.jar | prov-1.58.0.0.jar | bcpg-jdk15on-1.58.0.0.jar | bcpkix-jdk15on-1.58.0.0.jar (Spongy Castle)
 Providing tons of newer strong Cryptographic methods. See https://rtyley.github.io/spongycastle/ and http://www.bouncycastle.org/java.html
 
+##### org.junit_4.13.0.v20200204-1500.jar | core-1.3.0.jar
+JUnit 4 jar and hamcrest core for Jenkins test runs.
 
-### Notes
+
+Notes
+============
 
 Some ciphers or parts of ciphers originate from web sites, tutorials, repositories or other sources. 
 There's unfortunately no links to original references.
 
 
-### Contributions
+Contributions
+============
 
 ##### Rules?
 Please, write tests if you make something new.
 
 ##### Found problem?
-Make new branch and create pull request when problem is fixed.
+Open issue or make new branch and create pull request when problem is fixed.
 
 ##### Want to optimize code?
 You are free to optimize code, make new branch and create pull request when ready.
 
 
-### Authors
+Authors
+============
 
 * **Norkator** - *Initial work* - [norkator](https://github.com/norkator)
 
 
-### Contributors
+Contributors
+============
 
 * **Saurav Kumar** - *Added Morse, Huffman* - [SKR301](https://github.com/SKR301)
 
+
+License
+============
+See repo license section or license file.
