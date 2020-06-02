@@ -16,6 +16,7 @@ import cryptography.ciphers.chaocipher.Chaocipher;
 import cryptography.ciphers.gronsfeld.Gronsfeld;
 import cryptography.ciphers.adfgvx.Adfgvx;
 import cryptography.ciphers.playfair.Playfair;
+import cryptography.ciphers.porta.Porta;
 
 public class Ciphers {
 
@@ -74,6 +75,10 @@ public class Ciphers {
 		// Playfair
 		System.out.println("Playfair encrypt: " + Playfair.playfair("HELLOWORLDTEST", "ISFAIR", true, Mode.ENCRYPT));
 		System.out.println("Playfair decrypt: " + Playfair.playfair("MBQFHQVPFNEQCAQY", "ISFAIR", true, Mode.DECRYPT));
+		
+		// Porta
+		System.out.println("Porta encrypt: " + Porta.porta("PORTAEXAMPLE", "TEST"));
+		System.out.println("Porta decrypt: " + Porta.porta("GMIKWTBWVAUN", "TEST"));
 	}
 
 }
