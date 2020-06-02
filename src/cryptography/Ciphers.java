@@ -11,7 +11,6 @@ import cryptography.ciphers.autokey.Autokey;
 import cryptography.ciphers.beaufort.Beaufort;
 import cryptography.ciphers.keyword.Keyword;
 import cryptography.ciphers.vigenere.Vigenere;
-import cryptography.encoding.morse.Morse;
 import cryptography.ciphers.bacon.Bacon;
 import cryptography.ciphers.chaocipher.Chaocipher;
 import cryptography.ciphers.gronsfeld.Gronsfeld;
@@ -75,10 +74,6 @@ public class Ciphers {
 		// Playfair
 		System.out.println("Playfair encrypt: " + Playfair.playfair("HELLOWORLDTEST", "ISFAIR", true, Mode.ENCRYPT));
 		System.out.println("Playfair decrypt: " + Playfair.playfair("MBQFHQVPFNEQCAQY", "ISFAIR", true, Mode.DECRYPT));
-
-		//Morse Code
-		System.out.println("Morse Code encode: " + Morse.morse("MORSE CODE", Mode.ENCODE));
-		System.out.println("Morse Code decode: " + Morse.morse("-- --- .-. ... .   -.-. --- -.. .", Mode.DECODE));
 	}
 
 }
