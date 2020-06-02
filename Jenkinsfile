@@ -12,7 +12,7 @@ pipeline {
       }
       steps {
         bat 'ant -f build.xml -v'
-        junit 'reports/result.xml'
+        junit 'reports/TESTS-TestSuites.xml'
       }
     }
   }
