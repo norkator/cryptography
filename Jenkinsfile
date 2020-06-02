@@ -12,7 +12,7 @@ pipeline {
       }
       steps {
         bat 'ant -f build_jenkins.xml -v'
-        junit 'reports/TESTS-TestSuites.xml'
+        junit 'junit/TESTS-TestSuites.xml'
       }
     }
   }
