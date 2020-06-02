@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Cryptography">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="../../.p2/pool/plugins/org.junit_4.13.0.v20200204-1500.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+    </path>
+    <path id="Cryptography.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="jar/commons-codec-1.10.jar"/>
+        <pathelement location="jar/jacksum.jar"/>
+        <pathelement location="jar/core-1.58.0.0.jar"/>
+        <pathelement location="jar/prov-1.58.0.0.jar"/>
+        <pathelement location="jar/bcpkix-jdk15on-1.58.0.0.jar"/>
+        <pathelement location="jar/bcpg-jdk15on-1.58.0.0.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Cryptography.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target name="Cryptography">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="cryptography.JunitTestSuite" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.adfgvx.AdfgvxTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.atbash.AtbashTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.autokey.AutokeyTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.bacon.BaconTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.beaufort.BeaufortTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.caesar.CaesarTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.chaocipher.ChaocipherTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.gronsfeld.GronsfeldTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.keyword.KeywordTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.playfair.PlayfairTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.railfence.RailFenceTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.scytale.ScytaleTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.ciphers.vigenere.VigenereTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.encoding.a1z26.A1z26Test" todir="${junit.output.dir}"/>
+            <test name="cryptography.encoding.base32.Base32Test" todir="${junit.output.dir}"/>
+            <test name="cryptography.encoding.base64.Base64Test" todir="${junit.output.dir}"/>
+            <test name="cryptography.encoding.base85.Base85Test" todir="${junit.output.dir}"/>
+            <test name="cryptography.encoding.base91.Base91Test" todir="${junit.output.dir}"/>
+            <test name="cryptography.encoding.huffman.HuffmanTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.encoding.morse.MorseTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.adler.AdlerTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.blake2b.Blake2bTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.crc.CRCTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.elf.ELFTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.fcs.FCSTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.has.HASTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.keccak.KeccakTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.md.MDTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.ripemd.RIPEMDTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.sha.SHATest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.sha2.SHA2Test" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.sha3.SHA3Test" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.sm3.SM3Test" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.sum.SUMTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.tiger.TigerTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.whirlpool.WhirlpoolTest" todir="${junit.output.dir}"/>
+            <test name="cryptography.hashes.xor.XorTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="Cryptography.classpath"/>
+        </junit>
+    </target>
+    <target name="TestRunner">
+        <java classname="cryptography.TestRunner" failonerror="true" fork="yes">
+            <classpath refid="Cryptography.classpath"/>
+        </java>
+    </target>
+    <target name="JunitTestSuite">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="cryptography.JunitTestSuite" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="Cryptography.classpath"/>
+        </junit>
+    </target>
+    <target name="Ciphers">
+        <java classname="cryptography.Ciphers" failonerror="true" fork="yes">
+            <classpath refid="Cryptography.classpath"/>
+        </java>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
