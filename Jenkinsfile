@@ -11,7 +11,7 @@ pipeline {
         label 'master'
       }
       steps {
-        bat 'ant -f build.xml -v'
+        bat 'ant -f build_jenkins.xml -v'
         junit 'reports/TESTS-TestSuites.xml'
       }
     }
