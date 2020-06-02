@@ -8,11 +8,7 @@ public class PortaTest {
 	@Test
 	public void runTest() {
 		assertEquals("GMIKWTBWVAUN", Porta.porta("PORTAEXAMPLE", "TEST"));
-		// assertEquals("PORTAEXAMPLE", Porta.porta("GMIKWTBWVAUN", "TEST"));
-		
-		
-		// Purposely wrong to test Jenkins
-		assertEquals("PORTAEXAMPLE NOT WORKING TEST", Porta.porta("GMIKWTBWVAUN", "TEST"));
+		assertEquals("PORTAEXAMPLE", Porta.porta("GMIKWTBWVAUN", "TEST"));
 	}
 
 }
