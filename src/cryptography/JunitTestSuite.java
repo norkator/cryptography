@@ -17,6 +17,7 @@ import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
 import cryptography.encoding.base91.Base91Test;
 import cryptography.encoding.huffman.HuffmanTest;
+import cryptography.encoding.adaptiveHuffman.AdaptiveHuffmanTest;
 import cryptography.encoding.morse.MorseTest;
 import cryptography.hashes.adler.AdlerTest;
 import cryptography.hashes.blake2b.Blake2bTest;
@@ -94,6 +95,7 @@ import cryptography.ciphers.porta.PortaTest;
 	Base91Test.class,
 	MorseTest.class,
 	HuffmanTest.class,
+	AdaptiveHuffmanTest.class,
 })
 
 public class JunitTestSuite {
