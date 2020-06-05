@@ -6,6 +6,7 @@ import cryptography.encoding.base64.Base64;
 import cryptography.encoding.base85.Base85;
 import cryptography.encoding.base91.Base91;
 import cryptography.encoding.huffman.Huffman;
+import cryptography.encoding.adaptiveHuffman.AdaptiveHuffman;
 import cryptography.encoding.morse.Morse;
 
 public class Encoding {
@@ -39,6 +40,8 @@ public class Encoding {
 		// Huffman (only encoding)
 		System.out.println("Huffman encode: " +  Huffman.huffman("abcdbcdcdd", Mode.ENCODE));
 		
+		//AdaptiveHuffman
+		System.out.println("AdaptiveHuffman encode: " +  AdaptiveHuffman.adaptiveHuffman("aardvark", Mode.ENCODE));
+		System.out.println("AdaptiveHuffman decode: " +  AdaptiveHuffman.adaptiveHuffman("00000101000100000110001011010110001010", Mode.DECODE));
 	}
-
 }
