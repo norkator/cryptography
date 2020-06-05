@@ -3,7 +3,6 @@ package cryptography.encoding.adaptiveHuffman;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import cryptography.Mode;
-import cryptography.encoding.adaptiveHuffman.AdaptiveHuffman;
 
 public class AdaptiveHuffmanTest {
 	@Test
