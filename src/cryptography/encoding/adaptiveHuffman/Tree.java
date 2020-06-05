@@ -1,7 +1,6 @@
 package cryptography.encoding.adaptiveHuffman;
 
-
-public class Tree{
+public class Tree {
 	public String ch;
 	public int weight;
 	public int no;
