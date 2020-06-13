@@ -3,32 +3,39 @@ package cryptography.encoding.adaptiveHuffman;
 import java.util.ArrayList;
 
 public class AdaptiveHuffmanEncode {
-	static ArrayList<Tree> tree = new ArrayList<Tree>();
-	static int NYT = 0;
-	static int nodeNo = 51;
-	static int currNode;
-	static String output = "";
 
-	public static String encode(String data) {
+	private ArrayList<Tree> tree;
+	private static int NYT;
+	private static int nodeNo;
+	private static int currNode;
+
+	public AdaptiveHuffmanEncode() {
+		tree = new ArrayList<>();
 		createNode("NYT", 51, 0, -1, "");
+		NYT = 0;
+		nodeNo = 51;
+	}
+
+	public String Encode(String data) {
+		StringBuilder output = new StringBuilder();
 
 		boolean firstFlag;
 		for (int a = 0; a < data.length(); a++) {
 			firstFlag = false;
 			if (first(a, data)) {
 				firstFlag = true;
-				output += tree.get(NYT).code;
-				output += ChartoCode(data.charAt(a));
+				output.append(tree.get(NYT).code);
+				output.append(charToCode(data.charAt(a)));
 			} else {
-				output += retCodeData(Character.toString(data.charAt(a)));
+				output.append(retCodeData(Character.toString(data.charAt(a))));
 			}
 			update(firstFlag, Character.toString(data.charAt(a)));
 		}
 
-		return output;
+		return output.toString();
 	}
 
-	public static void createNode(String str, int num, int freq, int p, String c) {
+	private void createNode(String str, int num, int freq, int p, String c) {
 		Tree temp = new Tree();
 		temp.ch = str;
 		temp.no = num;
@@ -41,7 +48,7 @@ public class AdaptiveHuffmanEncode {
 		tree.add(temp);
 	}
 
-	public static boolean first(int n, String data) {
+	private static boolean first(int n, String data) {
 		for (int a = 0; a < n; a++) {
 			if (data.charAt(a) == data.charAt(n)) {
 				return false;
@@ -50,7 +57,7 @@ public class AdaptiveHuffmanEncode {
 		return true;
 	}
 
-	public static String ChartoCode(char ch) {
+	private static String charToCode(char ch) {
 		switch (ch) {
 		case 'a':
 			return "00000";
@@ -109,7 +116,7 @@ public class AdaptiveHuffmanEncode {
 		}
 	}
 
-	public static String retCodeData(String str) {
+	private String retCodeData(String str) {
 		for (int a = 0; a < tree.size(); a++) {
 			if (str.equals(tree.get(a).ch)) {
 				currNode = a;
@@ -119,7 +126,7 @@ public class AdaptiveHuffmanEncode {
 		return "";
 	}
 
-	public static void update(boolean flag, String str) {
+	private void update(boolean flag, String str) {
 		if (flag) {
 			tree.get(NYT).ch = "-";
 			tree.get(NYT).left = tree.size();
@@ -143,7 +150,7 @@ public class AdaptiveHuffmanEncode {
 		gotoParent(currNode);
 	}
 
-	public static int findNodeMax(int n) {
+	private int findNodeMax(int n) {
 		int w = tree.get(n).weight;
 		int index = n;
 
@@ -160,7 +167,7 @@ public class AdaptiveHuffmanEncode {
 		return index;
 	}
 
-	public static void gotoParent(int n) {
+	private void gotoParent(int n) {
 		int nodeMax;
 		while (tree.get(n).parent != -1) {
 			n = tree.get(n).parent;
@@ -177,7 +184,7 @@ public class AdaptiveHuffmanEncode {
 		}
 	}
 
-	static void switchNodes(int a, int b) {
+	private void switchNodes(int a, int b) {
 		// swap parent's child
 		int parent_a = tree.get(a).parent;
 		int parent_b = tree.get(b).parent;
@@ -212,7 +219,7 @@ public class AdaptiveHuffmanEncode {
 		}
 	}
 
-	static void reNumCode(int n) {
+	private void reNumCode(int n) {
 		if (tree.get(n).left != -1 && tree.get(n).right != -1) {
 			tree.get(tree.get(n).right).no = (--nodeNo);
 			tree.get(tree.get(n).left).no = (--nodeNo);
@@ -225,11 +232,13 @@ public class AdaptiveHuffmanEncode {
 		}
 	}
 
-	static void display() {
+	@SuppressWarnings("unused")
+	private void display() {
 		for (int a = 0; a < tree.size(); a++) {
 			System.out.println("" + a + " ch:" + tree.get(a).ch + " weight:" + tree.get(a).weight + " no:"
 					+ tree.get(a).no + " l:" + tree.get(a).left + " r:" + tree.get(a).right + " p:" + tree.get(a).parent
 					+ " code:" + tree.get(a).code);
 		}
 	}
+
 }

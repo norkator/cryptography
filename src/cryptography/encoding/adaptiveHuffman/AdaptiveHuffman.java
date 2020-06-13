@@ -7,10 +7,12 @@ public class AdaptiveHuffman {
 		String output = "";
 
 		if (mode == Mode.ENCODE) {
-			output = AdaptiveHuffmanEncode.encode(input);
+			AdaptiveHuffmanEncode adaptiveHuffmanEncode = new AdaptiveHuffmanEncode();
+			output = adaptiveHuffmanEncode.Encode(input);
 		}
 		if (mode == Mode.DECODE) {
-			output = AdaptiveHuffmanDecode.decode(input);
+			AdaptiveHuffmanDecode adaptiveHuffmanDecode = new AdaptiveHuffmanDecode();
+			output = adaptiveHuffmanDecode.Decode(input);
 		}
 		return output;
 	}
