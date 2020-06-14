@@ -27,10 +27,12 @@ import cryptography.hashes.fcs.FCSTest;
 import cryptography.hashes.has.HASTest;
 import cryptography.hashes.keccak.KeccakTest;
 import cryptography.hashes.md.MDTest;
+import cryptography.hashes.pbkdf2.PBKDF2Test;
 import cryptography.hashes.ripemd.RIPEMDTest;
 import cryptography.hashes.sha.SHATest;
 import cryptography.hashes.sha2.SHA2Test;
 import cryptography.hashes.sha3.SHA3Test;
+import cryptography.hashes.skein.SkeinTest;
 import cryptography.hashes.sm3.SM3Test;
 import cryptography.hashes.sum.SUMTest;
 import cryptography.hashes.tiger.TigerTest;
@@ -38,6 +40,7 @@ import cryptography.hashes.whirlpool.WhirlpoolTest;
 import cryptography.hashes.xor.XorTest;
 import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.ciphers.railfence.RailFenceTest;
+import cryptography.ciphers.rc.RCTest;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
 import cryptography.ciphers.atbash.AtbashTest;
 import cryptography.ciphers.autokey.AutokeyTest;
@@ -67,6 +70,7 @@ import cryptography.ciphers.porta.PortaTest;
 	AdfgvxTest.class,
 	PlayfairTest.class,
 	PortaTest.class,
+	RCTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
@@ -77,10 +81,12 @@ import cryptography.ciphers.porta.PortaTest;
 	HASTest.class,
 	KeccakTest.class,
 	MDTest.class,
+	PBKDF2Test.class,
 	RIPEMDTest.class,
 	SHATest.class,
 	SHA2Test.class,
 	SHA3Test.class,
+	SkeinTest.class,
 	SM3Test.class,
 	SUMTest.class,
 	TigerTest.class,

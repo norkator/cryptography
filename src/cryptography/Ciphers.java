@@ -6,6 +6,7 @@ package cryptography;
 import cryptography.ciphers.atbash.Atbash;
 import cryptography.ciphers.caesar.Caesar;
 import cryptography.ciphers.railfence.RailFence;
+import cryptography.ciphers.rc.RC;
 import cryptography.ciphers.scytale.Scytale;
 import cryptography.ciphers.autokey.Autokey;
 import cryptography.ciphers.beaufort.Beaufort;
@@ -84,6 +85,14 @@ public class Ciphers {
 		// Blowfish
 		System.out.println("Blowfish encrypt: " + Blowfish.blowfish("TESTING", Mode.ENCRYPT, "EXAMPLEKEY"));
 		System.out.println("Blowfish decrypt: " + Blowfish.blowfish("Dl+Cr1z8wRY=", Mode.DECRYPT, "EXAMPLEKEY"));
+		
+		// RC2
+		System.out.println("RC2 encrypt: " + RC.rc2(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
+		System.out.println("RC2 decrypt: " + RC.rc2(Mode.DECRYPT, "G2DXHTkgYEY=",  "EXAMPLEKEY"));
+		
+		// RC4
+		System.out.println("RC4 encrypt: " + RC.rc4(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
+		System.out.println("RC4 decrypt: " + RC.rc4(Mode.DECRYPT, "HUUcc9q/5Q==",  "EXAMPLEKEY"));
 	}
 
 }
