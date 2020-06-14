@@ -8,7 +8,7 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import org.spongycastle.crypto.engines.RC2Engine;
 import org.spongycastle.crypto.engines.RC4Engine;
-// import org.spongycastle.crypto.engines.RC6Engine;
+import org.spongycastle.crypto.engines.RC6Engine;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
@@ -103,9 +103,12 @@ public class RC {
 	 * @param key   cipher key
 	 * @return Hash string
 	 */
-	/* TODO: Some reason throws "NoSuchAlgorithmException: Cannot find any provider supporting RC6" even when there is provider
 	public static String rc6(Mode mode, String input, String key) {
 		org.apache.commons.codec.binary.Base64 base64 = new org.apache.commons.codec.binary.Base64();
+
+		// TODO: Some reason throws "NoSuchAlgorithmException: Cannot find any provider
+		// supporting RC6" even when there is provider
+
 		try {
 			if (mode == Mode.ENCRYPT) {
 				SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8),
@@ -129,6 +132,5 @@ public class RC {
 		}
 		return null;
 	}
-	*/
 
 }
