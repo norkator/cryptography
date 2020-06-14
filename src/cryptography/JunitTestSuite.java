@@ -40,6 +40,7 @@ import cryptography.hashes.whirlpool.WhirlpoolTest;
 import cryptography.hashes.xor.XorTest;
 import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.ciphers.railfence.RailFenceTest;
+import cryptography.ciphers.rc.RCTest;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
 import cryptography.ciphers.atbash.AtbashTest;
 import cryptography.ciphers.autokey.AutokeyTest;
@@ -69,6 +70,7 @@ import cryptography.ciphers.porta.PortaTest;
 	AdfgvxTest.class,
 	PlayfairTest.class,
 	PortaTest.class,
+	RCTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
