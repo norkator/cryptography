@@ -1,16 +1,17 @@
 package cryptography.ciphers.cast;
 
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
+import java.nio.charset.StandardCharsets;
 import java.security.Security;
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
+
+import org.spongycastle.crypto.BlockCipher;
+import org.spongycastle.crypto.BufferedBlockCipher;
+import org.spongycastle.crypto.DataLengthException;
+import org.spongycastle.crypto.InvalidCipherTextException;
 import org.spongycastle.crypto.engines.CAST5Engine;
 import org.spongycastle.crypto.engines.CAST6Engine;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.SecretKeySpec;
+import org.spongycastle.crypto.modes.CBCBlockCipher;
+import org.spongycastle.crypto.paddings.PaddedBufferedBlockCipher;
+import org.spongycastle.crypto.params.KeyParameter;
 import cryptography.Mode;
 
 public class CAST {
@@ -26,6 +27,12 @@ public class CAST {
 	/**
 	 * Source code:
 	 * https://github.com/rtyley/spongycastle/blob/spongy-master/core/src/main/java/org/spongycastle/crypto/engines/CAST5Engine.java
+	 * See also:
+	 * https://github.com/rtyley/spongycastle/blob/spongy-master/core/src/main/java/org/spongycastle/crypto/BufferedBlockCipher.java
+	 * Modes:
+	 * https://github.com/rtyley/spongycastle/blob/spongy-master/core/src/main/java/org/spongycastle/crypto/modes/CBCBlockCipher.java
+	 * Wiki:
+	 * https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC)
 	 * 
 	 * @param mode  cipher mode
 	 * @param input string
@@ -36,24 +43,33 @@ public class CAST {
 		org.apache.commons.codec.binary.Base64 base64 = new org.apache.commons.codec.binary.Base64();
 		try {
 			if (mode == Mode.ENCRYPT) {
-				try {
-					SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), new CAST5Engine().getAlgorithmName());
-					Cipher cipher = Cipher.getInstance(new CAST5Engine().getAlgorithmName());
-					cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-					return base64.encodeToString(cipher.doFinal(input.getBytes("UTF-8")));
-				} catch (NoSuchAlgorithmException | NoSuchPaddingException | UnsupportedEncodingException
-						| BadPaddingException | IllegalBlockSizeException | InvalidKeyException e) {
-					e.printStackTrace();
-				}
+				BlockCipher engine = new CAST5Engine();
+
+				BufferedBlockCipher cipher = new PaddedBufferedBlockCipher(new CBCBlockCipher(engine));
+				cipher.init(true, new KeyParameter(key.getBytes(StandardCharsets.UTF_8)));
+
+				byte[] inputBytes = input.getBytes(StandardCharsets.UTF_8);
+				byte[] rv = new byte[cipher.getOutputSize(inputBytes.length)];
+				int numOutBytes = cipher.processBytes(inputBytes, 0, inputBytes.length, rv, 0);
+
+				cipher.doFinal(rv, numOutBytes);
+				return base64.encodeToString(rv);
 			}
+
 			if (mode == Mode.DECRYPT) {
-				SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), new CAST5Engine().getAlgorithmName());
-				Cipher cipher = Cipher.getInstance(new CAST5Engine().getAlgorithmName());
-				cipher.init(Cipher.DECRYPT_MODE, secretKey);
-				return new String(cipher.doFinal(base64.decode(input.getBytes())));
+				BlockCipher engine = new CAST5Engine();
+
+				BufferedBlockCipher cipher = new PaddedBufferedBlockCipher(new CBCBlockCipher(engine));
+				cipher.init(false, new KeyParameter(key.getBytes(StandardCharsets.UTF_8)));
+
+				byte[] inputBytes = base64.decode(input.getBytes(StandardCharsets.UTF_8));
+				byte[] rv = new byte[cipher.getOutputSize(inputBytes.length)];
+				int numOutBytes = cipher.processBytes(inputBytes, 0, inputBytes.length, rv, 0);
+
+				cipher.doFinal(rv, numOutBytes);
+				return new String(rv, StandardCharsets.UTF_8).replaceAll("\u0000.*", "");
 			}
-		} catch (NoSuchAlgorithmException | BadPaddingException | NoSuchPaddingException | IllegalBlockSizeException
-				| InvalidKeyException e) {
+		} catch (DataLengthException | IllegalStateException | InvalidCipherTextException e) {
 			e.printStackTrace();
 			return null;
 		}
@@ -63,6 +79,10 @@ public class CAST {
 	/**
 	 * Source code:
 	 * https://github.com/rtyley/spongycastle/blob/spongy-master/core/src/main/java/org/spongycastle/crypto/engines/CAST6Engine.java
+	 * See also:
+	 * https://github.com/rtyley/spongycastle/blob/spongy-master/core/src/main/java/org/spongycastle/crypto/BufferedBlockCipher.java
+	 * Modes:
+	 * https://github.com/rtyley/spongycastle/blob/spongy-master/core/src/main/java/org/spongycastle/crypto/modes/CBCBlockCipher.java
 	 * 
 	 * @param mode  cipher mode
 	 * @param input string
@@ -73,24 +93,33 @@ public class CAST {
 		org.apache.commons.codec.binary.Base64 base64 = new org.apache.commons.codec.binary.Base64();
 		try {
 			if (mode == Mode.ENCRYPT) {
-				try {
-					SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), new CAST6Engine().getAlgorithmName());
-					Cipher cipher = Cipher.getInstance(new CAST6Engine().getAlgorithmName());
-					cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-					return base64.encodeToString(cipher.doFinal(input.getBytes("UTF-8")));
-				} catch (NoSuchAlgorithmException | NoSuchPaddingException | UnsupportedEncodingException
-						| BadPaddingException | IllegalBlockSizeException | InvalidKeyException e) {
-					e.printStackTrace();
-				}
+				BlockCipher engine = new CAST6Engine();
+
+				BufferedBlockCipher cipher = new PaddedBufferedBlockCipher(new CBCBlockCipher(engine));
+				cipher.init(true, new KeyParameter(key.getBytes(StandardCharsets.UTF_8)));
+
+				byte[] inputBytes = input.getBytes(StandardCharsets.UTF_8);
+				byte[] rv = new byte[cipher.getOutputSize(inputBytes.length)];
+				int numOutBytes = cipher.processBytes(inputBytes, 0, inputBytes.length, rv, 0);
+
+				cipher.doFinal(rv, numOutBytes);
+				return base64.encodeToString(rv);
 			}
+
 			if (mode == Mode.DECRYPT) {
-				SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), new CAST6Engine().getAlgorithmName());
-				Cipher cipher = Cipher.getInstance(new CAST6Engine().getAlgorithmName());
-				cipher.init(Cipher.DECRYPT_MODE, secretKey);
-				return new String(cipher.doFinal(base64.decode(input.getBytes())));
+				BlockCipher engine = new CAST6Engine();
+
+				BufferedBlockCipher cipher = new PaddedBufferedBlockCipher(new CBCBlockCipher(engine));
+				cipher.init(false, new KeyParameter(key.getBytes(StandardCharsets.UTF_8)));
+
+				byte[] inputBytes = base64.decode(input.getBytes(StandardCharsets.UTF_8));
+				byte[] rv = new byte[cipher.getOutputSize(inputBytes.length)];
+				int numOutBytes = cipher.processBytes(inputBytes, 0, inputBytes.length, rv, 0);
+
+				cipher.doFinal(rv, numOutBytes);
+				return new String(rv, StandardCharsets.UTF_8).replaceAll("\u0000.*", "");
 			}
-		} catch (NoSuchAlgorithmException | BadPaddingException | NoSuchPaddingException | IllegalBlockSizeException
-				| InvalidKeyException e) {
+		} catch (DataLengthException | IllegalStateException | InvalidCipherTextException e) {
 			e.printStackTrace();
 			return null;
 		}

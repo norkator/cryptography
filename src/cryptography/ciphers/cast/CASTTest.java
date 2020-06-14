@@ -8,14 +8,12 @@ public class CASTTest {
 
 	@Test
 	public void runTest() {
-		
-		// TODO: Implement when provider fixed
-		assertEquals("", CAST.cast5(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
-		assertEquals("TESTING", CAST.cast5(Mode.DECRYPT, "", "EXAMPLEKEY"));
 
-		// TODO: Implement when provider fixed
-		assertEquals("", CAST.cast6(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
-		assertEquals("TESTING", CAST.cast6(Mode.DECRYPT, "", "EXAMPLEKEY"));
+		assertEquals("KfqJ96FlihQ=", CAST.cast5(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
+		assertEquals("TESTING", CAST.cast5(Mode.DECRYPT, "KfqJ96FlihQ=", "EXAMPLEKEY"));
+
+		assertEquals("YuWPzdF2f6QknZIQRYWpPw==", CAST.cast6(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
+		assertEquals("TESTING", CAST.cast6(Mode.DECRYPT, "YuWPzdF2f6QknZIQRYWpPw==", "EXAMPLEKEY"));
 	}
 
 }
