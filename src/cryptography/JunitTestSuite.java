@@ -32,6 +32,7 @@ import cryptography.hashes.ripemd.RIPEMDTest;
 import cryptography.hashes.sha.SHATest;
 import cryptography.hashes.sha2.SHA2Test;
 import cryptography.hashes.sha3.SHA3Test;
+import cryptography.hashes.skein.SkeinTest;
 import cryptography.hashes.sm3.SM3Test;
 import cryptography.hashes.sum.SUMTest;
 import cryptography.hashes.tiger.TigerTest;
@@ -83,6 +84,7 @@ import cryptography.ciphers.porta.PortaTest;
 	SHATest.class,
 	SHA2Test.class,
 	SHA3Test.class,
+	SkeinTest.class,
 	SM3Test.class,
 	SUMTest.class,
 	TigerTest.class,

@@ -63,6 +63,7 @@ Hashes
 ##### [SHA - 0 / 1 / 224 / 256 / 384 / 512](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/sha/SHA.java)
 ##### [SHA2 - 224 / 256 / 384 / 512](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/sha2/SHA2.java)
 ##### [SHA3 - 224 / 256 / 384 / 512](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/sha3/SHA3.java)
+##### [Skein - 256 / 512 / 1024](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/skein/Skein.java)
 ##### [SM3](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/sm3/SM3.java)
 ##### [SUM - 8 / 16 / 24 / 32](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/sum/SUM.java)
 ##### [TIGER - T / 2 / 128 / 160](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/tiger/Tiger.java)

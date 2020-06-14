@@ -13,6 +13,7 @@ import cryptography.hashes.ripemd.RIPEMD;
 import cryptography.hashes.sha.SHA;
 import cryptography.hashes.sha2.SHA2;
 import cryptography.hashes.sha3.SHA3;
+import cryptography.hashes.skein.Skein;
 import cryptography.hashes.sm3.SM3;
 import cryptography.hashes.sum.SUM;
 import cryptography.hashes.tiger.Tiger;
@@ -176,9 +177,18 @@ public class Hashes {
 		// PBKDF2
 		try {
 			System.out.println("PBKDF2 hash: " + PBKDF2.createHash("test input", "testsalt", 2, 512));
-		} catch(Exception e) {
+		} catch (Exception e) {
 		}
-		
+
+		// Skein-256
+		System.out.println("Skein-256 hash: " + Skein.skein_256("testing"));
+
+		// Skein-512
+		System.out.println("Skein-512 hash: " + Skein.skein_512("testing"));
+
+		// Skein-1024
+		System.out.println("Skein-1024 hash: " + Skein.skein_1024("testing"));
+
 	}
 
 }
