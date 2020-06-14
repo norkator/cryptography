@@ -5,6 +5,7 @@ package cryptography;
 
 import cryptography.ciphers.atbash.Atbash;
 import cryptography.ciphers.caesar.Caesar;
+import cryptography.ciphers.cast.CAST;
 import cryptography.ciphers.railfence.RailFence;
 import cryptography.ciphers.rc.RC;
 import cryptography.ciphers.scytale.Scytale;
@@ -93,6 +94,19 @@ public class Ciphers {
 		// RC4
 		System.out.println("RC4 encrypt: " + RC.rc4(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
 		System.out.println("RC4 decrypt: " + RC.rc4(Mode.DECRYPT, "HUUcc9q/5Q==",  "EXAMPLEKEY"));
+		
+		// RC6
+		System.out.println("RC6 encrypt: " + RC.rc6(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
+		System.out.println("RC6 decrypt: " + RC.rc6(Mode.DECRYPT, "UEsASt9knf1TT0izJpmlkQ==",  "EXAMPLEKEY"));
+		
+		// CAST5
+		System.out.println("CAST5 encrypt: " + CAST.cast5(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
+		System.out.println("CAST5 decrypt: " + CAST.cast5(Mode.DECRYPT, "KfqJ96FlihQ=",  "EXAMPLEKEY"));
+		
+		// CAST6
+		System.out.println("CAST6 encrypt: " + CAST.cast6(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
+		System.out.println("CAST6 decrypt: " + CAST.cast6(Mode.DECRYPT, "YuWPzdF2f6QknZIQRYWpPw==",  "EXAMPLEKEY"));
+		
 	}
 
 }

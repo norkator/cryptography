@@ -8,6 +8,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import cryptography.ciphers.caesar.CaesarTest;
+import cryptography.ciphers.cast.CASTTest;
 import cryptography.ciphers.chaocipher.ChaocipherTest;
 import cryptography.ciphers.gronsfeld.GronsfeldTest;
 import cryptography.ciphers.scytale.ScytaleTest;
@@ -71,6 +72,7 @@ import cryptography.ciphers.porta.PortaTest;
 	PlayfairTest.class,
 	PortaTest.class,
 	RCTest.class,
+	CASTTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,

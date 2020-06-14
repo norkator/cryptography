@@ -13,6 +13,9 @@ public class RCTest {
 
 		assertEquals("HUUcc9q/5Q==", RC.rc4(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
 		assertEquals("TESTING", RC.rc4(Mode.DECRYPT, "HUUcc9q/5Q==", "EXAMPLEKEY"));
+
+		assertEquals("UEsASt9knf1TT0izJpmlkQ==", RC.rc6(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
+		assertEquals("TESTING", RC.rc6(Mode.DECRYPT, "UEsASt9knf1TT0izJpmlkQ==", "EXAMPLEKEY"));
 	}
 
 }
