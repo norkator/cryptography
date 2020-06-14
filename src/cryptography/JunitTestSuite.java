@@ -27,6 +27,7 @@ import cryptography.hashes.fcs.FCSTest;
 import cryptography.hashes.has.HASTest;
 import cryptography.hashes.keccak.KeccakTest;
 import cryptography.hashes.md.MDTest;
+import cryptography.hashes.pbkdf2.PBKDF2Test;
 import cryptography.hashes.ripemd.RIPEMDTest;
 import cryptography.hashes.sha.SHATest;
 import cryptography.hashes.sha2.SHA2Test;
@@ -77,6 +78,7 @@ import cryptography.ciphers.porta.PortaTest;
 	HASTest.class,
 	KeccakTest.class,
 	MDTest.class,
+	PBKDF2Test.class,
 	RIPEMDTest.class,
 	SHATest.class,
 	SHA2Test.class,

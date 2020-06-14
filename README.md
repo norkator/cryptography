@@ -58,6 +58,7 @@ Hashes
 ##### [HAS - 160](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/has/HAS.java)
 ##### [KECCAK - 256 / 384 / 512](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/keccak/Keccak.java)
 ##### [MD - 2 / 4 / 5](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/md/MD.java)
+##### [PBKDF2](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/pbkdf2/PBKDF2.java)
 ##### [RIPEMD - 128 / 160 / 256 / 320](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/ripemd/RIPEMD.java)
 ##### [SHA - 0 / 1 / 224 / 256 / 384 / 512](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/sha/SHA.java)
 ##### [SHA2 - 224 / 256 / 384 / 512](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/sha2/SHA2.java)

@@ -8,6 +8,7 @@ import cryptography.hashes.fcs.FCS;
 import cryptography.hashes.has.HAS;
 import cryptography.hashes.keccak.Keccak;
 import cryptography.hashes.md.MD;
+import cryptography.hashes.pbkdf2.PBKDF2;
 import cryptography.hashes.ripemd.RIPEMD;
 import cryptography.hashes.sha.SHA;
 import cryptography.hashes.sha2.SHA2;
@@ -172,6 +173,12 @@ public class Hashes {
 		// Keccak-512
 		System.out.println("Keccak-512 hash: " + Keccak.keccak_512("testing"));
 
+		// PBKDF2
+		try {
+			System.out.println("PBKDF2 hash: " + PBKDF2.createHash("test input", "testsalt", 2, 512));
+		} catch(Exception e) {
+		}
+		
 	}
 
 }
