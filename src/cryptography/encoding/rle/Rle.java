@@ -29,26 +29,39 @@ public class Rle {
 		}
 
 		if (mode == Mode.DECODE) {
-			String[] rleSplit = input.split("(?<=\\G..)");
-
-			int il = rleSplit.length;
-
-			for (int i = 0; i < il; i++) {
-
-		
-				int count = Integer.parseInt(String.valueOf(rleSplit[i].charAt(1)));
-				System.out.println(count);
+			char[] stArr = input.toCharArray();
+			char lastseen = 0;
+			
+			for (int p = 0; p < stArr.length; p++) {
+				char s = stArr[p];
 				
-				
-				for (int c = 0; c < count; c++) {
-
-					str.append(rleSplit[i].charAt(0));
+				if (!Character.isDigit(s)) {
+					lastseen = s;
+					str.append(s);
+				} else {
+					
+					int e = digitCount(stArr, p);
+					
+					int n = Integer.parseInt(String.valueOf(input.substring(p, (p + e))));
+					
+					for (int i = 0; i < n - 1; i++) {
+						str.append(lastseen);
+					}
 				}
-
 			}
+			
 
 		}
 
 		return str.toString();
 	}
+	
+	
+	
+	public static int digitCount(char[] stArr, int currentPos) {
+		return 1;
+	}
+	
+	
+	
 }
