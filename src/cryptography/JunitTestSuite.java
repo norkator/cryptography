@@ -10,6 +10,7 @@ import org.junit.runners.Suite.SuiteClasses;
 import cryptography.ciphers.caesar.CaesarTest;
 import cryptography.ciphers.cast.CASTTest;
 import cryptography.ciphers.chaocipher.ChaocipherTest;
+import cryptography.ciphers.elgamal.ElgamalTest;
 import cryptography.ciphers.gronsfeld.GronsfeldTest;
 import cryptography.ciphers.scytale.ScytaleTest;
 import cryptography.ciphers.vigenere.VigenereTest;
@@ -68,6 +69,7 @@ import cryptography.ciphers.porta.PortaTest;
 	VigenereTest.class,
 	BaconTest.class,
 	ChaocipherTest.class,
+	ElgamalTest.class,
 	GronsfeldTest.class,
 	AdfgvxTest.class,
 	PlayfairTest.class,
