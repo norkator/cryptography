@@ -47,6 +47,6 @@ public class Encoding {
 		
 		// Run-Length Encoding (RLE)
 		System.out.println("RLE encode: " +  Rle.rle(Mode.ENCODE, "AAAAAAAAAAABBBBCCCCCC"));
-		System.out.println("RLE decode: " +  Rle.rle(Mode.DECODE, "A20B4C6"));
+		System.out.println("RLE decode: " +  Rle.rle(Mode.DECODE, "A10B4C30"));
 	}
 }

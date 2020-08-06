@@ -30,38 +30,44 @@ public class Rle {
 
 		if (mode == Mode.DECODE) {
 			char[] stArr = input.toCharArray();
-			char lastseen = 0;
-			
+			char lastChar = 0;
+
 			for (int p = 0; p < stArr.length; p++) {
 				char s = stArr[p];
-				
+
 				if (!Character.isDigit(s)) {
-					lastseen = s;
+					lastChar = s;
 					str.append(s);
 				} else {
-					
+
 					int e = digitCount(stArr, p);
-					
+
 					int n = Integer.parseInt(String.valueOf(input.substring(p, (p + e))));
-					
+
 					for (int i = 0; i < n - 1; i++) {
-						str.append(lastseen);
+						str.append(lastChar);
 					}
+
 				}
 			}
-			
 
 		}
 
 		return str.toString();
 	}
-	
-	
-	
+
 	public static int digitCount(char[] stArr, int currentPos) {
-		return 1;
+		int count = 0;
+
+		for (int p = currentPos; p < stArr.length; p++) {
+			if (Character.isDigit(stArr[p])) {
+				count++;
+			} else {
+				break;
+			}
+		}
+
+		return count;
 	}
-	
-	
-	
+
 }

@@ -11,18 +11,8 @@ public class RleTest {
 
 	@Test
 	public void runTest() {
-		
-		/*
-		assertEquals("- . ... - .. -. --. -- --- .-. ... . ", Morse.morse("TESTING MORSE", Mode.ENCODE));
-		assertEquals("TESTINGMORSE", Morse.morse("- . ... - .. -. --. -- --- .-. ... .", Mode.DECODE));
-
-		assertEquals(
-				".- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.. ",
-				Morse.morse("ABCDEFGHIJKLMNOPQRSTUVWXYZ", Mode.ENCODE));
-		assertEquals("ABCDEFGHIJKLMNOPQRSTUVWXYZ", Morse.morse(
-				".- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --..",
-				Mode.DECODE));
-		 */
+		assertEquals("A11B4C6", Rle.rle(Mode.ENCODE, "AAAAAAAAAAABBBBCCCCCC"));
+		assertEquals("AAAAAAAAAABBBBCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC", Rle.rle(Mode.DECODE, "A10B4C30"));
 	}
 
 }
