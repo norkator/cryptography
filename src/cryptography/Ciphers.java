@@ -16,6 +16,7 @@ import cryptography.ciphers.keyword.Keyword;
 import cryptography.ciphers.vigenere.Vigenere;
 import cryptography.ciphers.bacon.Bacon;
 import cryptography.ciphers.chaocipher.Chaocipher;
+import cryptography.ciphers.elgamal.Elgamal;
 import cryptography.ciphers.gronsfeld.Gronsfeld;
 import cryptography.ciphers.adfgvx.Adfgvx;
 import cryptography.ciphers.playfair.Playfair;
@@ -106,6 +107,10 @@ public class Ciphers {
 		// CAST6
 		System.out.println("CAST6 encrypt: " + CAST.cast6(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
 		System.out.println("CAST6 decrypt: " + CAST.cast6(Mode.DECRYPT, "YuWPzdF2f6QknZIQRYWpPw==",  "EXAMPLEKEY"));
+		
+		// ELGAMAL
+		System.out.println("ELGAMAL encrypt: " + Elgamal.elgamal(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
+		// System.out.println("ELGAMAL decrypt: " + Elgamal.elgamal(Mode.DECRYPT, "",  ""));
 		
 	}
 
