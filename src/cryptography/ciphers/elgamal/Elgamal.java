@@ -19,7 +19,9 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+import cryptography.Logging;
 import cryptography.Mode;
 
 /**
@@ -40,7 +42,9 @@ import cryptography.Mode;
  */
 public class Elgamal {
 
-	private static final String PROVIDER = "SC";
+	private static final String PROVIDER = "BC";
+
+	private Logging logging = Logging.DISABLED;
 
 	private SecureRandom random = null;
 	private KeyPair keypair = null;
@@ -54,16 +58,23 @@ public class Elgamal {
 
 	// Provider
 	static {
-		Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
+		Security.insertProviderAt(new BouncyCastleProvider(), 1);
 	}
 
 	// Constructor
-	public Elgamal() {
+	public Elgamal(Logging logging_) {
+		logging = logging_;
 		random = new SecureRandom();
-		System.out.println("Elgamal generated secure random: " + random.toString());
 		keypair = createKeyPair();
-		System.out.print("Elgamal keypair generation: ");
-		System.out.println(keypair != null ? "success" : "failed");
+		if (logging == Logging.ENABLED) {
+			System.out.println("Elgamal generated secure random: " + random.toString());
+			System.out.print("Elgamal keypair generation: ");
+			System.out.println(keypair != null ? "success" : "failed");
+		}
+
+		// Get instances
+		xCipher = getCipherInstance("ElGamal/None/PKCS1Padding");
+		sCipher = getCipherInstance("AES/CTR/NoPadding");
 	}
 
 	/**
@@ -97,12 +108,8 @@ public class Elgamal {
 		}
 	}
 
-	public String elgamal(Mode mode, String input, String key) {
+	public String elgamal(Mode mode, String input) {
 		try {
-
-			// Get instances
-			xCipher = getCipherInstance("ElGamal/None/PKCS1Padding");
-			sCipher = getCipherInstance("AES/CTR/NoPadding");
 
 			if (mode == Mode.ENCRYPT) {
 
@@ -115,8 +122,11 @@ public class Elgamal {
 				// Encryption step
 				sCipher.init(Cipher.ENCRYPT_MODE, sKey, sIvSpec);
 				byte[] cipherText = sCipher.doFinal(input.getBytes());
-				System.out.println("Elgamal keyBlock length: " + keyBlock.length);
-				System.out.println("Elgamal cipherText length: " + cipherText.length);
+
+				if (logging == Logging.ENABLED) {
+					System.out.println("Elgamal keyBlock length: " + keyBlock.length);
+					System.out.println("Elgamal cipherText length: " + cipherText.length);
+				}
 
 				return base64.encodeToString(cipherText);
 			}

@@ -130,6 +130,9 @@ You can find all source code and details here: https://jacksum.loefflmann.net/en
 ##### core-1.58.0.0.jar | prov-1.58.0.0.jar | bcpg-jdk15on-1.58.0.0.jar | bcpkix-jdk15on-1.58.0.0.jar (Spongy Castle)
 Providing tons of newer strong Cryptographic methods. See https://rtyley.github.io/spongycastle/ and http://www.bouncycastle.org/java.html
 
+#### bcprov-jdk15on-166
+BouncyCastle signed cryptography provider
+
 ##### org.junit_4.13.0.v20200204-1500.jar | core-1.3.0.jar
 JUnit 4 jar and hamcrest core for Jenkins test runs.
 
