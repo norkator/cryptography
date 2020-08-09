@@ -19,6 +19,7 @@ Table of contents
 * [Installation](#installation)
 * [Running tests](#running-tests)
 * [External libraries](#external-libraries)
+* [Adding external library](#adding-external-library)
 * [Notes](#notes)
 * [Contributions](#contributions)
 * [Authors](#authors)
@@ -136,6 +137,27 @@ BouncyCastle signed cryptography provider
 ##### org.junit_4.13.0.v20200204-1500.jar | core-1.3.0.jar
 JUnit 4 jar and hamcrest core for Jenkins test runs.
 
+
+Adding external library
+============
+
+Everytime new external jar library is added, it must be also added to `build_jenkins.xml` in a block seen below as example
+
+```xml
+<path id="Cryptography.classpath">
+    <pathelement location="bin"/>
+    <path refid="JUnit 4.libraryclasspath"/>
+    <pathelement location="jar/commons-codec-1.10.jar"/>
+    <pathelement location="jar/jacksum.jar"/>
+    <pathelement location="jar/core-1.58.0.0.jar"/>
+    <pathelement location="jar/prov-1.58.0.0.jar"/>
+    <pathelement location="jar/bcpkix-jdk15on-1.58.0.0.jar"/>
+    <pathelement location="jar/bcpg-jdk15on-1.58.0.0.jar"/>
+	<pathelement location="jar/org.junit_4.13.0.v20200204-1500.jar"/>
+	<pathelement location="jar/core-1.3.0.jar"/>
+	<pathelement location="jar/bcprov-jdk15on-166"/>
+</path>
+```
 
 Notes
 ============
