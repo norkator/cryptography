@@ -20,6 +20,7 @@ public class ElgamalTest {
 		final String elgamalCipherText = elgamal.elgamal(Mode.ENCRYPT, "TESTING");
 
 		assertEquals("TESTING", elgamal.elgamal(Mode.DECRYPT, elgamalCipherText));
+		assertEquals(128, elgamal.getKeyBlockLength());
 
 	}
 

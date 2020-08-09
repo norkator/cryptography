@@ -111,6 +111,8 @@ public class Ciphers {
 		// ELGAMAL
 		Elgamal elgamal = new Elgamal(Logging.DISABLED);
 		final String elgamalCipherText = elgamal.elgamal(Mode.ENCRYPT, "TESTING");
+		System.out.println("ELGAMAL public key: " + elgamal.getPublicKeyStr());
+		System.out.println("ELGAMAL private key: " + elgamal.getPrivateKeyStr());
 		System.out.println("ELGAMAL encrypt: " + elgamalCipherText);
 		System.out.println("ELGAMAL decrypt: " + elgamal.elgamal(Mode.DECRYPT, elgamalCipherText));
 		

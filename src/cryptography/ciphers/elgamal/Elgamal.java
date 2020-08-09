@@ -223,4 +223,31 @@ public class Elgamal {
 		return new Object[] { new SecretKeySpec(data, 16, data.length - 16, "AES"), new IvParameterSpec(data, 0, 16) };
 	}
 
+	/**
+	 * Returns public key as base 64 for viewing purposes
+	 * 
+	 * @return base64 public key
+	 */
+	public String getPublicKeyStr() {
+		return base64.encodeToString(keypair.getPublic().getEncoded());
+	}
+
+	/**
+	 * Returns private key as base 64 for viewing purposes
+	 * 
+	 * @return base64 private key
+	 */
+	public String getPrivateKeyStr() {
+		return base64.encodeToString(keypair.getPrivate().getEncoded());
+	}
+
+	/**
+	 * Get key block length
+	 * 
+	 * @return integer
+	 */
+	public int getKeyBlockLength() {
+		return keyBlock.length;
+	}
+
 }
