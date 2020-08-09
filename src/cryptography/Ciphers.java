@@ -109,7 +109,8 @@ public class Ciphers {
 		System.out.println("CAST6 decrypt: " + CAST.cast6(Mode.DECRYPT, "YuWPzdF2f6QknZIQRYWpPw==",  "EXAMPLEKEY"));
 		
 		// ELGAMAL
-		System.out.println("ELGAMAL encrypt: " + Elgamal.elgamal(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
+		Elgamal elgamal = new Elgamal();
+		System.out.println("ELGAMAL encrypt: " + elgamal.elgamal(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
 		// System.out.println("ELGAMAL decrypt: " + Elgamal.elgamal(Mode.DECRYPT, "",  ""));
 		
 	}
