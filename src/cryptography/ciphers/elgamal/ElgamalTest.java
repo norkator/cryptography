@@ -5,15 +5,22 @@ package cryptography.ciphers.elgamal;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
+import cryptography.Logging;
 import cryptography.Mode;
-import cryptography.ciphers.keyword.Keyword;
 
 public class ElgamalTest {
 
 	@Test
 	public void runTest() {
-		/* Not implemented */
-		assertEquals("1", "0");
+		
+		// TODO: this test is currently very poor, only things which is tested is that encrypted string becomes original string again
+
+		Elgamal elgamal = new Elgamal(Logging.DISABLED);
+		final String elgamalCipherText = elgamal.elgamal(Mode.ENCRYPT, "TESTING");
+
+		assertEquals("TESTING", elgamal.elgamal(Mode.DECRYPT, elgamalCipherText));
+
 	}
 
 }
