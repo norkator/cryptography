@@ -19,6 +19,7 @@ Table of contents
 * [Installation](#installation)
 * [Running tests](#running-tests)
 * [External libraries](#external-libraries)
+* [Adding external library](#adding-external-library)
 * [Notes](#notes)
 * [Contributions](#contributions)
 * [Authors](#authors)
@@ -39,6 +40,7 @@ Ciphers
 ##### [Caesar](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/caesar/Caesar.java)
 ##### [CAST - 5 / 6](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/cast/CAST.java)
 ##### [Chaocipher](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/chaocipher/Chaocipher.java)
+##### [Elgamal](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/elgamal/Elgamal.java)
 ##### [Gronsfeld](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/gronsfeld/Gronsfeld.java)
 ##### [Keyword](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/keyword/Keyword.java)
 ##### [Playfair](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/playfair/Playfair.java)
@@ -84,6 +86,7 @@ Encoding
 ##### [Base91](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base91/Base91.java)
 ##### [Huffman](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/huffman/Huffman.java)
 ##### [Morse](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/morse/Morse.java)
+##### [RLE](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/rle/Rle.java)
 
 
 <br>
@@ -128,9 +131,33 @@ You can find all source code and details here: https://jacksum.loefflmann.net/en
 ##### core-1.58.0.0.jar | prov-1.58.0.0.jar | bcpg-jdk15on-1.58.0.0.jar | bcpkix-jdk15on-1.58.0.0.jar (Spongy Castle)
 Providing tons of newer strong Cryptographic methods. See https://rtyley.github.io/spongycastle/ and http://www.bouncycastle.org/java.html
 
+#### bcprov-jdk15on-166
+BouncyCastle signed cryptography provider
+
 ##### org.junit_4.13.0.v20200204-1500.jar | core-1.3.0.jar
 JUnit 4 jar and hamcrest core for Jenkins test runs.
 
+
+Adding external library
+============
+
+Everytime new external jar library is added, it must be also added to `build_jenkins.xml` in a block seen below as example
+
+```xml
+<path id="Cryptography.classpath">
+    <pathelement location="bin"/>
+    <path refid="JUnit 4.libraryclasspath"/>
+    <pathelement location="jar/commons-codec-1.10.jar"/>
+    <pathelement location="jar/jacksum.jar"/>
+    <pathelement location="jar/core-1.58.0.0.jar"/>
+    <pathelement location="jar/prov-1.58.0.0.jar"/>
+    <pathelement location="jar/bcpkix-jdk15on-1.58.0.0.jar"/>
+    <pathelement location="jar/bcpg-jdk15on-1.58.0.0.jar"/>
+	<pathelement location="jar/org.junit_4.13.0.v20200204-1500.jar"/>
+	<pathelement location="jar/core-1.3.0.jar"/>
+	<pathelement location="jar/bcprov-jdk15on-166"/>
+</path>
+```
 
 Notes
 ============

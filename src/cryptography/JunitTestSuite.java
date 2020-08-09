@@ -10,6 +10,7 @@ import org.junit.runners.Suite.SuiteClasses;
 import cryptography.ciphers.caesar.CaesarTest;
 import cryptography.ciphers.cast.CASTTest;
 import cryptography.ciphers.chaocipher.ChaocipherTest;
+import cryptography.ciphers.elgamal.ElgamalTest;
 import cryptography.ciphers.gronsfeld.GronsfeldTest;
 import cryptography.ciphers.scytale.ScytaleTest;
 import cryptography.ciphers.vigenere.VigenereTest;
@@ -20,6 +21,7 @@ import cryptography.encoding.base91.Base91Test;
 import cryptography.encoding.huffman.HuffmanTest;
 import cryptography.encoding.adaptiveHuffman.AdaptiveHuffmanTest;
 import cryptography.encoding.morse.MorseTest;
+import cryptography.encoding.rle.RleTest;
 import cryptography.hashes.adler.AdlerTest;
 import cryptography.hashes.blake2b.Blake2bTest;
 import cryptography.hashes.crc.CRCTest;
@@ -67,6 +69,7 @@ import cryptography.ciphers.porta.PortaTest;
 	VigenereTest.class,
 	BaconTest.class,
 	ChaocipherTest.class,
+	ElgamalTest.class,
 	GronsfeldTest.class,
 	AdfgvxTest.class,
 	PlayfairTest.class,
@@ -104,6 +107,7 @@ import cryptography.ciphers.porta.PortaTest;
 	MorseTest.class,
 	HuffmanTest.class,
 	AdaptiveHuffmanTest.class,
+	RleTest.class,
 })
 
 public class JunitTestSuite {

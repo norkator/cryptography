@@ -8,6 +8,7 @@ import cryptography.encoding.base91.Base91;
 import cryptography.encoding.huffman.Huffman;
 import cryptography.encoding.adaptiveHuffman.AdaptiveHuffman;
 import cryptography.encoding.morse.Morse;
+import cryptography.encoding.rle.Rle;
 
 public class Encoding {
 
@@ -43,5 +44,9 @@ public class Encoding {
 		//AdaptiveHuffman
 		System.out.println("AdaptiveHuffman encode: " +  AdaptiveHuffman.adaptiveHuffman("aardvark", Mode.ENCODE));
 		System.out.println("AdaptiveHuffman decode: " +  AdaptiveHuffman.adaptiveHuffman("00000101000100000110001011010110001010", Mode.DECODE));
+		
+		// Run-Length Encoding (RLE)
+		System.out.println("RLE encode: " +  Rle.rle(Mode.ENCODE, "AAAAAAAAAAABBBBCCCCCC"));
+		System.out.println("RLE decode: " +  Rle.rle(Mode.DECODE, "A10B4C30"));
 	}
 }
