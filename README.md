@@ -153,9 +153,9 @@ Everytime new external jar library is added, it must be also added to `build_jen
     <pathelement location="jar/prov-1.58.0.0.jar"/>
     <pathelement location="jar/bcpkix-jdk15on-1.58.0.0.jar"/>
     <pathelement location="jar/bcpg-jdk15on-1.58.0.0.jar"/>
-	<pathelement location="jar/org.junit_4.13.0.v20200204-1500.jar"/>
-	<pathelement location="jar/core-1.3.0.jar"/>
-	<pathelement location="jar/bcprov-jdk15on-166"/>
+    <pathelement location="jar/org.junit_4.13.0.v20200204-1500.jar"/>
+    <pathelement location="jar/core-1.3.0.jar"/>
+    <pathelement location="jar/bcprov-jdk15on-166"/>
 </path>
 ```
 
