@@ -19,13 +19,14 @@ import cryptography.ciphers.chaocipher.Chaocipher;
 import cryptography.ciphers.elgamal.Elgamal;
 import cryptography.ciphers.gronsfeld.Gronsfeld;
 import cryptography.ciphers.adfgvx.Adfgvx;
+import cryptography.ciphers.anubis.AnubisMethod;
 import cryptography.ciphers.playfair.Playfair;
 import cryptography.ciphers.porta.Porta;
 
 public class Ciphers {
 
 	public static void main(String[] args) {
-
+		
 		// Scytale
 		System.out.println("Scytale encrypt: " + Scytale.scytale("HELLO", Mode.ENCRYPT, 3));
 		System.out.println("Scytale decrypt: " + Scytale.scytale("HLEOL", Mode.DECRYPT, 3));
@@ -116,6 +117,11 @@ public class Ciphers {
 		System.out.println("ELGAMAL encrypt: " + elgamalCipherText);
 		System.out.println("ELGAMAL decrypt: " + elgamal.elgamal(Mode.DECRYPT, elgamalCipherText));
 		
+		// Anubis
+		final byte[] keyBytes = AnubisMethod.GetRandomKeyBytes();
+		final String anubiusEncrypted = AnubisMethod.Anubis("TESTING ANUBIS", keyBytes, Mode.ENCRYPT);
+		System.out.println("Anubis encrypt: " + anubiusEncrypted);
+		System.out.println("Anubis decrypt: " + AnubisMethod.Anubis(anubiusEncrypted, keyBytes, Mode.DECRYPT));
 	}
 
 }
