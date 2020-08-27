@@ -48,7 +48,7 @@ public class KhazadMethod {
 	 */
 	public static byte[] GetRandomKeyBytes() {
 		SecureRandom random = new SecureRandom();
-		byte bytes[] = new byte[16];
+		byte[] bytes = new byte[16];
 		random.nextBytes(bytes);
 		return bytes;
 	}
@@ -63,6 +63,16 @@ public class KhazadMethod {
 		Base64 base64 = new Base64();
 		return base64.encodeToString(keyBytes);
 	}
+	
+	/**
+	 * Return base64 key as byte array
+	 * @param base64Key b64 key string
+	 * @return byte array
+	 */
+	public static byte[] KeyBase64StringToBytes(final String base64Key) {
+        Base64 base64 = new Base64();
+        return base64.decode(base64Key.getBytes());
+    }
 
 	/**
 	 * Applies padding on too short input
@@ -85,7 +95,7 @@ public class KhazadMethod {
 	 * 
 	 * @param a first byte array
 	 * @param b second byte array
-	 * @return
+	 * @return concatenated byte array
 	 */
 	private static byte[] concatenateByteArrays(byte[] a, byte[] b) {
 		byte[] result = new byte[a.length + b.length];
