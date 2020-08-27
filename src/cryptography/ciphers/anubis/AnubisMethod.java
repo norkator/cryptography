@@ -1,6 +1,8 @@
 package cryptography.ciphers.anubis;
 
 import java.security.SecureRandom;
+import java.util.Arrays;
+
 import org.apache.commons.codec.binary.Base64;
 
 import cryptography.Mode;
@@ -21,10 +23,34 @@ public class AnubisMethod {
 
 			Anubis anubis = new Anubis();
 			anubis.keySetup(keyBytes);
+			
+			final int take = 16;
 
 			if (mode == Mode.ENCRYPT) {
 				byte[] cipherBytes = applyPadding(inputText.getBytes());
-				anubis.encrypt(cipherBytes);
+				
+				int from = 0;
+				int to = 0;
+				int left = cipherBytes.length;
+				byte[] resultBytes = new byte[left];
+				
+				while (left > 0) {
+					
+					if (left < from + take) {
+						to = left;
+					} else {
+						to = from + take;
+					}
+					
+					byte[] slice = Arrays.copyOfRange(cipherBytes, from, to);
+					anubis.encrypt(slice);
+					
+					System.arraycopy(slice, 0, resultBytes, from, to + slice.length);
+					
+					from = from + to;
+					
+				}
+				
 				return base64.encodeToString(cipherBytes);
 			}
 

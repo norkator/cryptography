@@ -28,6 +28,7 @@ public class Ciphers {
 
 	public static void main(String[] args) {
 
+		/*
 		// Scytale
 		System.out.println("Scytale encrypt: " + Scytale.scytale("HELLO", Mode.ENCRYPT, 3));
 		System.out.println("Scytale decrypt: " + Scytale.scytale("HLEOL", Mode.DECRYPT, 3));
@@ -117,6 +118,7 @@ public class Ciphers {
 		System.out.println("ELGAMAL private key: " + elgamal.getPrivateKeyStr());
 		System.out.println("ELGAMAL encrypt: " + elgamalCipherText);
 		System.out.println("ELGAMAL decrypt: " + elgamal.elgamal(Mode.DECRYPT, elgamalCipherText));
+		*/
 
 		// Anubis
 		final byte[] anubisKeyBytes = AnubisMethod.GetRandomKeyBytes();
@@ -125,12 +127,14 @@ public class Ciphers {
 		System.out.println("Anubis encrypt: " + anubiusEncrypted);
 		System.out.println("Anubis decrypt: " + AnubisMethod.Anubis(anubiusEncrypted, anubisKeyBytes, Mode.DECRYPT));
 
+		/*
 		// Khazad
 		final byte[] khazadKeyBytes = KhazadMethod.GetRandomKeyBytes();
 		final String khazadEncrypted = KhazadMethod.Khazad("TEST KHAZAD", khazadKeyBytes, Mode.ENCRYPT);
 		System.out.println("Khazad key    : " + KhazadMethod.KeyBytesToBase64String(khazadKeyBytes));
 		System.out.println("Khazad encrypt: " + khazadEncrypted);
 		System.out.println("Khazad decrypt: " + KhazadMethod.Khazad(khazadEncrypted, khazadKeyBytes, Mode.DECRYPT));
+		*/
 	}
 
 }
