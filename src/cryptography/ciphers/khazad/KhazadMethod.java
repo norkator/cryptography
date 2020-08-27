@@ -16,7 +16,7 @@ public class KhazadMethod {
 	 * @param mode      encrypt/decrypt
 	 * @return string
 	 */
-	public static String Anubis(final String inputText, final byte[] keyBytes, final Mode mode) {
+	public static String Khazad(final String inputText, final byte[] keyBytes, final Mode mode) {
 		try {
 			Base64 base64 = new Base64();
 
@@ -60,14 +60,12 @@ public class KhazadMethod {
 	 * @return either input or padded input
 	 */
 	private static byte[] applyPadding(byte[] input) {
-		/*
 		final int l = input.length;
-		if (l < 16) {
-			int n = 16 - l;
+		if (l < 8) {
+			int n = 8 - l;
 			byte[] padding = new byte[n];
 			return concatenateByteArrays(input, padding);
 		}
-		*/
 		return input;
 	}
 

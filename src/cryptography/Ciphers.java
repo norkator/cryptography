@@ -13,6 +13,7 @@ import cryptography.ciphers.autokey.Autokey;
 import cryptography.ciphers.beaufort.Beaufort;
 import cryptography.ciphers.blowfish.Blowfish;
 import cryptography.ciphers.keyword.Keyword;
+import cryptography.ciphers.khazad.KhazadMethod;
 import cryptography.ciphers.vigenere.Vigenere;
 import cryptography.ciphers.bacon.Bacon;
 import cryptography.ciphers.chaocipher.Chaocipher;
@@ -26,7 +27,7 @@ import cryptography.ciphers.porta.Porta;
 public class Ciphers {
 
 	public static void main(String[] args) {
-		
+
 		// Scytale
 		System.out.println("Scytale encrypt: " + Scytale.scytale("HELLO", Mode.ENCRYPT, 3));
 		System.out.println("Scytale decrypt: " + Scytale.scytale("HLEOL", Mode.DECRYPT, 3));
@@ -80,35 +81,35 @@ public class Ciphers {
 		// Playfair
 		System.out.println("Playfair encrypt: " + Playfair.playfair("HELLOWORLDTEST", "ISFAIR", true, Mode.ENCRYPT));
 		System.out.println("Playfair decrypt: " + Playfair.playfair("MBQFHQVPFNEQCAQY", "ISFAIR", true, Mode.DECRYPT));
-		
+
 		// Porta
 		System.out.println("Porta encrypt: " + Porta.porta("PORTAEXAMPLE", "TEST"));
 		System.out.println("Porta decrypt: " + Porta.porta("GMIKWTBWVAUN", "TEST"));
-		
+
 		// Blowfish
 		System.out.println("Blowfish encrypt: " + Blowfish.blowfish("TESTING", Mode.ENCRYPT, "EXAMPLEKEY"));
 		System.out.println("Blowfish decrypt: " + Blowfish.blowfish("Dl+Cr1z8wRY=", Mode.DECRYPT, "EXAMPLEKEY"));
-		
+
 		// RC2
 		System.out.println("RC2 encrypt: " + RC.rc2(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
-		System.out.println("RC2 decrypt: " + RC.rc2(Mode.DECRYPT, "G2DXHTkgYEY=",  "EXAMPLEKEY"));
-		
+		System.out.println("RC2 decrypt: " + RC.rc2(Mode.DECRYPT, "G2DXHTkgYEY=", "EXAMPLEKEY"));
+
 		// RC4
 		System.out.println("RC4 encrypt: " + RC.rc4(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
-		System.out.println("RC4 decrypt: " + RC.rc4(Mode.DECRYPT, "HUUcc9q/5Q==",  "EXAMPLEKEY"));
-		
+		System.out.println("RC4 decrypt: " + RC.rc4(Mode.DECRYPT, "HUUcc9q/5Q==", "EXAMPLEKEY"));
+
 		// RC6
 		System.out.println("RC6 encrypt: " + RC.rc6(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
-		System.out.println("RC6 decrypt: " + RC.rc6(Mode.DECRYPT, "UEsASt9knf1TT0izJpmlkQ==",  "EXAMPLEKEY"));
-		
+		System.out.println("RC6 decrypt: " + RC.rc6(Mode.DECRYPT, "UEsASt9knf1TT0izJpmlkQ==", "EXAMPLEKEY"));
+
 		// CAST5
 		System.out.println("CAST5 encrypt: " + CAST.cast5(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
-		System.out.println("CAST5 decrypt: " + CAST.cast5(Mode.DECRYPT, "KfqJ96FlihQ=",  "EXAMPLEKEY"));
-		
+		System.out.println("CAST5 decrypt: " + CAST.cast5(Mode.DECRYPT, "KfqJ96FlihQ=", "EXAMPLEKEY"));
+
 		// CAST6
 		System.out.println("CAST6 encrypt: " + CAST.cast6(Mode.ENCRYPT, "TESTING", "EXAMPLEKEY"));
-		System.out.println("CAST6 decrypt: " + CAST.cast6(Mode.DECRYPT, "YuWPzdF2f6QknZIQRYWpPw==",  "EXAMPLEKEY"));
-		
+		System.out.println("CAST6 decrypt: " + CAST.cast6(Mode.DECRYPT, "YuWPzdF2f6QknZIQRYWpPw==", "EXAMPLEKEY"));
+
 		// ELGAMAL
 		Elgamal elgamal = new Elgamal(Logging.DISABLED);
 		final String elgamalCipherText = elgamal.elgamal(Mode.ENCRYPT, "TESTING");
@@ -116,12 +117,18 @@ public class Ciphers {
 		System.out.println("ELGAMAL private key: " + elgamal.getPrivateKeyStr());
 		System.out.println("ELGAMAL encrypt: " + elgamalCipherText);
 		System.out.println("ELGAMAL decrypt: " + elgamal.elgamal(Mode.DECRYPT, elgamalCipherText));
-		
+
 		// Anubis
-		final byte[] keyBytes = AnubisMethod.GetRandomKeyBytes();
-		final String anubiusEncrypted = AnubisMethod.Anubis("TESTING ANUBIS", keyBytes, Mode.ENCRYPT);
+		final byte[] anubisKeyBytes = AnubisMethod.GetRandomKeyBytes();
+		final String anubiusEncrypted = AnubisMethod.Anubis("TESTING ANUBIS", anubisKeyBytes, Mode.ENCRYPT);
 		System.out.println("Anubis encrypt: " + anubiusEncrypted);
-		System.out.println("Anubis decrypt: " + AnubisMethod.Anubis(anubiusEncrypted, keyBytes, Mode.DECRYPT));
+		System.out.println("Anubis decrypt: " + AnubisMethod.Anubis(anubiusEncrypted, anubisKeyBytes, Mode.DECRYPT));
+
+		// Khazad
+		final byte[] khazadKeyBytes = KhazadMethod.GetRandomKeyBytes();
+		final String khazadEncrypted = KhazadMethod.Khazad("TEST KHAZAD", khazadKeyBytes, Mode.ENCRYPT);
+		System.out.println("Khazad encrypt: " + khazadEncrypted);
+		System.out.println("Khazad decrypt: " + KhazadMethod.Khazad(khazadEncrypted, khazadKeyBytes, Mode.DECRYPT));
 	}
 
 }
