@@ -17,7 +17,7 @@ public class AnubisTest {
 		final String decrypted = AnubisMethod.Anubis(encrypted, keyBytes, Mode.DECRYPT);
 		
 		assertEquals(40, keyBytes.length);
-		assertEquals("plainText", decrypted);
+		assertEquals(plainText, decrypted);
 		
 	}
 
