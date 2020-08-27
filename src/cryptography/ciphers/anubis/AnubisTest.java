@@ -11,7 +11,7 @@ public class AnubisTest {
 	@Test
 	public void runTest() {
 		
-		final String plainText = "TESTING ANUBIS";
+		final String plainText = "TESTING ANUBIS  ";
 		final byte[] keyBytes = AnubisMethod.GetRandomKeyBytes();
 		final String encrypted = AnubisMethod.Anubis(plainText, keyBytes, Mode.ENCRYPT);
 		final String decrypted = AnubisMethod.Anubis(encrypted, keyBytes, Mode.DECRYPT);

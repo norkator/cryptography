@@ -16,7 +16,7 @@ public class KhazadTest {
 		final String encrypted = KhazadMethod.Khazad(plainText, keyBytes, Mode.ENCRYPT);
 		final String decrypted = KhazadMethod.Khazad(encrypted, keyBytes, Mode.DECRYPT);
 
-		assertEquals(8, keyBytes.length);
+		assertEquals(16, keyBytes.length);
 		assertEquals(plainText, decrypted);
 
 	}
