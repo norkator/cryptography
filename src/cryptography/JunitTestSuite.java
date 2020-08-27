@@ -45,12 +45,14 @@ import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.ciphers.railfence.RailFenceTest;
 import cryptography.ciphers.rc.RCTest;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
+import cryptography.ciphers.anubis.AnubisTest;
 import cryptography.ciphers.atbash.AtbashTest;
 import cryptography.ciphers.autokey.AutokeyTest;
 import cryptography.ciphers.bacon.BaconTest;
 import cryptography.ciphers.beaufort.BeaufortTest;
 import cryptography.ciphers.blowfish.BlowfishTest;
 import cryptography.ciphers.keyword.KeywordTest;
+import cryptography.ciphers.khazad.KhazadTest;
 import cryptography.ciphers.playfair.PlayfairTest;
 import cryptography.ciphers.porta.PortaTest;
 
@@ -76,6 +78,8 @@ import cryptography.ciphers.porta.PortaTest;
 	PortaTest.class,
 	RCTest.class,
 	CASTTest.class,
+	AnubisTest.class,
+	KhazadTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,

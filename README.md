@@ -32,6 +32,7 @@ Ciphers
 ============
 
 ##### [Adfgvx](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/adfgvx/Adfgvx.java)
+##### [Anubis - 320](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/anubis/AnubisMethod.java)
 ##### [Atbash](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/atbash/Atbash.java)
 ##### [Autokey](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/autokey/Autokey.java)
 ##### [Bacon](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/bacon/Bacon.java)
@@ -43,6 +44,7 @@ Ciphers
 ##### [Elgamal](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/elgamal/Elgamal.java)
 ##### [Gronsfeld](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/gronsfeld/Gronsfeld.java)
 ##### [Keyword](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/keyword/Keyword.java)
+##### [Khazad - 128](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/khazad/KhazadMethod.java)
 ##### [Playfair](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/playfair/Playfair.java)
 ##### [Porta](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/porta/Porta.java)
 ##### [Rail fence](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/railfence/RailFence.java)
