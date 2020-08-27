@@ -11,7 +11,7 @@ public class AnubisMethod {
 	 * Anubis method for encryption and decryption
 	 * 
 	 * @param inputText string
-	 * @param key       key from GetNewKey method
+	 * @param keyBytes  key from GetNewKey method
 	 * @param mode      encrypt/decrypt
 	 * @return string
 	 */
