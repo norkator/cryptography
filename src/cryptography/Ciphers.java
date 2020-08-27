@@ -28,7 +28,6 @@ public class Ciphers {
 
 	public static void main(String[] args) {
 
-		/*
 		// Scytale
 		System.out.println("Scytale encrypt: " + Scytale.scytale("HELLO", Mode.ENCRYPT, 3));
 		System.out.println("Scytale decrypt: " + Scytale.scytale("HLEOL", Mode.DECRYPT, 3));
@@ -118,16 +117,15 @@ public class Ciphers {
 		System.out.println("ELGAMAL private key: " + elgamal.getPrivateKeyStr());
 		System.out.println("ELGAMAL encrypt: " + elgamalCipherText);
 		System.out.println("ELGAMAL decrypt: " + elgamal.elgamal(Mode.DECRYPT, elgamalCipherText));
-		*/
 
 		// Anubis
 		final byte[] anubisKeyBytes = AnubisMethod.GetRandomKeyBytes();
-		final String anubiusEncrypted = AnubisMethod.Anubis("TESTINGWITHLONGERBUT", anubisKeyBytes, Mode.ENCRYPT);
+		final String anubiusEncrypted = AnubisMethod
+				.Anubis("VERY LONG STRING FOR TESTING ANUBIS IMPLEMENTATION 1234567890", anubisKeyBytes, Mode.ENCRYPT);
 		System.out.println("Anubis key    : " + AnubisMethod.KeyBytesToBase64String(anubisKeyBytes));
 		System.out.println("Anubis encrypt: " + anubiusEncrypted);
 		System.out.println("Anubis decrypt: " + AnubisMethod.Anubis(anubiusEncrypted, anubisKeyBytes, Mode.DECRYPT));
 
-		
 		// Khazad
 		final byte[] khazadKeyBytes = KhazadMethod.GetRandomKeyBytes();
 		final String khazadEncrypted = KhazadMethod.Khazad("TEST KHAZAD", khazadKeyBytes, Mode.ENCRYPT);
