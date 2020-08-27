@@ -23,41 +23,44 @@ public class AnubisMethod {
 
 			Anubis anubis = new Anubis();
 			anubis.keySetup(keyBytes);
-			
+
 			final int take = 16;
 
 			if (mode == Mode.ENCRYPT) {
 				byte[] cipherBytes = applyPadding(inputText.getBytes());
-				
+
 				int from = 0;
 				int to = 0;
 				int left = cipherBytes.length;
-				byte[] resultBytes = new byte[left];
-				
+				byte[] resultBytes = new byte[0];
+
 				while (left > 0) {
-					
-					if (left < from + take) {
-						to = left;
-					} else {
-						to = from + take;
-					}
-					
+					to = from + take;
 					byte[] slice = Arrays.copyOfRange(cipherBytes, from, to);
 					anubis.encrypt(slice);
-					
-					System.arraycopy(slice, 0, resultBytes, from, to + slice.length);
-					
+					resultBytes = concatenateByteArrays(resultBytes, slice);
 					from = from + to;
-					
+					left = left - from;
 				}
-				
-				return base64.encodeToString(cipherBytes);
+				return base64.encodeToString(resultBytes);
 			}
 
 			if (mode == Mode.DECRYPT) {
 				byte[] cipherBytes = base64.decode(inputText.getBytes());
-				anubis.decrypt(cipherBytes);
-				return new String(cipherBytes);
+				int from = 0;
+				int to = 0;
+				int left = cipherBytes.length;
+				byte[] resultBytes = new byte[0];
+
+				while (left > 0) {
+					to = from + take;
+					byte[] slice = Arrays.copyOfRange(cipherBytes, from, to);
+					anubis.decrypt(slice);
+					resultBytes = concatenateByteArrays(resultBytes, slice);
+					from = from + to;
+					left = left - from;
+				}
+				return new String(resultBytes);
 			}
 
 			return null;
@@ -88,16 +91,17 @@ public class AnubisMethod {
 		Base64 base64 = new Base64();
 		return base64.encodeToString(keyBytes);
 	}
-	
+
 	/**
 	 * Return base64 key as byte array
+	 * 
 	 * @param base64Key b64 key string
 	 * @return byte array
 	 */
 	public static byte[] KeyBase64StringToBytes(final String base64Key) {
-        Base64 base64 = new Base64();
-        return base64.decode(base64Key.getBytes());
-    }
+		Base64 base64 = new Base64();
+		return base64.decode(base64Key.getBytes());
+	}
 
 	/**
 	 * Applies padding on too short input
