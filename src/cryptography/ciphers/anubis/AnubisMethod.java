@@ -53,6 +53,17 @@ public class AnubisMethod {
 	}
 
 	/**
+	 * Return key bytes as base64 string
+	 * 
+	 * @param keyBytes key
+	 * @return base64 string
+	 */
+	public static String KeyBytesToBase64String(byte[] keyBytes) {
+		Base64 base64 = new Base64();
+		return base64.encodeToString(keyBytes);
+	}
+
+	/**
 	 * Applies padding on too short input
 	 * 
 	 * @param input byte array input

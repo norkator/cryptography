@@ -121,12 +121,14 @@ public class Ciphers {
 		// Anubis
 		final byte[] anubisKeyBytes = AnubisMethod.GetRandomKeyBytes();
 		final String anubiusEncrypted = AnubisMethod.Anubis("TESTING ANUBIS", anubisKeyBytes, Mode.ENCRYPT);
+		System.out.println("Anubis key    : " + AnubisMethod.KeyBytesToBase64String(anubisKeyBytes));
 		System.out.println("Anubis encrypt: " + anubiusEncrypted);
 		System.out.println("Anubis decrypt: " + AnubisMethod.Anubis(anubiusEncrypted, anubisKeyBytes, Mode.DECRYPT));
 
 		// Khazad
 		final byte[] khazadKeyBytes = KhazadMethod.GetRandomKeyBytes();
 		final String khazadEncrypted = KhazadMethod.Khazad("TEST KHAZAD", khazadKeyBytes, Mode.ENCRYPT);
+		System.out.println("Khazad key    : " + KhazadMethod.KeyBytesToBase64String(khazadKeyBytes));
 		System.out.println("Khazad encrypt: " + khazadEncrypted);
 		System.out.println("Khazad decrypt: " + KhazadMethod.Khazad(khazadEncrypted, khazadKeyBytes, Mode.DECRYPT));
 	}
