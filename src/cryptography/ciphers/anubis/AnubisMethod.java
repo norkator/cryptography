@@ -2,6 +2,7 @@ package cryptography.ciphers.anubis;
 
 import java.security.SecureRandom;
 import org.apache.commons.codec.binary.Base64;
+import java.util.Arrays;
 
 import cryptography.Mode;
 
@@ -31,7 +32,7 @@ public class AnubisMethod {
 			if (mode == Mode.DECRYPT) {
 				byte[] cipherBytes = base64.decode(inputText.getBytes());
 				anubis.decrypt(cipherBytes);
-				return new String(cipherBytes);
+				return new String(removePadding(cipherBytes));
 			}
 
 			return null;
@@ -84,10 +85,32 @@ public class AnubisMethod {
 		if (l < 16) {
 			int n = 16 - l;
 			byte[] padding = new byte[n];
+			
 			return concatenateByteArrays(input, padding);
 		}
 		return input;
 	}
+	
+	/**
+	 * Remove any applied padding
+	 * 
+	 * @param decyphered byte array
+	 * @return either input or stripped input
+	 */
+	private static byte[] removePadding(byte[] cipherText) {
+		int noPadCipherLength = cipherText.length;
+		for(int a=cipherText.length-1;cipherText[a]==0;a--) {
+			if(cipherText[a]==0) {
+				noPadCipherLength--;
+			}
+		}
+
+		byte[] noPadCipher = new byte[noPadCipherLength];
+		System.arraycopy(cipherText, 0, noPadCipher, 0, noPadCipherLength);
+		return noPadCipher;
+	}
+	
+	
 
 	/**
 	 * Connects two byte arrays together
@@ -100,6 +123,7 @@ public class AnubisMethod {
 		byte[] result = new byte[a.length + b.length];
 		System.arraycopy(a, 0, result, 0, a.length);
 		System.arraycopy(b, 0, result, a.length, b.length);
+			
 		return result;
 	}
 

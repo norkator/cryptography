@@ -1,5 +1,7 @@
 package cryptography.ciphers.anubis;
 
+import java.util.Arrays;
+
 /**
  * <b>The Anubis block cipher.</b>
  *
