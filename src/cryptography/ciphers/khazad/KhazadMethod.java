@@ -32,7 +32,7 @@ public class KhazadMethod {
 			if (mode == Mode.DECRYPT) {
 				byte[] cipherBytes = base64.decode(inputText.getBytes());
 				khazad.decrypt(cipherBytes);
-				return new String(cipherBytes);
+				return new String(removePadding(cipherBytes));
 			}
 
 			return null;
@@ -89,7 +89,24 @@ public class KhazadMethod {
 		}
 		return input;
 	}
+	/**
+	 * Remove any applied padding
+	 * 
+	 * @param decyphered byte array
+	 * @return either input or stripped input
+	 */
+	private static byte[] removePadding(byte[] cipherText) {
+		int noPadCipherLength = cipherText.length;
+		for(int a=cipherText.length-1;cipherText[a]==0;a--) {
+			if(cipherText[a]==0) {
+				noPadCipherLength--;
+			}
+		}
 
+		byte[] noPadCipher = new byte[noPadCipherLength];
+		System.arraycopy(cipherText, 0, noPadCipher, 0, noPadCipherLength);
+		return noPadCipher;
+	}
 	/**
 	 * Connects two byte arrays together
 	 * 
