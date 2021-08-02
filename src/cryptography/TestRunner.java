@@ -1,5 +1,5 @@
 /**
- * Use JUnit4 
+ * Use JUnit4
  */
 package cryptography;
 
@@ -10,17 +10,17 @@ import org.junit.runner.notification.Failure;
 import java.security.Security;
 
 public class TestRunner {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// Allows use of tougher crypto
-		Security.setProperty("crypto.policy", "unlimited");
+        // Allows use of tougher crypto
+        Security.setProperty("crypto.policy", "unlimited");
 
-		Result result = JUnitCore.runClasses(JunitTestSuite.class);
+        Result result = JUnitCore.runClasses(JunitTestSuite.class);
 
-		for (Failure failure : result.getFailures()) {
-			System.out.println(failure.toString());
-		}
+        for (Failure failure : result.getFailures()) {
+            System.out.println(failure.toString());
+        }
 
-		System.out.println("Tests success: " + result.wasSuccessful());
-	}
+        System.out.println("Tests success: " + result.wasSuccessful());
+    }
 }
