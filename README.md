@@ -21,6 +21,7 @@ Table of contents
 * [External libraries](#external-libraries)
 * [Adding external library](#adding-external-library)
 * [Notes](#notes)
+* [Troubleshooting](#troubleshooting)
 * [Contributions](#contributions)
 * [Authors](#authors)
 * [Contributors](#contributors)
@@ -164,9 +165,23 @@ Everytime new external jar library is added, it must be also added to `build_jen
 
 Notes
 ============
-
 Some ciphers or parts of ciphers originate from web sites, tutorials, repositories or other sources. 
 There's unfortunately no links to original references.
+
+
+Troubleshooting
+============
+Noticed at Mac with jdk1.8.0...  
+```shell script
+[java.security.InvalidKeyException: Illegal key size or default parameters]>
+```
+this could be due to crypto policy being limited at java config. To change this, go to:
+```shell script
+cd /Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/security/
+sudo nano java.security
+```
+and uncomment out `crypto.policy=unlimited`:
+![Cryptography Image 1](./img/crypto_policy_note.png) 
 
 
 Contributions

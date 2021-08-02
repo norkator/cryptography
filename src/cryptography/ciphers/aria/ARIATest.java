@@ -8,10 +8,10 @@ public class ARIATest {
 
     @Test
     public void runTest() {
-        final String plainText = "key for aria";
-        final String encrypted = ARIA.encrypt("Hello world input text", plainText);
-        final String decrypted = ARIA.decrypt(encrypted, plainText);
-
+        final String key = "test key";
+        final String plainText = "hello world input";
+        final String encrypted = ARIA.encrypt(plainText, key);
+        final String decrypted = ARIA.decrypt(encrypted, key);
         assertEquals(plainText, decrypted);
     }
 
