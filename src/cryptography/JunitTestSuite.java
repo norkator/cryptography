@@ -3,6 +3,8 @@
  */
 package cryptography;
 
+import cryptography.ciphers.aria.ARIATest;
+import cryptography.ciphers.idea.IDEATest;
 import cryptography.encoding.base16.Base16Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -81,6 +83,8 @@ import cryptography.ciphers.porta.PortaTest;
 	CASTTest.class,
 	AnubisTest.class,
 	KhazadTest.class,
+	ARIATest.class,
+	IDEATest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
