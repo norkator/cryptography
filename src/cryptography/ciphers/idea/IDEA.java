@@ -12,7 +12,7 @@ public class IDEA {
 
     // Provider
     static {
-        Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
+        Security.insertProviderAt(new org.bouncycastle.jce.provider.BouncyCastleProvider(), 1);
     }
 
     public static String encrypt(String input, String key) {

@@ -8,9 +8,10 @@ public class IDEATest {
 
     @Test
     public void runTest() {
-        final String plainText = "key for idea";
-        final String encrypted = IDEA.encrypt("Hello world input text", plainText);
-        final String decrypted = IDEA.decrypt(encrypted, plainText);
+        final String key = "key for idea";
+        final String plainText = "Hello world input text";
+        final String encrypted = IDEA.encrypt(plainText, key);
+        final String decrypted = IDEA.decrypt(encrypted, key);
 
         assertEquals(plainText, decrypted);
     }
