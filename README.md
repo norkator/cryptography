@@ -183,6 +183,15 @@ sudo nano java.security
 and uncomment out `crypto.policy=unlimited`:
 ![Cryptography Image 1](./img/crypto_policy_note.png) 
 
+Following did same trick but from code, so used this one:
+```java
+import java.security.Security;
+public class SomeClass {
+	public static void main(String[] args) {
+        Security.setProperty("crypto.policy", "unlimited");
+    }
+}
+```
 
 Contributions
 ============
