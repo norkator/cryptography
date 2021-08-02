@@ -20,9 +20,14 @@ import cryptography.hashes.tiger.Tiger;
 import cryptography.hashes.whirlpool.Whirlpool;
 import cryptography.hashes.xor.Xor;
 
+import java.security.Security;
+
 public class Hashes {
 
 	public static void main(String[] args) {
+
+		// Allows use of tougher crypto
+		Security.setProperty("crypto.policy", "unlimited");
 
 		// CRC-8
 		System.out.println("CRC-8 hash: " + CRC.crc8("test"));

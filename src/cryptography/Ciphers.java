@@ -3,6 +3,7 @@
  */
 package cryptography;
 
+import cryptography.ciphers.aria.ARIA;
 import cryptography.ciphers.atbash.Atbash;
 import cryptography.ciphers.caesar.Caesar;
 import cryptography.ciphers.cast.CAST;
@@ -24,9 +25,14 @@ import cryptography.ciphers.anubis.AnubisMethod;
 import cryptography.ciphers.playfair.Playfair;
 import cryptography.ciphers.porta.Porta;
 
+import java.security.Security;
+
 public class Ciphers {
 
 	public static void main(String[] args) {
+
+		// Allows use of tougher crypto
+		Security.setProperty("crypto.policy", "unlimited");
 
 		// Scytale
 		System.out.println("Scytale encrypt: " + Scytale.scytale("HELLO", Mode.ENCRYPT, 3));
@@ -131,6 +137,15 @@ public class Ciphers {
 		System.out.println("Khazad key    : " + KhazadMethod.KeyBytesToBase64String(khazadKeyBytes));
 		System.out.println("Khazad encrypt: " + khazadEncrypted);
 		System.out.println("Khazad decrypt: " + KhazadMethod.Khazad(khazadEncrypted, khazadKeyBytes, Mode.DECRYPT));
+
+		// ARIA
+		final String key = "ARIA key";
+		final String plainText = "ARIA test input";
+		final String encrypted = ARIA.encrypt(plainText, key);
+		System.out.println("ARIA encrypt: " + encrypted);
+		final String decrypted = ARIA.decrypt(encrypted, key);
+		System.out.println("ARIA decrypt: " + decrypted);
+
 	}
 
 }
