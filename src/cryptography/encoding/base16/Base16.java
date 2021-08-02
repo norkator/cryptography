@@ -1,4 +1,4 @@
-package cryptography.ciphers.base16;
+package cryptography.encoding.base16;
 
 public class Base16 {
 

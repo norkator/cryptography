@@ -3,6 +3,7 @@
  */
 package cryptography;
 
+import cryptography.encoding.base16.Base16Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -103,6 +104,7 @@ import cryptography.ciphers.porta.PortaTest;
 	XorTest.class,
 	// --------------------------
 	// Encoding
+	Base16Test.class,
 	A1z26Test.class,
 	Base32Test.class,
 	Base64Test.class,

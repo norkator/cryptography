@@ -1,6 +1,7 @@
 package cryptography;
 
 import cryptography.encoding.a1z26.A1z26;
+import cryptography.encoding.base16.Base16;
 import cryptography.encoding.base32.Base32;
 import cryptography.encoding.base64.Base64;
 import cryptography.encoding.base85.Base85;
@@ -13,6 +14,10 @@ import cryptography.encoding.rle.Rle;
 public class Encoding {
 
 	public static void main(String[] args) {
+
+		// Base16
+		System.out.println("Base16 encode: " + Base16.encode("HELLO"));
+		System.out.println("Base16 decode: " + Base16.decode("48454C4C4F"));
 
 		// Base32
 		System.out.println("Base32 encode: " + Base32.base32("HELLO", Mode.ENCODE));
