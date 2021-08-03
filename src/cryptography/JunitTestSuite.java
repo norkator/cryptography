@@ -1,8 +1,11 @@
-/**
- * Declare test classes here
+/*
+  Declare test classes here
  */
 package cryptography;
 
+import cryptography.ciphers.aria.ARIATest;
+import cryptography.ciphers.idea.IDEATest;
+import cryptography.encoding.base16.Base16Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -60,7 +63,7 @@ import cryptography.ciphers.porta.PortaTest;
 @SuiteClasses({
 	// --------------------------
 	// Ciphers
-	CaesarTest.class, 
+	CaesarTest.class,
 	ScytaleTest.class,
 	RailFenceTest.class,
 	AtbashTest.class,
@@ -80,6 +83,8 @@ import cryptography.ciphers.porta.PortaTest;
 	CASTTest.class,
 	AnubisTest.class,
 	KhazadTest.class,
+	ARIATest.class,
+	IDEATest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
@@ -103,6 +108,7 @@ import cryptography.ciphers.porta.PortaTest;
 	XorTest.class,
 	// --------------------------
 	// Encoding
+	Base16Test.class,
 	A1z26Test.class,
 	Base32Test.class,
 	Base64Test.class,

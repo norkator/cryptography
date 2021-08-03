@@ -1,4 +1,4 @@
-/**
+/*
  * This class is part of running automated tests
  */
 package cryptography.ciphers.adfgvx;
