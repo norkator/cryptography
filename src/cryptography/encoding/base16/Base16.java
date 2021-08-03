@@ -1,5 +1,8 @@
 package cryptography.encoding.base16;
 
+/**
+ * Better known as hexadecimal | hex (https://en.wikipedia.org/wiki/Hexadecimal)
+ */
 public class Base16 {
 
     public static void main(String[] args) {
