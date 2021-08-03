@@ -11,6 +11,9 @@ In short words this repository is meant to be educational.
 
 This repository is part of this Android application: [Google Play - Cryptography](https://play.google.com/store/apps/details?id=com.nitramite.cryptography)
 
+<b>Feel free to contribute or open issues!</b>
+
+
 Table of contents
 =================
 * [Ciphers](#ciphers)
@@ -18,6 +21,8 @@ Table of contents
 * [Encoding](#encoding)
 * [Installation](#installation)
 * [Running tests](#running-tests)
+    * [Automatically](#automatically)
+    * [Manually](#manually)
 * [External libraries](#external-libraries)
 * [Adding external library](#adding-external-library)
 * [Notes](#notes)
@@ -111,13 +116,15 @@ I warmly recommend watching basic Eclipse tutorials if you are new to the topic.
 Running tests
 ============
 
-##### Jenkins
+Automatically
+--------------
 1. Make new branch.
-2. Push changes.
+2. Push changes. (tests will be run with each push)
 3. Open pull request.
-4. Later tests are run by Jenkins automation.
+4. Later tests are run by Github Actions workflow (`./.github/workflows/Tests.yml`).
 
-##### Manually
+Manually
+--------------
 1. Right click on `TestRunner.java`
 2. Click `Coverage As`
 3. Select `1 Java Application`
@@ -141,13 +148,13 @@ External libraries
 * BouncyCastle signed cryptography provider
 
 #### org.junit_4.13.0.v20200204-1500.jar | core-1.3.0.jar
-* JUnit 4 jar and hamcrest core for Jenkins test runs.
+* JUnit 4 jar and hamcrest core for Github Actions based test runs.
 
 
 Adding external library
 ============
 
-Everytime new external jar library is added, it must be also added to `build_jenkins.xml` in a block seen below as example
+Every time new external jar library is added, it must be also added to `build.xml` in a block seen below as example
 
 ```xml
 <path id="Cryptography.classpath">
@@ -210,13 +217,11 @@ Contributions
 
 Authors
 ============
-
 * **Norkator** - *Initial work* - [norkator](https://github.com/norkator)
 
 
 Contributors
 ============
-
 * **Saurav Kumar** - *Added Morse, Huffman* - [SKR301](https://github.com/SKR301)
 
 
