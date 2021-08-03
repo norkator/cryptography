@@ -1,5 +1,5 @@
-/**
- * Declare test classes here
+/*
+  Declare test classes here
  */
 package cryptography;
 
@@ -63,7 +63,7 @@ import cryptography.ciphers.porta.PortaTest;
 @SuiteClasses({
 	// --------------------------
 	// Ciphers
-	CaesarTest.class, 
+	CaesarTest.class,
 	ScytaleTest.class,
 	RailFenceTest.class,
 	AtbashTest.class,

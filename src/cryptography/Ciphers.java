@@ -1,4 +1,4 @@
-/**
+/*
  * This class will stack cipher methods and just try them all
  */
 package cryptography;
@@ -7,6 +7,7 @@ import cryptography.ciphers.aria.ARIA;
 import cryptography.ciphers.atbash.Atbash;
 import cryptography.ciphers.caesar.Caesar;
 import cryptography.ciphers.cast.CAST;
+import cryptography.ciphers.idea.IDEA;
 import cryptography.ciphers.railfence.RailFence;
 import cryptography.ciphers.rc.RC;
 import cryptography.ciphers.scytale.Scytale;
@@ -72,9 +73,9 @@ public class Ciphers {
 
 		// Chaocipher
 		System.out.println("Chaocipher encrypt: " + Chaocipher.chaocipher("HELLO", Mode.ENCRYPT,
-				"ABCDEFGHIJKLMNOPQRSTUVWXYZ", "ZYXWVUTSRQPONMLKJIHGFEDCBA"));
+			"ABCDEFGHIJKLMNOPQRSTUVWXYZ", "ZYXWVUTSRQPONMLKJIHGFEDCBA"));
 		System.out.println("Chaocipher decrypt: " + Chaocipher.chaocipher("STMLH", Mode.DECRYPT,
-				"ABCDEFGHIJKLMNOPQRSTUVWXYZ", "ZYXWVUTSRQPONMLKJIHGFEDCBA"));
+			"ABCDEFGHIJKLMNOPQRSTUVWXYZ", "ZYXWVUTSRQPONMLKJIHGFEDCBA"));
 
 		// Gronsfeld
 		System.out.println("Gronsfeld encrypt: " + Gronsfeld.gronsfeld("HELLO", "15243", Mode.ENCRYPT));
@@ -139,12 +140,20 @@ public class Ciphers {
 		System.out.println("Khazad decrypt: " + KhazadMethod.Khazad(khazadEncrypted, khazadKeyBytes, Mode.DECRYPT));
 
 		// ARIA
-		final String key = "ARIA key";
-		final String plainText = "ARIA test input";
-		final String encrypted = ARIA.encrypt(plainText, key);
-		System.out.println("ARIA encrypt: " + encrypted);
-		final String decrypted = ARIA.decrypt(encrypted, key);
-		System.out.println("ARIA decrypt: " + decrypted);
+		final String ariaKey = "ARIA key";
+		final String ariaPlainText = "ARIA test input";
+		final String ariaEncrypted = ARIA.encrypt(ariaPlainText, ariaKey);
+		System.out.println("ARIA encrypt: " + ariaEncrypted);
+		final String ariaDecrypted = ARIA.decrypt(ariaEncrypted, ariaKey);
+		System.out.println("ARIA decrypt: " + ariaDecrypted);
+
+		// IDEA
+		final String ideaKey = "IDEA key";
+		final String ideaPlainText = "IDEA test input";
+		final String ideaEncrypted = IDEA.encrypt(ideaPlainText, ideaKey);
+		System.out.println("IDEA encrypt: " + ideaEncrypted);
+		final String ideaDecrypted = IDEA.decrypt(ideaEncrypted, ideaKey);
+		System.out.println("IDEA decrypt: " + ideaDecrypted);
 
 	}
 
