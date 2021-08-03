@@ -7,6 +7,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.Security;
 
+/**
+ * Source code: https://github.com/bcgit/bc-java/blob/master/prov/src/main/java/org/bouncycastle/jcajce/provider/symmetric/ARIA.java
+ * Look all providers. 'provider.addAlgorithm...'
+ */
 public class ARIA {
 
 	public static void main(String[] args) {
@@ -16,7 +20,6 @@ public class ARIA {
 	static {
 		Security.insertProviderAt(new org.bouncycastle.jce.provider.BouncyCastleProvider(), 1);
 	}
-
 
 	public static String encrypt(String input, String key) {
 		org.apache.commons.codec.binary.Base64 base64 = new org.apache.commons.codec.binary.Base64();

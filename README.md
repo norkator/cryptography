@@ -34,6 +34,7 @@ Ciphers
 
 ##### [Adfgvx](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/adfgvx/Adfgvx.java)
 ##### [Anubis - 320](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/anubis/AnubisMethod.java)
+##### [ARIA](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/aria/ARIA.java)
 ##### [Atbash](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/atbash/Atbash.java)
 ##### [Autokey](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/autokey/Autokey.java)
 ##### [Bacon](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/bacon/Bacon.java)
@@ -44,6 +45,7 @@ Ciphers
 ##### [Chaocipher](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/chaocipher/Chaocipher.java)
 ##### [Elgamal](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/elgamal/Elgamal.java)
 ##### [Gronsfeld](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/gronsfeld/Gronsfeld.java)
+##### [IDEA](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/idea/IDEA.java)
 ##### [Keyword](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/keyword/Keyword.java)
 ##### [Khazad - 128](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/khazad/KhazadMethod.java)
 ##### [Playfair](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/playfair/Playfair.java)
@@ -125,21 +127,21 @@ Running tests
 External libraries
 ============
 
-##### commons-codec-1.10.jar
-Included for Base32 and Base64 encoding methods.
+#### commons-codec-1.10.jar
+* Included for Base32 and Base64 encoding methods.
 
-##### jacksum-1.7.0 (jacksum.jar)
-Included for many hashing algorithms.
-You can find all source code and details here: https://jacksum.loefflmann.net/en/download.html
+#### jacksum-1.7.0 (jacksum.jar)
+* Included for many hashing algorithms.
+* You can find all source code and details here: https://jacksum.loefflmann.net/en/download.html
 
-##### core-1.58.0.0.jar | prov-1.58.0.0.jar | bcpg-jdk15on-1.58.0.0.jar | bcpkix-jdk15on-1.58.0.0.jar (Spongy Castle)
-Providing tons of newer strong Cryptographic methods. See https://rtyley.github.io/spongycastle/ and http://www.bouncycastle.org/java.html
+#### core-1.58.0.0.jar | prov-1.58.0.0.jar | bcpg-jdk15on-1.58.0.0.jar | bcpkix-jdk15on-1.58.0.0.jar (Spongy Castle)
+* Providing tons of newer strong Cryptographic methods. See https://rtyley.github.io/spongycastle/ and http://www.bouncycastle.org/java.html
 
-#### bcprov-jdk15on-166
-BouncyCastle signed cryptography provider
+### bcprov-jdk15on-166
+* BouncyCastle signed cryptography provider
 
-##### org.junit_4.13.0.v20200204-1500.jar | core-1.3.0.jar
-JUnit 4 jar and hamcrest core for Jenkins test runs.
+#### org.junit_4.13.0.v20200204-1500.jar | core-1.3.0.jar
+* JUnit 4 jar and hamcrest core for Jenkins test runs.
 
 
 Adding external library
@@ -196,14 +198,14 @@ public class SomeClass {
 Contributions
 ============
 
-##### Rules?
-Please, write tests if you make something new.
+#### Rules?
+* Please, write tests if you make something new.
 
-##### Found problem?
-Open issue or make new branch and create pull request when problem is fixed.
+#### Found problem?
+* Open issue or make new branch and create pull request when problem is fixed.
 
-##### Want to optimize code?
-You are free to optimize code, make new branch and create pull request when ready.
+#### Want to optimize code?
+* You are free to optimize code, make new branch and create pull request when ready.
 
 
 Authors

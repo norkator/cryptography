@@ -5,6 +5,11 @@ import javax.crypto.spec.SecretKeySpec;
 import java.security.GeneralSecurityException;
 import java.security.Security;
 
+/**
+ * Source code:
+ * https://github.com/bcgit/bc-java/blob/master/prov/src/main/java/org/bouncycastle/jcajce/provider/symmetric/IDEA.java
+ * https://github.com/bcgit/bc-java/blob/master/core/src/main/java/org/bouncycastle/crypto/engines/IDEAEngine.java
+ */
 public class IDEA {
 
 	public static void main(String[] args) {
