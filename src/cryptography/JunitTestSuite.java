@@ -3,6 +3,7 @@
  */
 package cryptography;
 
+import cryptography.ciphers.aes.AESTest;
 import cryptography.ciphers.aria.ARIATest;
 import cryptography.ciphers.idea.IDEATest;
 import cryptography.encoding.base16.Base16Test;
@@ -87,6 +88,7 @@ import cryptography.ciphers.porta.PortaTest;
 	KhazadTest.class,
 	ARIATest.class,
 	IDEATest.class,
+	AESTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
