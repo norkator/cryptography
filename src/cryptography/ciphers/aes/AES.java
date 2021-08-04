@@ -1,7 +1,5 @@
 package cryptography.ciphers.aes;
 
-import org.spongycastle.util.encoders.Base64;
-import org.spongycastle.util.encoders.Hex;
 import org.spongycastle.crypto.CipherParameters;
 import org.spongycastle.crypto.PBEParametersGenerator;
 import org.spongycastle.crypto.digests.SHA256Digest;
@@ -19,9 +17,19 @@ import java.security.Security;
  * Source code:
  * https://github.com/bcgit/bc-java/blob/master/core/src/main/java/org/bouncycastle/crypto/engines/AESEngine.java
  * https://github.com/rtyley/spongycastle/blob/spongy-master/core/src/main/java/org/spongycastle/crypto/modes/CBCBlockCipher.java
- *
  */
 public final class AES {
+
+	// Key size options
+	public final static int KEY_SIZE_128_BITS = 128;
+	public final static int KEY_SIZE_192_BITS = 192;
+	public final static int KEY_SIZE_256_BITS = 256;
+
+	// Blank initialization vector for compatibility use
+	public static final byte[] IV_BLANK = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+
+	// Some iterations
+	public static final int KEY_GENERATION_ITERATIONS = 1000;
 
 	public static void main(String[] args) {
 	}
@@ -32,37 +40,18 @@ public final class AES {
 	}
 
 
-	/*
-	try {
-		String password = "123456";
-		byte[] salt = Hex.decode("68656c6c6f776f72");
-		int iterations = 1000;
-		int keySizeInBits = 128;
-		byte[] iv = Hex.decode("68656c6c6f776f726c6468656c6c6f77");
-		byte[] encryptedData = Base64.decode("");
-		byte[] key = createKey(password, salt, iterations, keySizeInBits).getKey();
-		String decryptedData = new String(decrypt(encryptedData, key, iv), "UTF-8");
-		return decryptedData;
-	} catch (Exception e) {
-		throw new RuntimeException(e);
-	}
-	*/
-
-
-
-	private KeyParameter createKey(String password, byte[] salt, int iterations, int keySizeInBits) {
+	public static KeyParameter createKey(String password, byte[] salt, int iterations, int keySizeInBits) {
 		PKCS5S2ParametersGenerator generator = new PKCS5S2ParametersGenerator(new SHA256Digest());
 		generator.init(PBEParametersGenerator.PKCS5PasswordToUTF8Bytes(password.toCharArray()), salt, iterations);
-		KeyParameter key = (KeyParameter) generator.generateDerivedMacParameters(keySizeInBits);
-		return key;
+		return (KeyParameter) generator.generateDerivedMacParameters(keySizeInBits);
 	}
 
-	private static byte[] decrypt(byte[] cipher, byte[] key, byte[] iv) throws Exception {
+	public static byte[] decrypt(byte[] cipher, byte[] key, byte[] iv) throws Exception {
 		PaddedBufferedBlockCipher aes = createCipher(key, iv, false);
 		return cipherData(aes, cipher);
 	}
 
-	private static byte[] encrypt(byte[] plain, byte[] key, byte[] iv) throws Exception {
+	public static byte[] encrypt(byte[] plain, byte[] key, byte[] iv) throws Exception {
 		PaddedBufferedBlockCipher aes = createCipher(key, iv, true);
 		return cipherData(aes, plain);
 	}
