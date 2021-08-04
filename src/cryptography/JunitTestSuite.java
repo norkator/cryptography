@@ -6,6 +6,8 @@ package cryptography;
 import cryptography.ciphers.aria.ARIATest;
 import cryptography.ciphers.idea.IDEATest;
 import cryptography.encoding.base16.Base16Test;
+import cryptography.random.dummy.DummyTest;
+import cryptography.random.secureRandom.SecureRandomTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -118,6 +120,10 @@ import cryptography.ciphers.porta.PortaTest;
 	HuffmanTest.class,
 	AdaptiveHuffmanTest.class,
 	RleTest.class,
+	// --------------------------
+	// Random
+	DummyTest.class,
+	SecureRandomTest.class,
 })
 
 public class JunitTestSuite {
