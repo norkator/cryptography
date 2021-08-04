@@ -19,6 +19,7 @@ Table of contents
 * [Ciphers](#ciphers)
 * [Hashes](#hashes)
 * [Encoding](#encoding)
+* [Random](#random)
 * [Installation](#installation)
 * [Running tests](#running-tests)
     * [Automatically](#automatically)
@@ -32,12 +33,15 @@ Table of contents
 * [Contributors](#contributors)
 * [License](#license)
 
-<br>
+
+------------------------------------------------------------------------------------------------------------------------
+
 
 Ciphers
 ============
 
 ##### [Adfgvx](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/adfgvx/Adfgvx.java)
+##### [AES - 128 / 192 / 256](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/aes/AES.java)
 ##### [Anubis - 320](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/anubis/AnubisMethod.java)
 ##### [ARIA](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/aria/ARIA.java)
 ##### [Atbash](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/atbash/Atbash.java)
@@ -98,6 +102,13 @@ Encoding
 ##### [Huffman](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/huffman/Huffman.java)
 ##### [Morse](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/morse/Morse.java)
 ##### [RLE](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/rle/Rle.java)
+
+
+Random
+============
+
+##### [Dummy - Bytes](https://github.com/norkator/Cryptography/blob/master/src/cryptography/random/dummy/Dummy.java)
+##### [Secure Random - Strong / SHA1PRNG](https://github.com/norkator/Cryptography/blob/master/src/cryptography/random/secureRandom/SecureRandom.java)
 
 
 <br>
