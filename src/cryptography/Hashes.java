@@ -7,6 +7,7 @@ import cryptography.hashes.elf.ELF;
 import cryptography.hashes.fcs.FCS;
 import cryptography.hashes.has.HAS;
 import cryptography.hashes.keccak.Keccak;
+import cryptography.hashes.kupyna.Kupyna;
 import cryptography.hashes.md.MD;
 import cryptography.hashes.pbkdf2.PBKDF2;
 import cryptography.hashes.ripemd.RIPEMD;
@@ -193,6 +194,11 @@ public class Hashes {
 
 		// Skein-1024
 		System.out.println("Skein-1024 hash: " + Skein.skein_1024("testing"));
+
+		// Kupyna
+		System.out.println("Kupyna 256 hash: " + Kupyna.kupyna256("testing"));
+		System.out.println("Kupyna 384 hash: " + Kupyna.kupyna384("testing"));
+		System.out.println("Kupyna 512 hash: " + Kupyna.kupyna512("testing"));
 
 	}
 

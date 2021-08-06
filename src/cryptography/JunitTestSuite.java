@@ -7,6 +7,7 @@ import cryptography.ciphers.aes.AESTest;
 import cryptography.ciphers.aria.ARIATest;
 import cryptography.ciphers.idea.IDEATest;
 import cryptography.encoding.base16.Base16Test;
+import cryptography.hashes.kupyna.KupynaTest;
 import cryptography.random.dummy.DummyTest;
 import cryptography.random.secureRandom.SecureRandomTest;
 import org.junit.runner.RunWith;
@@ -110,6 +111,7 @@ import cryptography.ciphers.porta.PortaTest;
 	TigerTest.class,
 	WhirlpoolTest.class,
 	XorTest.class,
+	KupynaTest.class,
 	// --------------------------
 	// Encoding
 	Base16Test.class,
