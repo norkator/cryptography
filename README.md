@@ -17,8 +17,9 @@ This repository is part of this Android application: [Google Play - Cryptography
 Table of contents
 =================
 * [Ciphers](#ciphers)
-* [Hashes](#hashes)
+* [Converters](#converters)
 * [Encoding](#encoding)
+* [Hashes](#hashes)
 * [Random](#random)
 * [Installation](#installation)
 * [Running tests](#running-tests)
@@ -65,6 +66,30 @@ Ciphers
 ##### [Vigenere](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/vigenere/Vigenere.java)
 
 
+Converters
+============
+
+##### [BinaryDecimal](https://github.com/norkator/Cryptography/blob/master/src/cryptography/converters/binaryDecimal/BinaryDecimal.java)
+##### [BinaryHex](https://github.com/norkator/Cryptography/blob/master/src/cryptography/converters/binaryHex/BinaryHex.java)
+##### [BinaryInteger](https://github.com/norkator/Cryptography/blob/master/src/cryptography/converters/binaryInteger/BinaryInteger.java)
+##### [BinaryText](https://github.com/norkator/Cryptography/blob/master/src/cryptography/converters/binaryText/BinaryText.java)
+
+
+Encoding
+============
+
+##### [A1z26](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/a1z26/A1z26.java)
+##### [Adaptive Huffman](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/adaptiveHuffman/AdaptiveHuffman.java)
+##### [Base16](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base16/Base16.java)
+##### [Base32](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base32/Base32.java)
+##### [Base64](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base64/Base64.java)
+##### [Base85](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base85/Base85.java)
+##### [Base91](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base91/Base91.java)
+##### [Huffman](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/huffman/Huffman.java)
+##### [Morse](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/morse/Morse.java)
+##### [RLE](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/rle/Rle.java)
+
+
 Hashes
 ============
 
@@ -88,21 +113,6 @@ Hashes
 ##### [TIGER - T / 2 / 128 / 160](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/tiger/Tiger.java)
 ##### [WHIRLPOOL - 0 / 1 / W](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/whirlpool/Whirlpool.java)
 ##### [XOR - 8](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/xor/Xor.java)
-
-
-Encoding
-============
-
-##### [A1z26](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/a1z26/A1z26.java)
-##### [Adaptive Huffman](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/adaptiveHuffman/AdaptiveHuffman.java)
-##### [Base16](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base16/Base16.java)
-##### [Base32](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base32/Base32.java)
-##### [Base64](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base64/Base64.java)
-##### [Base85](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base85/Base85.java)
-##### [Base91](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base91/Base91.java)
-##### [Huffman](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/huffman/Huffman.java)
-##### [Morse](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/morse/Morse.java)
-##### [RLE](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/rle/Rle.java)
 
 
 Random
