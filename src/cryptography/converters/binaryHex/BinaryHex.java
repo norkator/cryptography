@@ -15,7 +15,7 @@ public class BinaryHex {
 		}
 		if (mode == Mode.DECODE) {
 			long hexDec = Long.parseLong(input, 2);
-			return Long.toString(hexDec, 16);
+			return Long.toString(hexDec, 16).toUpperCase();
 		}
 		return null;
 	}
