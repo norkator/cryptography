@@ -9,7 +9,9 @@ import org.spongycastle.crypto.modes.CBCBlockCipher;
 import org.spongycastle.crypto.paddings.PaddedBufferedBlockCipher;
 import org.spongycastle.crypto.params.KeyParameter;
 import org.spongycastle.crypto.params.ParametersWithIV;
+import org.spongycastle.util.encoders.Base64;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Security;
 
 /**
@@ -46,14 +48,14 @@ public final class AES {
 		return (KeyParameter) generator.generateDerivedMacParameters(keySizeInBits);
 	}
 
-	public static byte[] decrypt(byte[] cipher, byte[] key, byte[] iv) throws Exception {
+	public static String decrypt(String cipher, byte[] key, byte[] iv) throws Exception {
 		PaddedBufferedBlockCipher aes = createCipher(key, iv, false);
-		return cipherData(aes, cipher);
+		return new String(cipherData(aes, Base64.decode(cipher)), StandardCharsets.UTF_8);
 	}
 
-	public static byte[] encrypt(byte[] plain, byte[] key, byte[] iv) throws Exception {
+	public static String encrypt(String plain, byte[] key, byte[] iv) throws Exception {
 		PaddedBufferedBlockCipher aes = createCipher(key, iv, true);
-		return cipherData(aes, plain);
+		return Base64.toBase64String(cipherData(aes, plain.getBytes()));
 	}
 
 	private static byte[] cipherData(PaddedBufferedBlockCipher cipher, byte[] data) throws Exception {
