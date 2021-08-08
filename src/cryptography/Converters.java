@@ -1,5 +1,5 @@
 /*
- * This class will stack random methods and just try them all
+ * This class will stack converter methods and just try them all
  */
 package cryptography;
 
@@ -7,10 +7,6 @@ import cryptography.converters.binaryDecimal.BinaryDecimal;
 import cryptography.converters.binaryHex.BinaryHex;
 import cryptography.converters.binaryInteger.BinaryInteger;
 import cryptography.converters.binaryText.BinaryText;
-import cryptography.random.dummy.Dummy;
-import cryptography.random.secureRandom.SecureRandom;
-
-import java.util.Arrays;
 
 public class Converters {
 
