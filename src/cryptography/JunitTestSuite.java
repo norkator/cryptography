@@ -3,26 +3,41 @@
  */
 package cryptography;
 
+import cryptography.ciphers.adfgvx.AdfgvxTest;
+import cryptography.ciphers.aes.AESTest;
+import cryptography.ciphers.anubis.AnubisTest;
 import cryptography.ciphers.aria.ARIATest;
-import cryptography.ciphers.idea.IDEATest;
-import cryptography.encoding.base16.Base16Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
-
+import cryptography.ciphers.atbash.AtbashTest;
+import cryptography.ciphers.autokey.AutokeyTest;
+import cryptography.ciphers.bacon.BaconTest;
+import cryptography.ciphers.beaufort.BeaufortTest;
+import cryptography.ciphers.blowfish.BlowfishTest;
 import cryptography.ciphers.caesar.CaesarTest;
 import cryptography.ciphers.cast.CASTTest;
 import cryptography.ciphers.chaocipher.ChaocipherTest;
 import cryptography.ciphers.elgamal.ElgamalTest;
 import cryptography.ciphers.gronsfeld.GronsfeldTest;
+import cryptography.ciphers.idea.IDEATest;
+import cryptography.ciphers.keyword.KeywordTest;
+import cryptography.ciphers.khazad.KhazadTest;
+import cryptography.ciphers.playfair.PlayfairTest;
+import cryptography.ciphers.porta.PortaTest;
+import cryptography.ciphers.railfence.RailFenceTest;
+import cryptography.ciphers.rc.RCTest;
 import cryptography.ciphers.scytale.ScytaleTest;
 import cryptography.ciphers.vigenere.VigenereTest;
+import cryptography.converters.binaryDecimal.BinaryDecimalTest;
+import cryptography.converters.binaryHex.BinaryHexTest;
+import cryptography.converters.binaryInteger.BinaryIntegerTest;
+import cryptography.converters.binaryText.BinaryTextTest;
+import cryptography.encoding.a1z26.A1z26Test;
+import cryptography.encoding.adaptiveHuffman.AdaptiveHuffmanTest;
+import cryptography.encoding.base16.Base16Test;
 import cryptography.encoding.base32.Base32Test;
 import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
 import cryptography.encoding.base91.Base91Test;
 import cryptography.encoding.huffman.HuffmanTest;
-import cryptography.encoding.adaptiveHuffman.AdaptiveHuffmanTest;
 import cryptography.encoding.morse.MorseTest;
 import cryptography.encoding.rle.RleTest;
 import cryptography.hashes.adler.AdlerTest;
@@ -32,6 +47,7 @@ import cryptography.hashes.elf.ELFTest;
 import cryptography.hashes.fcs.FCSTest;
 import cryptography.hashes.has.HASTest;
 import cryptography.hashes.keccak.KeccakTest;
+import cryptography.hashes.kupyna.KupynaTest;
 import cryptography.hashes.md.MDTest;
 import cryptography.hashes.pbkdf2.PBKDF2Test;
 import cryptography.hashes.ripemd.RIPEMDTest;
@@ -44,20 +60,11 @@ import cryptography.hashes.sum.SUMTest;
 import cryptography.hashes.tiger.TigerTest;
 import cryptography.hashes.whirlpool.WhirlpoolTest;
 import cryptography.hashes.xor.XorTest;
-import cryptography.encoding.a1z26.A1z26Test;
-import cryptography.ciphers.railfence.RailFenceTest;
-import cryptography.ciphers.rc.RCTest;
-import cryptography.ciphers.adfgvx.AdfgvxTest;
-import cryptography.ciphers.anubis.AnubisTest;
-import cryptography.ciphers.atbash.AtbashTest;
-import cryptography.ciphers.autokey.AutokeyTest;
-import cryptography.ciphers.bacon.BaconTest;
-import cryptography.ciphers.beaufort.BeaufortTest;
-import cryptography.ciphers.blowfish.BlowfishTest;
-import cryptography.ciphers.keyword.KeywordTest;
-import cryptography.ciphers.khazad.KhazadTest;
-import cryptography.ciphers.playfair.PlayfairTest;
-import cryptography.ciphers.porta.PortaTest;
+import cryptography.random.dummy.DummyTest;
+import cryptography.random.secureRandom.SecureRandomTest;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({
@@ -85,6 +92,25 @@ import cryptography.ciphers.porta.PortaTest;
 	KhazadTest.class,
 	ARIATest.class,
 	IDEATest.class,
+	AESTest.class,
+	// --------------------------
+	// Converters
+	BinaryDecimalTest.class,
+	BinaryHexTest.class,
+	BinaryIntegerTest.class,
+	BinaryTextTest.class,
+	// --------------------------
+	// Encoding
+	Base16Test.class,
+	A1z26Test.class,
+	Base32Test.class,
+	Base64Test.class,
+	Base85Test.class,
+	Base91Test.class,
+	MorseTest.class,
+	HuffmanTest.class,
+	AdaptiveHuffmanTest.class,
+	RleTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
@@ -106,18 +132,11 @@ import cryptography.ciphers.porta.PortaTest;
 	TigerTest.class,
 	WhirlpoolTest.class,
 	XorTest.class,
+	KupynaTest.class,
 	// --------------------------
-	// Encoding
-	Base16Test.class,
-	A1z26Test.class,
-	Base32Test.class,
-	Base64Test.class,
-	Base85Test.class,
-	Base91Test.class,
-	MorseTest.class,
-	HuffmanTest.class,
-	AdaptiveHuffmanTest.class,
-	RleTest.class,
+	// Random
+	DummyTest.class,
+	SecureRandomTest.class,
 })
 
 public class JunitTestSuite {
