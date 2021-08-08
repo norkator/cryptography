@@ -3,6 +3,7 @@
  */
 package cryptography;
 
+import cryptography.ciphers.aes.AES;
 import cryptography.ciphers.aria.ARIA;
 import cryptography.ciphers.atbash.Atbash;
 import cryptography.ciphers.caesar.Caesar;
@@ -25,6 +26,7 @@ import cryptography.ciphers.adfgvx.Adfgvx;
 import cryptography.ciphers.anubis.AnubisMethod;
 import cryptography.ciphers.playfair.Playfair;
 import cryptography.ciphers.porta.Porta;
+import cryptography.random.secureRandom.SecureRandom;
 
 import java.security.Security;
 
@@ -154,6 +156,26 @@ public class Ciphers {
 		System.out.println("IDEA encrypt: " + ideaEncrypted);
 		final String ideaDecrypted = IDEA.decrypt(ideaEncrypted, ideaKey);
 		System.out.println("IDEA decrypt: " + ideaDecrypted);
+
+		// AES (see AESTest.class for more)
+		try {
+			final String aesKey = "some key";
+			final String aesPlainText = "some test input";
+			byte[] salt = SecureRandom.secureRandomStrongBytes(16);
+			byte[] iv = AES.IV_BLANK;
+			byte[] key = AES.createKey(aesKey, salt, AES.KEY_GENERATION_ITERATIONS, AES.KEY_SIZE_256_BITS).getKey();
+			final String encrypted = AES.encrypt(aesPlainText, key, iv);
+			System.out.println("AES 256 blank iv encrypt: " + encrypted);
+			System.out.println("AES 256 blank iv decrypt: " + AES.decrypt(encrypted, key, iv));
+
+			byte[] strongIV = SecureRandom.secureRandomStrongBytes(16);
+			String encrypted2 = AES.encrypt(aesPlainText, key, strongIV);
+			System.out.println("AES 256 strong iv encrypt: " + encrypted2);
+			System.out.println("AES 256 strong iv decrypt: " + AES.decrypt(encrypted2, key, strongIV));
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+
 
 	}
 
