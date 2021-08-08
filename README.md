@@ -126,7 +126,7 @@ Random
 
 Installation
 ============
-1. Download and install eclipse: https://www.eclipse.org/downloads/
+1. Download and install eclipse: https://www.eclipse.org/downloads/ or any other IDE.
 2. Download project source code by either cloning it with Git or by `Clone or download` menu `Download ZIP` option.
 2. Open project in Eclipse `File` - `Open projects from File System...`
 3. Navigate to `/src` - `cryptography` - `Ciphers.java` and start play with it. Rest of the folder structure
