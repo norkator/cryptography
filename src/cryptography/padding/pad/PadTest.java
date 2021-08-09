@@ -1,7 +1,7 @@
 /*
  * This class is part of running automated tests
  */
-package cryptography.utils;
+package cryptography.padding.pad;
 
 import org.junit.Test;
 import org.junit.Assert;

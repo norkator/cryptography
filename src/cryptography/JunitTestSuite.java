@@ -63,7 +63,7 @@ import cryptography.hashes.whirlpool.WhirlpoolTest;
 import cryptography.hashes.xor.XorTest;
 import cryptography.random.dummy.DummyTest;
 import cryptography.random.secureRandom.SecureRandomTest;
-import cryptography.utils.PadTest;
+import cryptography.padding.pad.PadTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
