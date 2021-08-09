@@ -14,9 +14,11 @@ public class Pad {
 			return "Input exception. \nCannot pad. \nInput length > 4";
 		}
 
+		StringBuilder binaryBuilder = new StringBuilder(binary);
 		for (int a = 0; a < 4 - length; a++) {
-			binary = "0" + binary;
+			binaryBuilder.insert(0, "0");
 		}
+		binary = binaryBuilder.toString();
 		return binary;
 	}
 
@@ -33,9 +35,11 @@ public class Pad {
 			return "Input exception. \nCannot pad. \nInput length > 8";
 		}
 
+		StringBuilder binaryBuilder = new StringBuilder(binary);
 		for (int a = 0; a < 8 - length; a++) {
-			binary = "0" + binary;
+			binaryBuilder.insert(0, "0");
 		}
+		binary = binaryBuilder.toString();
 		return binary;
 	}
 
@@ -52,9 +56,11 @@ public class Pad {
 			return "Input exception. \nCannot pad. \nInput length > 16";
 		}
 
+		StringBuilder binaryBuilder = new StringBuilder(binary);
 		for (int a = 0; a < 16 - length; a++) {
-			binary = "0" + binary;
+			binaryBuilder.insert(0, "0");
 		}
+		binary = binaryBuilder.toString();
 		return binary;
 	}
 
@@ -71,9 +77,11 @@ public class Pad {
 			return "Input exception. \nCannot pad. \nInput length > 32";
 		}
 
+		StringBuilder binaryBuilder = new StringBuilder(binary);
 		for (int a = 0; a < 32 - length; a++) {
-			binary = "0" + binary;
+			binaryBuilder.insert(0, "0");
 		}
+		binary = binaryBuilder.toString();
 		return binary;
 	}
 
@@ -95,9 +103,11 @@ public class Pad {
 			return "Input exception. \nCannot pad. \nCustom length <= 0";
 		}
 
+		StringBuilder binaryBuilder = new StringBuilder(binary);
 		for (int a = 0; a < customLength - length; a++) {
-			binary = "0" + binary;
+			binaryBuilder.insert(0, "0");
 		}
+		binary = binaryBuilder.toString();
 		return binary;
 	}
 
