@@ -1,7 +1,7 @@
 package cryptography.converters.binaryInteger;
 
 import cryptography.Mode;
-import cryptography.Pad;
+import cryptography.utils.Pad;
 import cryptography.converters.compliment.*;
 
 import java.math.BigInteger;

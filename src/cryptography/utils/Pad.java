@@ -1,4 +1,4 @@
-package cryptography;
+package cryptography.utils;
 
 public class Pad {
 	/*
