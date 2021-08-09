@@ -7,6 +7,7 @@ import cryptography.converters.binaryDecimal.BinaryDecimal;
 import cryptography.converters.binaryHex.BinaryHex;
 import cryptography.converters.binaryInteger.BinaryInteger;
 import cryptography.converters.binaryText.BinaryText;
+import cryptography.converters.compliment.Compliment;
 
 public class Converters {
 
@@ -24,6 +25,8 @@ public class Converters {
 		System.out.println("Binary text encode: " + BinaryText.binaryText("Hello", Mode.ENCODE));
 		System.out.println("Binary text decode: " + BinaryText.binaryText("01001000 01100101 01101100 01101100 01101111", Mode.DECODE));
 
+		System.out.println("One's compliment: " + Compliment.oneCompliment("1011010"));
+		System.out.println("Two's compliment: " + Compliment.twoCompliment("1011010"));
 	}
 
 }
