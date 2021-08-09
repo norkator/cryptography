@@ -10,7 +10,7 @@ public class BinaryDecimal {
 	}
 
 	public static String binaryDecimal(String input, Mode mode) {
-		if (mode == Mode.ENCODE) {	
+		if (mode == Mode.ENCODE) {
 			return new BigInteger(input, 10).toString(2);
 		}
 		if (mode == Mode.DECODE) {

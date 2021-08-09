@@ -10,16 +10,16 @@ public class Pad {
 	 */
 	public static String to4(String binary) {
 		int length = binary.length();
-		if(length > 4) {
+		if (length > 4) {
 			return "Input exception. \nCannot pad. \nInput length > 4";
 		}
-		
-		for(int a=0;a<4-length;a++) {
-			binary = "0" + binary; 
+
+		for (int a = 0; a < 4 - length; a++) {
+			binary = "0" + binary;
 		}
 		return binary;
-	}	
-	
+	}
+
 	/*
 	 	@Param
 	 		binary: String => Input binary string to be padded
@@ -29,16 +29,16 @@ public class Pad {
 	*/
 	public static String to8(String binary) {
 		int length = binary.length();
-		if(length > 8) {
+		if (length > 8) {
 			return "Input exception. \nCannot pad. \nInput length > 8";
 		}
-		
-		for(int a=0;a<8-length;a++) {
-			binary = "0" + binary; 
+
+		for (int a = 0; a < 8 - length; a++) {
+			binary = "0" + binary;
 		}
 		return binary;
 	}
-	
+
 	/*
 	 	@Param
 	 		binary: String => Input binary string to be padded
@@ -48,16 +48,16 @@ public class Pad {
 	*/
 	public static String to16(String binary) {
 		int length = binary.length();
-		if(length > 16) {
+		if (length > 16) {
 			return "Input exception. \nCannot pad. \nInput length > 16";
 		}
-		
-		for(int a=0;a<16-length;a++) {
-			binary = "0" + binary; 
+
+		for (int a = 0; a < 16 - length; a++) {
+			binary = "0" + binary;
 		}
 		return binary;
 	}
-	
+
 	/*
 	 	@Param
 	 		binary: String => Input binary string to be padded
@@ -67,16 +67,16 @@ public class Pad {
 	*/
 	public static String to32(String binary) {
 		int length = binary.length();
-		if(length > 32) {
+		if (length > 32) {
 			return "Input exception. \nCannot pad. \nInput length > 32";
 		}
-		
-		for(int a=0;a<32-length;a++) {
-			binary = "0" + binary; 
+
+		for (int a = 0; a < 32 - length; a++) {
+			binary = "0" + binary;
 		}
 		return binary;
 	}
-	
+
 	/*
 	 	@Param
 	 		binary: String => Input binary string to be padded
@@ -88,17 +88,17 @@ public class Pad {
 	*/
 	public static String toCustomLength(String binary, int customLength) {
 		int length = binary.length();
-		if(length > customLength) {
-			return "Input exception. \nCannot pad. \nInput length > "+customLength;
+		if (length > customLength) {
+			return "Input exception. \nCannot pad. \nInput length > " + customLength;
 		}
-		if(customLength <= 0) {
+		if (customLength <= 0) {
 			return "Input exception. \nCannot pad. \nCustom length <= 0";
 		}
-		
-		for(int a=0;a<customLength-length;a++) {
-			binary = "0" + binary; 
+
+		for (int a = 0; a < customLength - length; a++) {
+			binary = "0" + binary;
 		}
 		return binary;
 	}
-	
+
 }

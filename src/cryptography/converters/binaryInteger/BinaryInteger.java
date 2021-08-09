@@ -3,6 +3,7 @@ package cryptography.converters.binaryInteger;
 import cryptography.Mode;
 import cryptography.Pad;
 import cryptography.converters.compliment.*;
+
 import java.math.BigInteger;
 
 public class BinaryInteger {
@@ -16,11 +17,11 @@ public class BinaryInteger {
 			return Pad.to32(Integer.toBinaryString(Integer.parseInt(input)));
 		}
 		if (mode == Mode.DECODE) {
-			input = (input.length() < 32)? Pad.to32(input) : input;
-			
-			if(input.charAt(0) == '0') {
+			input = (input.length() < 32) ? Pad.to32(input) : input;
+
+			if (input.charAt(0) == '0') {
 				return new BigInteger(input, 2).toString(10);
-			}else {
+			} else {
 				input = Compliment.twoCompliment(input);
 				return "-" + new BigInteger(input, 2).toString(10);
 			}
