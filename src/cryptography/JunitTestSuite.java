@@ -30,6 +30,7 @@ import cryptography.converters.binaryDecimal.BinaryDecimalTest;
 import cryptography.converters.binaryHex.BinaryHexTest;
 import cryptography.converters.binaryInteger.BinaryIntegerTest;
 import cryptography.converters.binaryText.BinaryTextTest;
+import cryptography.converters.compliment.ComplimentTest;
 import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.encoding.adaptiveHuffman.AdaptiveHuffmanTest;
 import cryptography.encoding.base16.Base16Test;
@@ -62,6 +63,7 @@ import cryptography.hashes.whirlpool.WhirlpoolTest;
 import cryptography.hashes.xor.XorTest;
 import cryptography.random.dummy.DummyTest;
 import cryptography.random.secureRandom.SecureRandomTest;
+import cryptography.utils.PadTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -99,6 +101,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	BinaryHexTest.class,
 	BinaryIntegerTest.class,
 	BinaryTextTest.class,
+	ComplimentTest.class,
 	// --------------------------
 	// Encoding
 	Base16Test.class,
@@ -137,6 +140,9 @@ import org.junit.runners.Suite.SuiteClasses;
 	// Random
 	DummyTest.class,
 	SecureRandomTest.class,
+	// --------------------------
+	// Padding
+	PadTest.class,
 })
 
 public class JunitTestSuite {

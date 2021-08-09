@@ -73,6 +73,7 @@ Converters
 ##### [BinaryHex](https://github.com/norkator/Cryptography/blob/master/src/cryptography/converters/binaryHex/BinaryHex.java)
 ##### [BinaryInteger](https://github.com/norkator/Cryptography/blob/master/src/cryptography/converters/binaryInteger/BinaryInteger.java)
 ##### [BinaryText](https://github.com/norkator/Cryptography/blob/master/src/cryptography/converters/binaryText/BinaryText.java)
+##### [Compliment](https://github.com/norkator/Cryptography/blob/master/src/cryptography/converters/compliment/Compliment.java)
 
 
 Encoding
@@ -244,7 +245,7 @@ Authors
 
 Contributors
 ============
-* **Saurav Kumar** - *Added Morse, Huffman* - [SKR301](https://github.com/SKR301)
+* **Saurav Kumar** - *Added Morse, Huffman, Compliment* - [SKR301](https://github.com/SKR301)
 
 
 License
