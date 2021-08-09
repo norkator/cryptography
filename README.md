@@ -40,6 +40,9 @@ Table of contents
 
 Ciphers
 ============
+Cipher (or cypher) is an algorithm for performing encryption or decryption—a series of well-defined steps that can be 
+followed as a procedure. Encryption is the process of encoding information. This process converts the original 
+representation of the information, known as plaintext, into an alternative form known as ciphertext. 
 
 ##### [Adfgvx](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/adfgvx/Adfgvx.java)
 ##### [AES - 128 / 192 / 256](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/aes/AES.java)
@@ -68,6 +71,7 @@ Ciphers
 
 Converters
 ============
+Converters converts input from representation system A to representation system B and vice versa.
 
 ##### [BinaryDecimal](https://github.com/norkator/Cryptography/blob/master/src/cryptography/converters/binaryDecimal/BinaryDecimal.java)
 ##### [BinaryHex](https://github.com/norkator/Cryptography/blob/master/src/cryptography/converters/binaryHex/BinaryHex.java)
@@ -78,6 +82,7 @@ Converters
 
 Encoding
 ============
+Encoding is used to represent data in ASCII string format by translating the data into selected encoding representation.
 
 ##### [A1z26](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/a1z26/A1z26.java)
 ##### [Adaptive Huffman](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/adaptiveHuffman/AdaptiveHuffman.java)
@@ -93,6 +98,8 @@ Encoding
 
 Hashes
 ============
+A hash function is any function that can be used to map data of arbitrary size to fixed-size values. 
+The values returned by a hash function are called hash values, hash codes, digests, or simply hashes. 
 
 ##### [ADLER - 32](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/adler/Adler.java)
 ##### [Blake2b - 160 / 256 / 384 / 512](https://github.com/norkator/Cryptography/blob/master/src/cryptography/hashes/blake2b/Blake2b.java)
@@ -118,6 +125,8 @@ Hashes
 
 Random
 ============
+Random generation is a process which, often by means of a random number generator (RNG), generates a sequence 
+of numbers or symbols that cannot be reasonably predicted better than by a random chance. 
 
 ##### [Dummy - Bytes](https://github.com/norkator/Cryptography/blob/master/src/cryptography/random/dummy/Dummy.java)
 ##### [Secure Random - Strong / SHA1PRNG](https://github.com/norkator/Cryptography/blob/master/src/cryptography/random/secureRandom/SecureRandom.java)
