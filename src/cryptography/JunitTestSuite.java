@@ -39,6 +39,8 @@ import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
 import cryptography.encoding.base91.Base91Test;
 import cryptography.encoding.huffman.HuffmanTest;
+import cryptography.encoding.koblitz.Koblitz;
+import cryptography.encoding.koblitz.KoblitzTest;
 import cryptography.encoding.morse.MorseTest;
 import cryptography.encoding.rle.RleTest;
 import cryptography.hashes.adler.AdlerTest;
@@ -114,6 +116,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	HuffmanTest.class,
 	AdaptiveHuffmanTest.class,
 	RleTest.class,
+	KoblitzTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,

@@ -1,5 +1,6 @@
 package cryptography;
 
+
 import cryptography.encoding.a1z26.A1z26;
 import cryptography.encoding.base16.Base16;
 import cryptography.encoding.base32.Base32;
@@ -10,6 +11,8 @@ import cryptography.encoding.huffman.Huffman;
 import cryptography.encoding.adaptiveHuffman.AdaptiveHuffman;
 import cryptography.encoding.morse.Morse;
 import cryptography.encoding.rle.Rle;
+import cryptography.encoding.koblitz.Koblitz;
+import cryptography.EC.ellipticCurve.EllipticCurve;
 
 public class Encoding {
 
@@ -49,9 +52,13 @@ public class Encoding {
 		//AdaptiveHuffman
 		System.out.println("AdaptiveHuffman encode: " +  AdaptiveHuffman.adaptiveHuffman("aardvark", Mode.ENCODE));
 		System.out.println("AdaptiveHuffman decode: " +  AdaptiveHuffman.adaptiveHuffman("00000101000100000110001011010110001010", Mode.DECODE));
-		
+
 		// Run-Length Encoding (RLE)
 		System.out.println("RLE encode: " +  Rle.rle(Mode.ENCODE, "AAAAAAAAAAABBBBCCCCCC"));
 		System.out.println("RLE decode: " +  Rle.rle(Mode.DECODE, "A10B4C30"));
+		
+		// Koblit'z Method
+		System.out.println("RLE encode: " +  Koblitz.encode("HELLO", 20, new EllipticCurve())[0]);
+		System.out.println("RLE decode: " +  Koblitz.decode(new String[]{"427340773284","248"}, 20, new EllipticCurve()));
 	}
 }
