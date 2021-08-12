@@ -12,7 +12,7 @@ import cryptography.encoding.adaptiveHuffman.AdaptiveHuffman;
 import cryptography.encoding.morse.Morse;
 import cryptography.encoding.rle.Rle;
 import cryptography.encoding.koblitz.Koblitz;
-import cryptography.EC.ellipticCurve.EllipticCurve;
+import cryptography.ciphers.ellipticCurve.EllipticCurve;
 
 public class Encoding {
 
