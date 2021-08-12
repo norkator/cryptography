@@ -3,7 +3,7 @@ package cryptography.encoding.koblitz;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import cryptography.EC.ellipticCurve.EllipticCurve;
+import cryptography.ciphers.ellipticCurve.EllipticCurve;
 
 public class KoblitzTest {
 	@Test

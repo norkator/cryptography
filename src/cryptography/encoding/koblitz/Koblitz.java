@@ -2,7 +2,7 @@
 package cryptography.encoding.koblitz;
 
 import java.math.BigDecimal;
-import cryptography.EC.ellipticCurve.EllipticCurve;
+import cryptography.ciphers.ellipticCurve.EllipticCurve;
 import java.math.RoundingMode;
 
 public class Koblitz {	
