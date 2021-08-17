@@ -16,6 +16,7 @@ import cryptography.ciphers.caesar.CaesarTest;
 import cryptography.ciphers.cast.CASTTest;
 import cryptography.ciphers.chaocipher.ChaocipherTest;
 import cryptography.ciphers.elgamal.ElgamalTest;
+import cryptography.ciphers.ellipticCurve.EllipticCurveTest;
 import cryptography.ciphers.gronsfeld.GronsfeldTest;
 import cryptography.ciphers.idea.IDEATest;
 import cryptography.ciphers.keyword.KeywordTest;
@@ -97,6 +98,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	ARIATest.class,
 	IDEATest.class,
 	AESTest.class,
+	EllipticCurveTest.class,
 	// --------------------------
 	// Converters
 	BinaryDecimalTest.class,

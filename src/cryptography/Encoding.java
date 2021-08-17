@@ -12,6 +12,9 @@ import cryptography.encoding.adaptiveHuffman.AdaptiveHuffman;
 import cryptography.encoding.morse.Morse;
 import cryptography.encoding.rle.Rle;
 import cryptography.encoding.koblitz.Koblitz;
+
+import java.math.BigDecimal;
+
 import cryptography.ciphers.ellipticCurve.EllipticCurve;
 
 public class Encoding {
@@ -58,7 +61,7 @@ public class Encoding {
 		System.out.println("RLE decode: " +  Rle.rle(Mode.DECODE, "A10B4C30"));
 		
 		// Koblit'z Method
-		System.out.println("RLE encode: " +  Koblitz.encode("HELLO", 20, new EllipticCurve())[0]);
-		System.out.println("RLE decode: " +  Koblitz.decode(new String[]{"427340773284","248"}, 20, new EllipticCurve()));
+		System.out.println("RLE encode: " +  Koblitz.encode("HELLO", 20, new EllipticCurve(new BigDecimal("-1"),new BigDecimal("1"),new BigDecimal("5")))[0]);
+		System.out.println("RLE decode: " +  Koblitz.decode(new String[]{"427340773284","248"}, 20, new EllipticCurve(new BigDecimal("-1"),new BigDecimal("1"),new BigDecimal("5"))));
 	}
 }
