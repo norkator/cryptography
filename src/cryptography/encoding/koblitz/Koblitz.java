@@ -31,10 +31,23 @@ public class Koblitz {
 	
 	public static String decode(String[] point, int k, EllipticCurve E) {
 		BigDecimal x = new BigDecimal(point[0]);
-		BigDecimal m = x.divide(new BigDecimal(Integer.toString(k)), RoundingMode.FLOOR) ;
+		BigDecimal m = x.divide(new BigDecimal(Integer.toString(k)), 0, RoundingMode.FLOOR) ;
 		String output = "";
 		while(!m.equals(BigDecimal.ZERO)) {
 			output += (char)m.remainder(E.b).intValueExact();
+			m = m.divide(E.b, RoundingMode.FLOOR);
+		}
+		
+		return output;
+	}
+
+	
+	public static String decode(String point, int k, EllipticCurve E) {
+		BigDecimal x = new BigDecimal(point);
+		BigDecimal m = x.divide(new BigDecimal(Integer.toString(k)), 0, RoundingMode.FLOOR);
+		String output = "";
+		while(!m.equals(BigDecimal.ZERO)) {
+			output += (char)(m.remainder(E.b).intValueExact());
 			m = m.divide(E.b, RoundingMode.FLOOR);
 		}
 		
