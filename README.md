@@ -67,6 +67,8 @@ representation of the information, known as plaintext, into an alternative form 
 ##### [RC - 2 / 4 / 6](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/rc/RC.java)
 ##### [Scytale](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/scytale/Scytale.java)
 ##### [Vigenere](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/vigenere/Vigenere.java)
+##### [Elliptic Curve](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/ellipticCurve/EllipticCurve.java)
+
 
 
 Converters
@@ -255,7 +257,7 @@ Authors
 
 Contributors
 ============
-* **Saurav Kumar** - *Added Morse, Huffman, Compliment, Koblitz* - [SKR301](https://github.com/SKR301)
+* **Saurav Kumar** - *Added Morse, Huffman, Compliment, Koblitz, EllipticCurve* - [SKR301](https://github.com/SKR301)
 
 
 License
