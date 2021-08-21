@@ -195,11 +195,11 @@ public class Ciphers {
 			BigInteger[] publicKeyB = EC_Util.multiply_EC_PointByKey(privateKeyB, G, E);
 
 			//encryption
-			String[] ciphered = E.encrypt("Fuck You Jew", G, secretKey[0], publicKeyB[0], 2000);
+			String[] ciphered = E.encrypt("Some test input", G, secretKey[0], publicKeyB[0], 2000);
 			String deciphered = E.decrypt(ciphered, privateKeyB, 2000);
 
 			System.out.println("ECC encryption: " + ciphered[0] + " " + ciphered[1]);
-			System.out.println("ECCC decryption: " + deciphered);
+			System.out.println("ECC decryption: " + deciphered);
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
