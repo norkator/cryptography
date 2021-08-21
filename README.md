@@ -70,7 +70,6 @@ representation of the information, known as plaintext, into an alternative form 
 ##### [Elliptic Curve](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/ellipticCurve/EllipticCurve.java)
 
 
-
 Converters
 ============
 Converters converts input from representation system A to representation system B and vice versa.

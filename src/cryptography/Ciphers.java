@@ -185,20 +185,20 @@ public class Ciphers {
 		try {
 			//Create Elliptic Eqn
 			Random rand = new Random();
-			EllipticCurve E = new EllipticCurve(new BigDecimal("-1"),new BigDecimal("1"),new BigDecimal("5"));
-			
+			EllipticCurve E = new EllipticCurve(new BigDecimal("-1"), new BigDecimal("1"), new BigDecimal("5"));
+
 			//Generate Secret Key
-			BigInteger privateKeyA = new BigInteger(3,rand);
-			BigInteger privateKeyB = new BigInteger(3,rand);
+			BigInteger privateKeyA = new BigInteger(3, rand);
+			BigInteger privateKeyB = new BigInteger(3, rand);
 			BigInteger[] G = E.calcG();
 			BigInteger[] secretKey = EC_Util.genSecretKey_DeffieHellman(privateKeyA, privateKeyB, G, E);
 			BigInteger[] publicKeyB = EC_Util.multiply_EC_PointByKey(privateKeyB, G, E);
-			
+
 			//encryption
 			String[] ciphered = E.encrypt("Fuck You Jew", G, secretKey[0], publicKeyB[0], 2000);
 			String deciphered = E.decrypt(ciphered, privateKeyB, 2000);
-			
-			System.out.println("ECC encryption: " + ciphered[0]+" "+ciphered[1]);
+
+			System.out.println("ECC encryption: " + ciphered[0] + " " + ciphered[1]);
 			System.out.println("ECCC decryption: " + deciphered);
 		} catch (Exception e) {
 			System.out.println(e.toString());
