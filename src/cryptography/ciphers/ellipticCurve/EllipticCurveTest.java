@@ -32,11 +32,11 @@ public class EllipticCurveTest {
 		BigInteger[] publicKeyB = EC_Util.multiply_EC_PointByKey(privateKeyB, G, E);
 
 		//encryption
-		String[] ciphered = E.encrypt("Fuck You Jew", G, secretKey[0], publicKeyB[0], 2000);
+		String[] ciphered = E.encrypt("Test input string", G, secretKey[0], publicKeyB[0], 2000);
 		String deciphered = E.decrypt(ciphered, privateKeyB, 2000);
 
 		//tests
-		Assert.assertEquals("Fuck You Jew", deciphered);
+		Assert.assertEquals("Test input string", deciphered);
 //		Assert.assertEquals("y^2 mod "+P+" = ( x^3 + ("+A+")x + ("+B+") ) mod "+P, E.getEqn());
 	}
 }
