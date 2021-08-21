@@ -67,6 +67,7 @@ representation of the information, known as plaintext, into an alternative form 
 ##### [RC - 2 / 4 / 6](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/rc/RC.java)
 ##### [Scytale](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/scytale/Scytale.java)
 ##### [Vigenere](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/vigenere/Vigenere.java)
+##### [Elliptic Curve](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/ellipticCurve/EllipticCurve.java)
 
 
 Converters
@@ -94,6 +95,7 @@ Encoding is used to represent data in ASCII string format by translating the dat
 ##### [Huffman](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/huffman/Huffman.java)
 ##### [Morse](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/morse/Morse.java)
 ##### [RLE](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/rle/Rle.java)
+##### [Koblitz](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/koblitz/Koblitz.java)
 
 
 Hashes
@@ -254,7 +256,7 @@ Authors
 
 Contributors
 ============
-* **Saurav Kumar** - *Added Morse, Huffman, Compliment* - [SKR301](https://github.com/SKR301)
+* **Saurav Kumar** - *Added Morse, Huffman, Compliment, Koblitz, EllipticCurve* - [SKR301](https://github.com/SKR301)
 
 
 License

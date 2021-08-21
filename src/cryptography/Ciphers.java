@@ -21,6 +21,8 @@ import cryptography.ciphers.vigenere.Vigenere;
 import cryptography.ciphers.bacon.Bacon;
 import cryptography.ciphers.chaocipher.Chaocipher;
 import cryptography.ciphers.elgamal.Elgamal;
+import cryptography.ciphers.ellipticCurve.EC_Util;
+import cryptography.ciphers.ellipticCurve.EllipticCurve;
 import cryptography.ciphers.gronsfeld.Gronsfeld;
 import cryptography.ciphers.adfgvx.Adfgvx;
 import cryptography.ciphers.anubis.AnubisMethod;
@@ -28,7 +30,10 @@ import cryptography.ciphers.playfair.Playfair;
 import cryptography.ciphers.porta.Porta;
 import cryptography.random.secureRandom.SecureRandom;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.security.Security;
+import java.util.Random;
 
 public class Ciphers {
 
@@ -172,6 +177,29 @@ public class Ciphers {
 			String encrypted2 = AES.encrypt(aesPlainText, key, strongIV);
 			System.out.println("AES 256 strong iv encrypt: " + encrypted2);
 			System.out.println("AES 256 strong iv decrypt: " + AES.decrypt(encrypted2, key, strongIV));
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+
+		// EllepticCurve (see EllipticCurveTest.class for more)
+		try {
+			//Create Elliptic Eqn
+			Random rand = new Random();
+			EllipticCurve E = new EllipticCurve(new BigDecimal("-1"), new BigDecimal("1"), new BigDecimal("5"));
+
+			//Generate Secret Key
+			BigInteger privateKeyA = new BigInteger(3, rand);
+			BigInteger privateKeyB = new BigInteger(3, rand);
+			BigInteger[] G = E.calcG();
+			BigInteger[] secretKey = EC_Util.genSecretKey_DeffieHellman(privateKeyA, privateKeyB, G, E);
+			BigInteger[] publicKeyB = EC_Util.multiply_EC_PointByKey(privateKeyB, G, E);
+
+			//encryption
+			String[] ciphered = E.encrypt("Some test input", G, secretKey[0], publicKeyB[0], 2000);
+			String deciphered = E.decrypt(ciphered, privateKeyB, 2000);
+
+			System.out.println("ECC encryption: " + ciphered[0] + " " + ciphered[1]);
+			System.out.println("ECC decryption: " + deciphered);
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}

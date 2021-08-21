@@ -16,6 +16,7 @@ import cryptography.ciphers.caesar.CaesarTest;
 import cryptography.ciphers.cast.CASTTest;
 import cryptography.ciphers.chaocipher.ChaocipherTest;
 import cryptography.ciphers.elgamal.ElgamalTest;
+import cryptography.ciphers.ellipticCurve.EllipticCurveTest;
 import cryptography.ciphers.gronsfeld.GronsfeldTest;
 import cryptography.ciphers.idea.IDEATest;
 import cryptography.ciphers.keyword.KeywordTest;
@@ -39,6 +40,8 @@ import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
 import cryptography.encoding.base91.Base91Test;
 import cryptography.encoding.huffman.HuffmanTest;
+import cryptography.encoding.koblitz.Koblitz;
+import cryptography.encoding.koblitz.KoblitzTest;
 import cryptography.encoding.morse.MorseTest;
 import cryptography.encoding.rle.RleTest;
 import cryptography.hashes.adler.AdlerTest;
@@ -95,6 +98,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	ARIATest.class,
 	IDEATest.class,
 	AESTest.class,
+	EllipticCurveTest.class,
 	// --------------------------
 	// Converters
 	BinaryDecimalTest.class,
@@ -114,6 +118,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	HuffmanTest.class,
 	AdaptiveHuffmanTest.class,
 	RleTest.class,
+	KoblitzTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
