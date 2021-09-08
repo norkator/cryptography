@@ -1,18 +1,24 @@
 package cryptography.other.hmac;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 
+@SuppressWarnings("PointlessBitwiseExpression")
 public class EatonHMAC {
 
 	public static void main(String[] args) {
-		// expected: dc724af18fbdd4e59189f5fe768a5f8311527050
-		// System.out.println(sha1_encode("testing")); // => OK
-
-		// expected: 6dbd7ae284167cd748f5c6de8bc5b710d6f688c2
-		System.out.println(hmac_encode("admin", "test")); // => Wrong
 	}
 
+
+	/**
+	 * Get Eaton IPM HMAC
+	 *
+	 * @param key  which is password
+	 * @param data which is challenge
+	 * @return HMAC string
+	 */
+	public static String GetEatonHMAC(String key, String data) {
+		return hmac_encode(sha1_encode(key), data);
+	}
 
 	private static int rotate_left(int n, int s) {
 		return (n << s) | (n >>> (32 - s));
@@ -144,6 +150,7 @@ public class EatonHMAC {
 	}
 
 
+	// checked => valid
 	static String hexToBin(String hStr) {
 		StringBuilder bStr = new StringBuilder();
 		for (int i = 0; i < hStr.length(); i += 2)
@@ -152,21 +159,36 @@ public class EatonHMAC {
 
 	}
 
+	private static int charCodeAt(String string, int index) {
+		return (int) string.charAt(index);
+	}
+
 	private static String hmac_encode(String key, String data) {
 		int hashLength = 64;
-		if (key.length() > hashLength) key = hexToBin(sha1_encode(key));
-		// if (key.length() < hashLength) key += (new Array(hashLength - key.length() + 1)).join("\0");
+
+		if (key.length() > hashLength) {
+			key = hexToBin(sha1_encode(key));
+		}
+		if (key.length() < hashLength) {
+			StringBuilder keyBuilder = new StringBuilder(key);
+			while (keyBuilder.length() < hashLength) {
+				keyBuilder.append("\0");
+			}
+			key = keyBuilder.toString();
+		}
 
 		int i = 0;
 		StringBuilder ipad = new StringBuilder();
 		StringBuilder opad = new StringBuilder();
 		while (i < key.length()) {
-			opad.append((char) key.charAt(i) ^ 0x5C);
-			ipad.append((char) key.charAt(i) ^ 0x36);
+			char a = (char) (charCodeAt(key, i) ^ 0x5C);
+			char b = (char) (charCodeAt(key, i) ^ 0x36);
+			opad.append(a);
+			ipad.append(b);
 			i++;
 		}
+
 		return sha1_encode(opad + hexToBin(sha1_encode(ipad + data)));
 	}
-
 
 }
