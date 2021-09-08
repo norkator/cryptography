@@ -135,7 +135,10 @@ var HMAC =
 
 			var hashLength = 64;
 			if(key.length > hashLength) key = hexToBin(SHA1.encode(key));
-			if(key.length < hashLength) key += (new Array(hashLength - key.length + 1)).join("\0");
+
+			var a = (new Array(hashLength - key.length + 1)).join("\0");
+			console.log(a);
+			if(key.length < hashLength) key += a;
 
 			var i = 0;
 			var ipad = "";
@@ -156,5 +159,6 @@ function hmac(key, data) {
 }
 
 
-console.log(SHA1.encode('testing'));
+// console.log(SHA1.encode('testing'));
 console.log(hmac('admin', 'test'));
+// console.log(String.fromCharCode(12 ^ 0x5C));
