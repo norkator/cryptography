@@ -5,7 +5,11 @@ import java.util.ArrayList;
 public class EatonHMAC {
 
 	public static void main(String[] args) {
+		// expected: dc724af18fbdd4e59189f5fe768a5f8311527050 => OK
 		System.out.println(sha1_encode("testing"));
+
+		// expected: 6dbd7ae284167cd748f5c6de8bc5b710d6f688c2 => Wrong
+		System.out.println(hmac_encode("admin", "test"));
 	}
 
 
@@ -138,5 +142,38 @@ public class EatonHMAC {
 		return result.toLowerCase();
 	}
 
+	public static String fromCharCode(int... codePoints) {
+		return new String(codePoints, 0, codePoints.length);
+	}
+
+	// Todo.. most likely doesn't work
+	private static String hexToBin(String hStr) {
+		StringBuilder bStr = new StringBuilder();
+		for (int i = 0; i < hStr.length(); i += 2)
+			bStr.append(
+				fromCharCode((Integer.parseInt(
+					String.valueOf(hStr.charAt(i)), 16) << 4) +
+					Integer.parseInt(String.valueOf(hStr.charAt(i + 1)), 16)
+				)
+			);
+		return bStr.toString();
+	}
+
+	private static String hmac_encode(String key, String data) {
+		int hashLength = 64;
+		if (key.length() > hashLength) key = hexToBin(sha1_encode(key));
+		// if (key.length() < hashLength) key += (new Array(hashLength - key.length() + 1)).join("\0");
+		if (key.length() < hashLength) key += (String.valueOf(hashLength - key.length() + 1)).join("\0");
+
+		int i = 0;
+		StringBuilder ipad = new StringBuilder();
+		StringBuilder opad = new StringBuilder();
+		while (i < key.length()) {
+			opad.append(fromCharCode(key.charAt(i) ^ 0x5C));
+			ipad.append(fromCharCode(key.charAt(i) ^ 0x36));
+			i++;
+		}
+		return sha1_encode(opad + hexToBin(sha1_encode(ipad + data)));
+	}
 
 }
