@@ -13,6 +13,6 @@ public class VICTest {
 		int date = (int)(Math.random() * (89999) + 10000);
 		int key = (int)(Math.random() * (89999) + 10000);
 		int personalNo = (int)(Math.random() * 10);
-		assertEquals("abc",VIC.encrypt("Twas the night before christmas", 13919, 6, 72401));
+		assertEquals("abc",VIC.keyGen("Twas the night before christmas", 13919, 6, 72401));
 	}
 }
