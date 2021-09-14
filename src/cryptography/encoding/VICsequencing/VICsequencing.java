@@ -2,7 +2,7 @@ package cryptography.encoding.VICsequencing;
 
 
 public class VICsequencing {
-	private static String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	private static String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	
 	public static String encode(String input) {
 		if(input.length() > 10) {
