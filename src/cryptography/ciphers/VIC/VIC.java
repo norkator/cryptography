@@ -21,23 +21,13 @@ public class VIC {
 		String lineM = chainAdd50Res.substring(30,40);
 		String lineN = chainAdd50Res.substring(40,50);
 		String lineP = chainAdd50Res.substring(50,60);
-
-//		System.out.println(lineA);
-//		System.out.println(lineB);
-//		System.out.println(lineC);
-//		System.out.println(lineD);
-//		System.out.println(lineE);
-//		System.out.println(lineF);
-//		System.out.println(lineG);
-//		System.out.println(lineH);
-//		System.out.println(lineJ);
-//		System.out.println(lineK);
-//		System.out.println(lineL);
-//		System.out.println(lineM);
-//		System.out.println(lineN);
-//		System.out.println(lineP);
+		String block = columnarTranspose(chainAdd50Res.substring(10),lineJ);
+		int blockIndex = Character.getNumericValue(lineP.charAt(9)) + Character.getNumericValue(lineP.charAt(8)) + personalNo;
+		String lineQ = block.substring(0,blockIndex);
+		String lineR = block.substring(blockIndex,blockIndex + personalNo);
+		String lineS = VICsequencing.encode(lineP);
 		
-		return "abc";
+		return lineS;
 	}
 	
 	public static String modSub(String str1,String str2) {
@@ -86,4 +76,20 @@ public class VIC {
 		return res;
 	}
 	
+	public static String columnarTranspose(String str, String key) {
+		String[] temp = new String[10];
+		for(int a=0;a<key.length();a++) {
+			int index = Character.getNumericValue(key.charAt(a));
+			if(index == 0) {
+				index = 10;
+			}
+			temp[index-1] = (new StringBuilder()).append(str.charAt(a)).append(str.charAt(10+a)).append(str.charAt(20+a)).append(str.charAt(30+a)).append(str.charAt(40+a)).toString();
+		}
+		
+		String res = "";
+		for(int a=0;a<10;a++) {
+			res += temp[a];
+		}
+		return res;
+	}
 }
