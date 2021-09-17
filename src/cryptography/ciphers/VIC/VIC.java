@@ -3,7 +3,6 @@ package cryptography.ciphers.VIC;
 import cryptography.encoding.VICsequencing.VICsequencing;
 
 public class VIC {
-
 	public static String keyGen(String input, int date, int personalNo, int key) {
 		input = input.toUpperCase().replaceAll(" ", "");
 		String lineA = String.valueOf(key);
@@ -28,6 +27,62 @@ public class VIC {
 		String lineS = VICsequencing.encode(lineP);
 		
 		return lineS;
+	}
+	
+	public static String encrypt(String input, String phrase, String inputForKey, int date, int personalNo, int keyGroup) {
+		input = input.toUpperCase();
+		phrase = phrase.toUpperCase();
+		
+		String output ="";
+		char[] key = keyGen(inputForKey, date, personalNo, keyGroup).toCharArray();
+		char[] row = new char[]{' ', (char)(personalNo+'0'), (char)((personalNo + 2)%10 + '0')};
+		char[][] table = genTable(phrase);
+		
+		int[] pos;
+		for(int a=0;a<input.length();a++) {
+			if(input.charAt(a)!=' ') {
+				pos = findLetterInTable(table, input.charAt(a));
+				output += String.valueOf(row[pos[0]]) + String.valueOf(key[pos[1]]);
+			}
+			
+		}
+		output = output.replaceAll("\\s","");
+		return output;
+	}
+	
+	public static char[][] genTable(String phrase){
+		char[][] table = new char[3][10];
+		table[0] = phrase.toCharArray();
+		
+		int index=0;
+		for(char a='A';a<='Z';a++) {
+			if(index>=10) {
+				if(!phrase.contains(String.valueOf(a))){
+					table[2][index%10] = a;
+					index++;
+				}
+			} else {
+				if(!phrase.contains(String.valueOf(a))){
+					table[1][index%10] = a;
+					index++;
+				}
+			}
+		}
+
+		table[2][8] = '.';table[2][9] = ',';
+		
+		return table;
+	}
+	
+	public static int[] findLetterInTable(char[][] table, char val) {
+		for(int a=0;a<table.length;a++) {
+			for(int b=0;b<table[a].length;b++) {
+				if(val==table[a][b]) {
+					return new int[] {a,b};
+				}
+			}
+		}
+		return null;
 	}
 	
 	public static String modSub(String str1,String str2) {
