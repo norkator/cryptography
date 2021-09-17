@@ -9,7 +9,7 @@ public class VICsequencingTest {
 	public void runTest() {
 		assertEquals("4062791538", VICsequencing.encode("MYSISTERIS"));
 		assertEquals("2163475", VICsequencing.encode("OCTOPUS"));
-		assertEquals("51234678", VICsequencing.encode("30111999"));
+		assertEquals("48123567", VICsequencing.encode("30111999"));
 		assertEquals("Input size cant be more than 10", VICsequencing.encode("MYSISTERISOCTOPUS"));
 	}
 }
