@@ -24,6 +24,7 @@ import cryptography.ciphers.elgamal.Elgamal;
 import cryptography.ciphers.ellipticCurve.EC_Util;
 import cryptography.ciphers.ellipticCurve.EllipticCurve;
 import cryptography.ciphers.gronsfeld.Gronsfeld;
+import cryptography.ciphers.VIC.VIC;
 import cryptography.ciphers.adfgvx.Adfgvx;
 import cryptography.ciphers.anubis.AnubisMethod;
 import cryptography.ciphers.playfair.Playfair;
@@ -181,7 +182,7 @@ public class Ciphers {
 			System.out.println(e.toString());
 		}
 
-		// EllepticCurve (see EllipticCurveTest.class for more)
+		// EllipticCurve (see EllipticCurveTest.class for more)
 		try {
 			//Create Elliptic Eqn
 			Random rand = new Random();
@@ -204,7 +205,23 @@ public class Ciphers {
 			System.out.println(e.toString());
 		}
 
-
+		//VIC
+		String plainText = "We are pleased to hear of your success in establishing your false identity You will be sent some money to cover expenses within a month";
+		int date = 741776;
+		int keyGroup = 77651;
+		int personalNo = 8;
+		String cipherText = VIC.encrypt(plainText, 
+						"AT ONE SIR", 
+						"I dream of Jeannie with t", 
+						date, personalNo, keyGroup);
+		String decipherText = VIC.decrypt(cipherText, 
+						"AT ONE SIR", 
+						"I dream of Jeannie with t", 
+						date, personalNo, keyGroup);
+		System.out.println("VIC Cipher: "+cipherText);
+		System.out.println("VIC Decipher: "+decipherText);
+		
+		
 	}
 
 }
