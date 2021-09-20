@@ -258,7 +258,7 @@ Authors
 
 Contributors
 ============
-* **Saurav Kumar** - *Added Morse, Huffman, Compliment, Koblitz, EllipticCurve, VICsequencing, VIC* - [SKR301](https://github.com/SKR301)
+* **Saurav Kumar** - *Added Morse, Huffman, Compliment, Koblitz, EllipticCurve, VICsequencing, VIC * - [SKR301](https://github.com/SKR301)
 
 
 License
