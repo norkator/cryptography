@@ -3,6 +3,7 @@
  */
 package cryptography;
 
+import cryptography.ciphers.VIC.VICTest;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
 import cryptography.ciphers.aes.AESTest;
 import cryptography.ciphers.anubis.AnubisTest;
@@ -32,6 +33,7 @@ import cryptography.converters.binaryHex.BinaryHexTest;
 import cryptography.converters.binaryInteger.BinaryIntegerTest;
 import cryptography.converters.binaryText.BinaryTextTest;
 import cryptography.converters.compliment.ComplimentTest;
+import cryptography.encoding.VICsequencing.VICsequencingTest;
 import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.encoding.adaptiveHuffman.AdaptiveHuffmanTest;
 import cryptography.encoding.base16.Base16Test;
@@ -40,7 +42,6 @@ import cryptography.encoding.base64.Base64Test;
 import cryptography.encoding.base85.Base85Test;
 import cryptography.encoding.base91.Base91Test;
 import cryptography.encoding.huffman.HuffmanTest;
-import cryptography.encoding.koblitz.Koblitz;
 import cryptography.encoding.koblitz.KoblitzTest;
 import cryptography.encoding.morse.MorseTest;
 import cryptography.encoding.rle.RleTest;
@@ -99,6 +100,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	IDEATest.class,
 	AESTest.class,
 	EllipticCurveTest.class,
+	VICTest.class,
 	// --------------------------
 	// Converters
 	BinaryDecimalTest.class,
@@ -119,6 +121,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	AdaptiveHuffmanTest.class,
 	RleTest.class,
 	KoblitzTest.class,
+	VICsequencingTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
