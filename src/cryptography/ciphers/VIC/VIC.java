@@ -5,6 +5,7 @@ import cryptography.encoding.VICsequencing.VICsequencing;
 public class VIC {
 	public static String keyGen(String input, int date, int personalNo, int key) {
 		input = input.toUpperCase().replaceAll(" ", "");
+		
 		String lineA = String.valueOf(key);
 		String lineB = String.valueOf(date);
 		String lineC = modSub(lineA,lineB);
@@ -21,23 +22,47 @@ public class VIC {
 		String lineN = chainAdd50Res.substring(40,50);
 		String lineP = chainAdd50Res.substring(50,60);
 		String block = columnarTranspose(chainAdd50Res.substring(10),lineJ);
-		int blockIndex = Character.getNumericValue(lineP.charAt(9)) + Character.getNumericValue(lineP.charAt(8)) + personalNo;
-		String lineQ = block.substring(0,blockIndex);
-		String lineR = block.substring(blockIndex,blockIndex + personalNo);
+		String lineQ = block.substring(0, Character.getNumericValue(lineP.charAt(8)) + personalNo);
+		String lineR = block.substring(Character.getNumericValue(lineP.charAt(8)) + personalNo, Character.getNumericValue(lineP.charAt(8)) + personalNo + Character.getNumericValue(lineP.charAt(9)) + personalNo);
 		String lineS = VICsequencing.encode(lineP);
-		
+
+//		System.out.println(lineA);
+//		System.out.println(lineB);
+//		System.out.println(lineC);
+//		System.out.println(lineD);
+//		System.out.println(lineE);
+//		System.out.println(lineF);
+//		System.out.println(lineG);
+//		System.out.println(lineH);
+//		System.out.println(lineJ);
+//		System.out.println(lineK);
+//		System.out.println(lineL);
+//		System.out.println(lineM);
+//		System.out.println(lineN);
+//		System.out.println(lineP);
+//		System.out.println(lineQ);
+//		System.out.println(lineR);
+//		System.out.println(lineS);
 		return lineS;
 	}
 	
 	public static String encrypt(String input, String phrase, String inputForKey, int date, int personalNo, int keyGroup) {
-		input = input.toUpperCase();
+		input = input.toUpperCase().replaceAll(" ", "");
 		phrase = phrase.toUpperCase();
 		
 		String output ="";
 		char[] key = keyGen(inputForKey, date, personalNo, keyGroup).toCharArray();
-		char[] row = new char[]{' ', (char)(personalNo+'0'), (char)((personalNo + 2)%10 + '0')};
+		char[] row = new char[]{' ', '0', (char)((personalNo) + '0')};
 		char[][] table = genTable(phrase);
 		
+
+//		for(int a=0;a<table.length;a++) {
+//			for(int b=0;b<table[a].length;b++) {
+//				System.out.print(table[a][b]+" ");
+//			}
+//			System.out.println();
+//		}
+
 		int[] pos;
 		for(int a=0;a<input.length();a++) {
 			if(input.charAt(a)!=' ') {
@@ -47,6 +72,49 @@ public class VIC {
 			
 		}
 		output = output.replaceAll("\\s","");
+		return output;
+	}
+	
+	public static String decrypt(String input, String phrase, String inputForKey, int date, int personalNo, int keyGroup) {
+		input = input.toUpperCase().replaceAll(" ", "");;
+		phrase = phrase.toUpperCase();
+		
+		int gap1 = phrase.indexOf(" ");
+		int gap2 = phrase.indexOf(" ",gap1+1);
+		
+		String output ="";
+		char[] key = keyGen(inputForKey, date, personalNo, keyGroup).toCharArray();
+		char[] row = new char[]{' ', key[gap1], key[gap2]};
+		char[][] table = genTable(phrase);
+
+		
+		int a=0;
+		while(a<input.length()) {
+			int selRow=0,selCol=0;
+			
+			if(input.charAt(a)==row[1]) {
+				selRow = 1;
+			}else if(input.charAt(a)==row[2]) {
+				selRow = 2;
+			}else {
+				selRow = 0;
+			}
+			
+			if(selRow!=0) {
+				a++;	
+			}
+
+			for(int b=0;b<key.length;b++) {
+				if(input.charAt(a)==key[b]) {
+					selCol = b;
+					break;
+				}
+			}
+			
+			output += table[selRow][selCol];
+			a++;
+		}
+		
 		return output;
 	}
 	
@@ -84,6 +152,7 @@ public class VIC {
 		}
 		return null;
 	}
+
 	
 	public static String modSub(String str1,String str2) {
 		String res = "";
