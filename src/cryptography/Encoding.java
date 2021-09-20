@@ -1,6 +1,7 @@
 package cryptography;
 
 
+import cryptography.encoding.VICsequencing.VICsequencing;
 import cryptography.encoding.a1z26.A1z26;
 import cryptography.encoding.base16.Base16;
 import cryptography.encoding.base32.Base32;
@@ -63,5 +64,9 @@ public class Encoding {
 		// Koblit'z Method
 		System.out.println("RLE encode: " + Koblitz.encode("HELLO", 20, new EllipticCurve(new BigDecimal("-1"), new BigDecimal("1"), new BigDecimal("5")))[0]);
 		System.out.println("RLE decode: " + Koblitz.decode(new String[]{"427340773284", "248"}, 20, new EllipticCurve(new BigDecimal("-1"), new BigDecimal("1"), new BigDecimal("5"))));
+	
+		//VIC sequencing
+		System.out.println("VIC sequencing encode: " + VICsequencing.encode("MYSISTERIS"));
+		
 	}
 }
