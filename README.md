@@ -68,7 +68,7 @@ representation of the information, known as plaintext, into an alternative form 
 ##### [Scytale](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/scytale/Scytale.java)
 ##### [Vigenere](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/vigenere/Vigenere.java)
 ##### [Elliptic Curve](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/ellipticCurve/EllipticCurve.java)
-##### [Elliptic Curve](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/VIC/VIC.java)
+##### [VIC](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/VIC/VIC.java)
 
 
 Converters
