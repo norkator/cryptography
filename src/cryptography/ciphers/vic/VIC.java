@@ -1,6 +1,6 @@
 package cryptography.ciphers.vic;
 
-import cryptography.encoding.VICsequencing.VICsequencing;
+import cryptography.encoding.vicSequencing.VICSequencing;
 
 public class VIC {
 	public static String keyGen(String input, int date, int personalNo, int key) {
@@ -10,11 +10,11 @@ public class VIC {
 		String lineB = String.valueOf(date);
 		String lineC = modSub(lineA, lineB);
 		String lineD = input.substring(0, 20);
-		String lineE = VICsequencing.encode(lineD.substring(0, 10)) + VICsequencing.encode(lineD.substring(10));
+		String lineE = VICSequencing.encode(lineD.substring(0, 10)) + VICSequencing.encode(lineD.substring(10));
 		String lineF = chainAddition(lineC, 5) + "1234567890";
 		String lineG = modAdd(lineE.substring(0, 10), lineF.substring(0, 10));
 		String lineH = encodeByReplacing(lineG, lineE.substring(10), lineF.substring(10));
-		String lineJ = VICsequencing.encode(lineH);
+		String lineJ = VICSequencing.encode(lineH);
 		String chainAdd50Res = chainAddition(lineH, 50);
 		String lineK = chainAdd50Res.substring(10, 20);
 		String lineL = chainAdd50Res.substring(20, 30);
@@ -24,7 +24,7 @@ public class VIC {
 		String block = columnarTranspose(chainAdd50Res.substring(10), lineJ);
 		String lineQ = block.substring(0, Character.getNumericValue(lineP.charAt(8)) + personalNo);
 		String lineR = block.substring(Character.getNumericValue(lineP.charAt(8)) + personalNo, Character.getNumericValue(lineP.charAt(8)) + personalNo + Character.getNumericValue(lineP.charAt(9)) + personalNo);
-		String lineS = VICsequencing.encode(lineP);
+		String lineS = VICSequencing.encode(lineP);
 
 		// System.out.println(lineA);
 		// System.out.println(lineB);

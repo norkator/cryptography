@@ -33,7 +33,7 @@ import cryptography.converters.binaryHex.BinaryHexTest;
 import cryptography.converters.binaryInteger.BinaryIntegerTest;
 import cryptography.converters.binaryText.BinaryTextTest;
 import cryptography.converters.compliment.ComplimentTest;
-import cryptography.encoding.VICsequencing.VICsequencingTest;
+import cryptography.encoding.vicSequencing.VICSequencingTest;
 import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.encoding.adaptiveHuffman.AdaptiveHuffmanTest;
 import cryptography.encoding.base16.Base16Test;
@@ -121,7 +121,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	AdaptiveHuffmanTest.class,
 	RleTest.class,
 	KoblitzTest.class,
-	VICsequencingTest.class,
+	VICSequencingTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
