@@ -8,7 +8,7 @@ public class VICSequencing {
 
 	public static String encode(String input) {
 		if (input.length() > 10) {
-			return "Input size cant be more than 10";
+			return "Input size cannot be more than 10 chars long";
 		}
 
 		char[] output = new char[input.length()];
