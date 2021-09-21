@@ -64,9 +64,9 @@ public class Encoding {
 		// Koblit'z Method
 		System.out.println("RLE encode: " + Koblitz.encode("HELLO", 20, new EllipticCurve(new BigDecimal("-1"), new BigDecimal("1"), new BigDecimal("5")))[0]);
 		System.out.println("RLE decode: " + Koblitz.decode(new String[]{"427340773284", "248"}, 20, new EllipticCurve(new BigDecimal("-1"), new BigDecimal("1"), new BigDecimal("5"))));
-	
-		//VIC sequencing
+
+		// VIC sequencing
 		System.out.println("VIC sequencing encode: " + VICSequencing.encode("MYSISTERIS"));
-		
+
 	}
 }
