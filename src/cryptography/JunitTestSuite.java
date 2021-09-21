@@ -3,7 +3,7 @@
  */
 package cryptography;
 
-import cryptography.ciphers.VIC.VICTest;
+import cryptography.ciphers.vic.VICTest;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
 import cryptography.ciphers.aes.AESTest;
 import cryptography.ciphers.anubis.AnubisTest;

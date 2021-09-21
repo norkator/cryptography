@@ -24,7 +24,7 @@ import cryptography.ciphers.elgamal.Elgamal;
 import cryptography.ciphers.ellipticCurve.EC_Util;
 import cryptography.ciphers.ellipticCurve.EllipticCurve;
 import cryptography.ciphers.gronsfeld.Gronsfeld;
-import cryptography.ciphers.VIC.VIC;
+import cryptography.ciphers.vic.VIC;
 import cryptography.ciphers.adfgvx.Adfgvx;
 import cryptography.ciphers.anubis.AnubisMethod;
 import cryptography.ciphers.playfair.Playfair;
