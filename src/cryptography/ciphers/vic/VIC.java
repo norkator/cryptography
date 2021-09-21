@@ -2,7 +2,10 @@ package cryptography.ciphers.vic;
 
 import cryptography.encoding.vicSequencing.VICSequencing;
 
+@SuppressWarnings("UnnecessaryLocalVariable")
 public class VIC {
+
+	@SuppressWarnings("unused") // Todo.. clean away unused contents
 	public static String keyGen(String input, int date, int personalNo, int key) {
 		input = input.toUpperCase().replaceAll(" ", "");
 
@@ -26,23 +29,6 @@ public class VIC {
 		String lineR = block.substring(Character.getNumericValue(lineP.charAt(8)) + personalNo, Character.getNumericValue(lineP.charAt(8)) + personalNo + Character.getNumericValue(lineP.charAt(9)) + personalNo);
 		String lineS = VICSequencing.encode(lineP);
 
-		// System.out.println(lineA);
-		// System.out.println(lineB);
-		// System.out.println(lineC);
-		// System.out.println(lineD);
-		// System.out.println(lineE);
-		// System.out.println(lineF);
-		// System.out.println(lineG);
-		// System.out.println(lineH);
-		// System.out.println(lineJ);
-		// System.out.println(lineK);
-		// System.out.println(lineL);
-		// System.out.println(lineM);
-		// System.out.println(lineN);
-		// System.out.println(lineP);
-		// System.out.println(lineQ);
-		// System.out.println(lineR);
-		// System.out.println(lineS);
 		return lineS;
 	}
 
@@ -50,40 +36,32 @@ public class VIC {
 		input = input.toUpperCase().replaceAll(" ", "");
 		phrase = phrase.toUpperCase();
 
-		String output = "";
+		StringBuilder output = new StringBuilder();
 		char[] key = keyGen(inputForKey, date, personalNo, keyGroup).toCharArray();
 		char[] row = new char[]{' ', '0', (char) ((personalNo) + '0')};
 		char[][] table = genTable(phrase);
-
-
-		// for(int a=0;a<table.length;a++) {
-		// 	for(int b=0;b<table[a].length;b++) {
-		// 		System.out.print(table[a][b]+" ");
-		// 	}
-		// 	System.out.println();
-		// }
 
 		int[] pos;
 		for (int a = 0; a < input.length(); a++) {
 			if (input.charAt(a) != ' ') {
 				pos = findLetterInTable(table, input.charAt(a));
-				output += String.valueOf(row[pos[0]]) + String.valueOf(key[pos[1]]);
+				//noinspection ConstantConditions
+				output.append(row[pos[0]]).append(key[pos[1]]);
 			}
 
 		}
-		output = output.replaceAll("\\s", "");
-		return output;
+		output = new StringBuilder(output.toString().replaceAll("\\s", ""));
+		return output.toString();
 	}
 
 	public static String decrypt(String input, String phrase, String inputForKey, int date, int personalNo, int keyGroup) {
 		input = input.toUpperCase().replaceAll(" ", "");
-		;
 		phrase = phrase.toUpperCase();
 
 		int gap1 = phrase.indexOf(" ");
 		int gap2 = phrase.indexOf(" ", gap1 + 1);
 
-		String output = "";
+		StringBuilder output = new StringBuilder();
 		char[] key = keyGen(inputForKey, date, personalNo, keyGroup).toCharArray();
 		char[] row = new char[]{' ', key[gap1], key[gap2]};
 		char[][] table = genTable(phrase);
@@ -97,8 +75,6 @@ public class VIC {
 				selRow = 1;
 			} else if (input.charAt(a) == row[2]) {
 				selRow = 2;
-			} else {
-				selRow = 0;
 			}
 
 			if (selRow != 0) {
@@ -112,11 +88,11 @@ public class VIC {
 				}
 			}
 
-			output += table[selRow][selCol];
+			output.append(table[selRow][selCol]);
 			a++;
 		}
 
-		return output;
+		return output.toString();
 	}
 
 	public static char[][] genTable(String phrase) {
@@ -157,27 +133,27 @@ public class VIC {
 
 
 	public static String modSub(String str1, String str2) {
-		String res = "";
+		StringBuilder res = new StringBuilder();
 		for (int a = 0; a < str1.length(); a++) {
 			int num1 = Character.getNumericValue(str1.charAt(a));
 			int num2 = Character.getNumericValue(str2.charAt(a));
 
 			int val = (num1 >= num2) ? num1 - num2 : num1 - num2 + 10;
-			res = res + String.valueOf(val);
+			res.append(val);
 		}
-		return res;
+		return res.toString();
 	}
 
 	public static String modAdd(String str1, String str2) {
-		String res = "";
+		StringBuilder res = new StringBuilder();
 		for (int a = 0; a < str1.length(); a++) {
 			int num1 = Character.getNumericValue(str1.charAt(a));
 			int num2 = Character.getNumericValue(str2.charAt(a));
 
 			int val = (num1 + num2) % 10;
-			res = res + String.valueOf(val);
+			res.append(val);
 		}
-		return res;
+		return res.toString();
 	}
 
 	public static String encodeByReplacing(String str, String key, String aid) {
@@ -193,13 +169,13 @@ public class VIC {
 	}
 
 	public static String chainAddition(String num, int length) {
-		String res = num;
+		StringBuilder res = new StringBuilder(num);
 
 		for (int a = 0; a < length; a++) {
-			res = res + ((Character.getNumericValue(res.charAt(a)) + Character.getNumericValue(res.charAt(a + 1))) % 10);
+			res.append((Character.getNumericValue(res.charAt(a)) + Character.getNumericValue(res.charAt(a + 1))) % 10);
 		}
 
-		return res;
+		return res.toString();
 	}
 
 	public static String columnarTranspose(String str, String key) {
@@ -209,13 +185,14 @@ public class VIC {
 			if (index == 0) {
 				index = 10;
 			}
-			temp[index - 1] = (new StringBuilder()).append(str.charAt(a)).append(str.charAt(10 + a)).append(str.charAt(20 + a)).append(str.charAt(30 + a)).append(str.charAt(40 + a)).toString();
+			temp[index - 1] = String.valueOf(str.charAt(a)) + str.charAt(10 + a) + str.charAt(20 + a) + str.charAt(30 + a) + str.charAt(40 + a);
 		}
 
-		String res = "";
+		StringBuilder res = new StringBuilder();
 		for (int a = 0; a < 10; a++) {
-			res += temp[a];
+			res.append(temp[a]);
 		}
-		return res;
+		return res.toString();
 	}
+
 }

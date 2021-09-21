@@ -9,7 +9,6 @@ public class VICTest {
 
 	@Test
 	public void runTest() {
-
 		int date = 741776;
 		int keyGroup = 77651;
 		int personalNo = 8;
@@ -31,4 +30,5 @@ public class VICTest {
 
 		assertEquals(plainText.toUpperCase().replaceAll(" ", ""), decipherText);
 	}
+
 }
