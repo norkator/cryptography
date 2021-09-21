@@ -24,6 +24,7 @@ import cryptography.ciphers.elgamal.Elgamal;
 import cryptography.ciphers.ellipticCurve.EC_Util;
 import cryptography.ciphers.ellipticCurve.EllipticCurve;
 import cryptography.ciphers.gronsfeld.Gronsfeld;
+import cryptography.ciphers.vic.VIC;
 import cryptography.ciphers.adfgvx.Adfgvx;
 import cryptography.ciphers.anubis.AnubisMethod;
 import cryptography.ciphers.playfair.Playfair;
@@ -181,20 +182,20 @@ public class Ciphers {
 			System.out.println(e.toString());
 		}
 
-		// EllepticCurve (see EllipticCurveTest.class for more)
+		// EllipticCurve (see EllipticCurveTest.class for more)
 		try {
-			//Create Elliptic Eqn
+			// Create Elliptic Eqn
 			Random rand = new Random();
 			EllipticCurve E = new EllipticCurve(new BigDecimal("-1"), new BigDecimal("1"), new BigDecimal("5"));
 
-			//Generate Secret Key
+			// Generate Secret Key
 			BigInteger privateKeyA = new BigInteger(3, rand);
 			BigInteger privateKeyB = new BigInteger(3, rand);
 			BigInteger[] G = E.calcG();
 			BigInteger[] secretKey = EC_Util.genSecretKey_DeffieHellman(privateKeyA, privateKeyB, G, E);
 			BigInteger[] publicKeyB = EC_Util.multiply_EC_PointByKey(privateKeyB, G, E);
 
-			//encryption
+			// encryption
 			String[] ciphered = E.encrypt("Some test input", G, secretKey[0], publicKeyB[0], 2000);
 			String deciphered = E.decrypt(ciphered, privateKeyB, 2000);
 
@@ -203,6 +204,22 @@ public class Ciphers {
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
+
+		// VIC
+		String plainText = "We are pleased to hear of your success in establishing your false identity You will be sent some money to cover expenses within a month";
+		int date = 741776;
+		int keyGroup = 77651;
+		int personalNo = 8;
+		String cipherText = VIC.encrypt(plainText,
+			"AT ONE SIR",
+			"I dream of Jeannie with t",
+			date, personalNo, keyGroup);
+		String decipherText = VIC.decrypt(cipherText,
+			"AT ONE SIR",
+			"I dream of Jeannie with t",
+			date, personalNo, keyGroup);
+		System.out.println("VIC Cipher: " + cipherText);
+		System.out.println("VIC Decipher: " + decipherText);
 
 
 	}
