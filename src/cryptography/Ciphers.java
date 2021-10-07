@@ -206,20 +206,24 @@ public class Ciphers {
 		}
 
 		// VIC
-		String plainText = "We are pleased to hear of your success in establishing your false identity You will be sent some money to cover expenses within a month";
-		int date = 741776;
-		int keyGroup = 77651;
-		int personalNo = 8;
-		String cipherText = VIC.encrypt(plainText,
-			"AT ONE SIR",
-			"I dream of Jeannie with t",
-			date, personalNo, keyGroup);
-		String decipherText = VIC.decrypt(cipherText,
-			"AT ONE SIR",
-			"I dream of Jeannie with t",
-			date, personalNo, keyGroup);
-		System.out.println("VIC Cipher: " + cipherText);
-		System.out.println("VIC Decipher: " + decipherText);
+		try {
+			String plainText = "We are pleased to hear of your success in establishing your false identity You will be sent some money to cover expenses within a month";
+			int date = 741776;
+			int keyGroup = 77651;
+			int personalNo = 8;
+			String cipherText = VIC.encrypt(plainText,
+				"AT ONE SIR",
+				"I dream of Jeannie with t",
+				date, personalNo, keyGroup);
+			String decipherText = VIC.decrypt(cipherText,
+				"AT ONE SIR",
+				"I dream of Jeannie with t",
+				date, personalNo, keyGroup);
+			System.out.println("VIC Cipher: " + cipherText);
+			System.out.println("VIC Decipher: " + decipherText);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
 
 
 	}
