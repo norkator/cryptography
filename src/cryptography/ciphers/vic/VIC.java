@@ -32,7 +32,11 @@ public class VIC {
 		return lineS;
 	}
 
-	public static String encrypt(String input, String phrase, String inputForKey, int date, int personalNo, int keyGroup) {
+	public static String encrypt(
+		String input, String phrase, String inputForKey, int date, int personalNo, int keyGroup
+	) throws Exception {
+		validateInputParameters(date, personalNo, keyGroup);
+
 		input = input.toUpperCase().replaceAll(" ", "");
 		phrase = phrase.toUpperCase();
 
@@ -54,7 +58,11 @@ public class VIC {
 		return output.toString();
 	}
 
-	public static String decrypt(String input, String phrase, String inputForKey, int date, int personalNo, int keyGroup) {
+	public static String decrypt(
+		String input, String phrase, String inputForKey, int date, int personalNo, int keyGroup
+	) throws Exception {
+		validateInputParameters(date, personalNo, keyGroup);
+
 		input = input.toUpperCase().replaceAll(" ", "");
 		phrase = phrase.toUpperCase();
 
@@ -193,6 +201,18 @@ public class VIC {
 			res.append(temp[a]);
 		}
 		return res.toString();
+	}
+
+	private static void validateInputParameters(int date, int personalNo, int keyGroup) throws Exception {
+		if (String.valueOf(date).length() != 6) {
+			throw new Exception("VIC cipher 'date' value must be exact six digits long");
+		}
+		if (String.valueOf(personalNo).length() > 2) {
+			throw new Exception("VIC cipher 'personalNo' value must be either one or two digits long");
+		}
+		if (String.valueOf(keyGroup).length() != 5) {
+			throw new Exception("VIC cipher 'keyGroup' value must be exact five digits long");
+		}
 	}
 
 }

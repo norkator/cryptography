@@ -17,18 +17,22 @@ public class VICTest {
 
 		String plainText = "We are pleased to hear of your success in establishing your false identity You will be sent some money to cover expenses within a month";
 
-		String cipherText = VIC.encrypt(plainText,
-			"AT ONE SIR",
-			"I dream of Jeannie with t",
-			date, personalNo, keyGroup);
+		try {
+			String cipherText = VIC.encrypt(plainText,
+				"AT ONE SIR",
+				"I dream of Jeannie with t",
+				date, personalNo, keyGroup);
 
 
-		String decipherText = VIC.decrypt(cipherText,
-			"AT ONE SIR",
-			"I dream of Jeannie with t",
-			date, personalNo, keyGroup);
+			String decipherText = VIC.decrypt(cipherText,
+				"AT ONE SIR",
+				"I dream of Jeannie with t",
+				date, personalNo, keyGroup);
 
-		assertEquals(plainText.toUpperCase().replaceAll(" ", ""), decipherText);
+			assertEquals(plainText.toUpperCase().replaceAll(" ", ""), decipherText);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
 	}
 
 }
