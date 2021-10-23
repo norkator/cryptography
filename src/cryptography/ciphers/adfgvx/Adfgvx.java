@@ -14,12 +14,12 @@ public class Adfgvx {
 	public void main(String[] args) {
 	}
 
-	public static String adfgvx(String inputText, final Mode mode) {
+	public static String adfgvx(String inputText, String key ,final Mode mode) {
 		try {
 			inputText = inputText.toLowerCase();
 			String output = null;
-			
-			init();
+
+			polibiusSquare(key);
 
 			if (mode == Mode.ENCRYPT) {
 				Point p;
@@ -34,6 +34,7 @@ public class Adfgvx {
 					}
 				}
 				output = res.toString();
+				System.out.println(output);
 			}
 
 			if (mode == Mode.DECRYPT) {
@@ -60,16 +61,21 @@ public class Adfgvx {
 		}
 	}
 	
-	private static void init() {
+	private static void polibiusSquare(String key) {
 		substitute = new String[6][6];
-		int c = 97;
-		for (int i = 0; i < 5; i++)
-			for (int j = 0; j < 6; j++)
-				substitute[i][j] = "" + (char) c++;
-		for (int i = 0; i < 4; i++)
-			substitute[4][i + 2] = Integer.toString(i);
-		for (int i = 4; i <= 9; i++)
-			substitute[5][i - 4] = Integer.toString(i);
+		String temp = key+"abcdefghijklmnopqrstuvwxyz0123456789";
+		String result = "";
+	    for (int i = 0; i < temp.length(); i++) {
+	        if(!result.contains(String.valueOf(temp.charAt(i)))) {
+	            result += String.valueOf(temp.charAt(i));
+	        }
+	    }
+	    
+	    for(int a=0;a<6;a++) {
+	    	for(int b=0;b<6;b++) {
+	    		substitute[a][b] = String.valueOf(result.charAt(a*6+b));
+	    	}
+	    }
 	}
 
 	private static Point findPos(char c) {
