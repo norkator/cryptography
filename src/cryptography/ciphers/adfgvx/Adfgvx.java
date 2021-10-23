@@ -39,14 +39,19 @@ public class Adfgvx {
 			if (mode == Mode.DECRYPT) {
 				StringBuilder res = new StringBuilder();
 				Point p;
-				for (int i = 0; i < inputText.length();) {
-					if (inputText.charAt(i) == ' ') {
-						res.append(inputText.charAt(i));
+				
+				String input = reverseColTranspose(inputText,key);
+				
+				System.out.println(input);
+				
+				for (int i = 0; i < input.length();) {
+					if (input.charAt(i) == ' ') {
+						res.append(input.charAt(i));
 						i++;
 					} else {
 						String codeInt = "ADFGVX".toLowerCase();
-						p = new Point(codeInt.indexOf(inputText.substring(i, i + 1)),
-								codeInt.indexOf(inputText.substring(i + 1, i + 2)));
+						p = new Point(codeInt.indexOf(input.substring(i, i + 1)),
+								codeInt.indexOf(input.substring(i + 1, i + 2)));
 						res.append(substitute[p.x][p.y]);
 						i = i + 2;
 					}
@@ -120,10 +125,46 @@ public class Adfgvx {
 		
 		for(int a=0;a<key.length();a++) {
 			res += temp[a];
-		}
-		
-		
+		}	
 		return res;
 	}
 	
+	private static String reverseColTranspose(String text, String key) {
+		final int row = (int) Math.ceil((float)text.length()/(float)key.length());
+		final int col = key.length();
+		int toPad = row*col - text.length();
+		
+		String transposeKey = VICSequencing.encode(key.toUpperCase());
+		
+		String[] temp = new String[col];	
+		
+		int textPointer = 0;
+		for(int a=1; a<=col ;a++) {
+			for(int b=0; b<col ;b++) {
+				int index = Character.getNumericValue(transposeKey.charAt(b));
+				if(a == index) {
+					String curr = "";
+					if(b >= col-toPad) {
+						curr = text.substring(textPointer,textPointer+2)+" ";
+						textPointer+=2;
+					} else {
+						curr = text.substring(textPointer,textPointer+3);
+						textPointer+=3;
+					}
+					temp[b] = curr;
+				}
+			}
+		}
+
+		String res = "";
+		
+		for(int a=0;a<row;a++) {
+			for(int b=0;b<col;b++) {
+				if(temp[b].charAt(a) != ' ') {
+					res+=temp[b].charAt(a);
+				}
+			}
+		}	
+		return res;
+	}
 }
