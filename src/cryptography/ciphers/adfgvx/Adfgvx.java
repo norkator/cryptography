@@ -3,12 +3,10 @@ package cryptography.ciphers.adfgvx;
 import java.awt.Point;
 
 import cryptography.Mode;
+import cryptography.encoding.vicSequencing.VICSequencing;
 
 public class Adfgvx {
-
-	private static String[][] substitute = { { "y", "e", "n", "2", "9", "r" }, { "x", "8", "h", "t", "o", "s" },
-			{ "k", "5", "4", "m", "0", "j" }, { "u", "f", "l", "z", "3", "a" }, { "d", "b", "v", "c", "6", "p" },
-			{ "g", "i", "q", "w", "1", "7" } };
+	private static String[][] substitute;
 	private static String[] code = { "A", "D", "F", "G", "V", "X" };
 
 	public void main(String[] args) {
@@ -19,7 +17,7 @@ public class Adfgvx {
 			inputText = inputText.toLowerCase();
 			String output = null;
 
-			polibiusSquare(key);
+			String substitute[][] = polibiusSquare(key);
 
 			if (mode == Mode.ENCRYPT) {
 				Point p;
@@ -34,7 +32,8 @@ public class Adfgvx {
 					}
 				}
 				output = res.toString();
-				System.out.println(output);
+				
+				return columnarTransposition(output, key);
 			}
 
 			if (mode == Mode.DECRYPT) {
@@ -61,7 +60,7 @@ public class Adfgvx {
 		}
 	}
 	
-	private static void polibiusSquare(String key) {
+	private static String[][] polibiusSquare(String key) {
 		substitute = new String[6][6];
 		String temp = key+"abcdefghijklmnopqrstuvwxyz0123456789";
 		String result = "";
@@ -76,6 +75,7 @@ public class Adfgvx {
 	    		substitute[a][b] = String.valueOf(result.charAt(a*6+b));
 	    	}
 	    }
+	    return substitute;
 	}
 
 	private static Point findPos(char c) {
@@ -96,4 +96,34 @@ public class Adfgvx {
 		return new Point(i, j);
 	}
 
+	private static String columnarTransposition(String text, String key) {
+		String transposeKey = VICSequencing.encode(key.toUpperCase());
+		final int row = (int) Math.ceil((float)text.length()/(float)key.length());
+		String curr;
+		
+		String[] temp = new String[key.length()];
+		for (int a = 0; a < transposeKey.length(); a++) {
+			int index = Character.getNumericValue(transposeKey.charAt(a));
+
+			curr = "";
+			for(int b=0;b<row;b++) {
+				if(b*key.length() +a < text.length()) {
+					curr += text.charAt(b*key.length() +a);
+				}
+			}
+			
+			temp[index-1] = curr;
+			
+		}
+		
+		String res = "";
+		
+		for(int a=0;a<key.length();a++) {
+			res += temp[a];
+		}
+		
+		
+		return res;
+	}
+	
 }
