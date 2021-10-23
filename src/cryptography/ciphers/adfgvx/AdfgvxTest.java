@@ -11,8 +11,9 @@ public class AdfgvxTest {
 
 	@Test
 	public void runTest() {
-		assertEquals("VAXFGDFVFVADDFDVFDAX", Adfgvx.adfgvx("helloworld", "iamagod", Mode.ENCRYPT));
-//		assertEquals("HELLOWORLD", Adfgvx.adfgvx("DDAVDXDXFFGVFFFXDXAG", Mode.DECRYPT));
+		assertEquals("AFFFFXGDDDFFVDVFXDFF", Adfgvx.adfgvx("HELLOWORLD", "imagine", Mode.ENCRYPT));
+		assertEquals("HELLOWORLD", Adfgvx.adfgvx("AFFFFXGDDDFFVDVFXDFF", "imagine", Mode.DECRYPT));
+		
+		
 	}
-
 }
