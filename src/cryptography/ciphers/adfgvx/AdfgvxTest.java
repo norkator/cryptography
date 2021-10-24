@@ -11,9 +11,9 @@ public class AdfgvxTest {
 
 	@Test
 	public void runTest() {
-		assertEquals("AFFFFXGDDDFFVDVFXDFF", Adfgvx.adfgvx("HELLOWORLD", "imagine", Mode.ENCRYPT));
-		assertEquals("HELLOWORLD", Adfgvx.adfgvx("AFFFFXGDDDFFVDVFXDFF", "imagine", Mode.DECRYPT));
-		
-		
+		assertEquals("DDFADXFGAFFVFXDGDXVX", Adfgvx.adfgvx("HELLOWORLD", "abcdef", Mode.ENCRYPT));
+		assertEquals("HELLOWORLD", Adfgvx.adfgvx("DDFADXFGAFFVFXDGDXVX", "abcdef", Mode.DECRYPT));
+		assertEquals("SAURAVKUMARISTHEKING",Adfgvx.adfgvx(Adfgvx.adfgvx("SAURAVKUMARISTHEKING", "yeahboii", Mode.ENCRYPT), "yeahboii", Mode.DECRYPT));
+		assertEquals("Key size larger than 10, choose smaller key", Adfgvx.adfgvx("HELLOWORLD", "abcdeabcde", Mode.ENCRYPT));
 	}
 }
