@@ -12,7 +12,12 @@ public class Adfgvx {
 	public void main(String[] args) {
 	}
 
+	
+//	KEY size must be less than 10
 	public static String adfgvx(String inputText, String key ,final Mode mode) {
+		if(key.length() >= 10) {
+			return "Key size larger than 10, choose smaller key";
+		}
 		try {
 			inputText = inputText.toLowerCase();
 			String output = null;
@@ -39,10 +44,10 @@ public class Adfgvx {
 			if (mode == Mode.DECRYPT) {
 				StringBuilder res = new StringBuilder();
 				Point p;
-				
+
 				String input = reverseColTranspose(inputText,key);
 				
-				System.out.println(input);
+//				System.out.println(input);
 				
 				for (int i = 0; i < input.length();) {
 					if (input.charAt(i) == ' ') {
@@ -137,7 +142,7 @@ public class Adfgvx {
 		String transposeKey = VICSequencing.encode(key.toUpperCase());
 		
 		String[] temp = new String[col];	
-		
+
 		int textPointer = 0;
 		for(int a=1; a<=col ;a++) {
 			for(int b=0; b<col ;b++) {
@@ -145,11 +150,11 @@ public class Adfgvx {
 				if(a == index) {
 					String curr = "";
 					if(b >= col-toPad) {
-						curr = text.substring(textPointer,textPointer+2)+" ";
-						textPointer+=2;
+						curr = text.substring(textPointer,textPointer+row-1)+" ";
+						textPointer+=row-1;
 					} else {
-						curr = text.substring(textPointer,textPointer+3);
-						textPointer+=3;
+						curr = text.substring(textPointer,textPointer+row);
+						textPointer+=row;
 					}
 					temp[b] = curr;
 				}
@@ -165,6 +170,7 @@ public class Adfgvx {
 				}
 			}
 		}	
+
 		return res;
 	}
 }
