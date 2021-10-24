@@ -13,7 +13,7 @@ public class Adfgvx {
 	}
 
 	
-//	KEY size must be less than 10
+//	KEY size must be < 10
 	public static String adfgvx(String inputText, String key ,final Mode mode) {
 		if(key.length() >= 10) {
 			return "Key size larger than 10, choose smaller key";
