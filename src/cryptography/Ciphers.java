@@ -36,7 +36,7 @@ import java.math.BigInteger;
 import java.security.Security;
 import java.util.Random;
 
-public class Ciphers { 
+public class Ciphers {
 
 	public static void main(String[] args) {
 

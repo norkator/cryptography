@@ -6,16 +6,17 @@ import cryptography.Mode;
 import cryptography.encoding.vicSequencing.VICSequencing;
 
 public class Adfgvx {
+
 	private static String[][] substitute;
-	private static String[] code = { "A", "D", "F", "G", "V", "X" };
+	private static String[] code = {"A", "D", "F", "G", "V", "X"};
 
 	public void main(String[] args) {
 	}
 
-	
-//	KEY size must be < 10
-	public static String adfgvx(String inputText, String key ,final Mode mode) {
-		if(key.length() >= 10) {
+
+	//	KEY size must be < 10
+	public static String adfgvx(String inputText, String key, final Mode mode) {
+		if (key.length() >= 10) {
 			return "Key size larger than 10, choose smaller key";
 		}
 		try {
@@ -37,7 +38,7 @@ public class Adfgvx {
 					}
 				}
 				output = res.toString();
-				
+
 				return columnarTransposition(output, key);
 			}
 
@@ -45,18 +46,18 @@ public class Adfgvx {
 				StringBuilder res = new StringBuilder();
 				Point p;
 
-				String input = reverseColTranspose(inputText,key);
-				
+				String input = reverseColTranspose(inputText, key);
+
 //				System.out.println(input);
-				
-				for (int i = 0; i < input.length();) {
+
+				for (int i = 0; i < input.length(); ) {
 					if (input.charAt(i) == ' ') {
 						res.append(input.charAt(i));
 						i++;
 					} else {
 						String codeInt = "ADFGVX".toLowerCase();
 						p = new Point(codeInt.indexOf(input.substring(i, i + 1)),
-								codeInt.indexOf(input.substring(i + 1, i + 2)));
+							codeInt.indexOf(input.substring(i + 1, i + 2)));
 						res.append(substitute[p.x][p.y]);
 						i = i + 2;
 					}
@@ -69,23 +70,23 @@ public class Adfgvx {
 			return e.toString();
 		}
 	}
-	
+
 	private static String[][] polibiusSquare(String key) {
 		substitute = new String[6][6];
-		String temp = key+"abcdefghijklmnopqrstuvwxyz0123456789";
+		String temp = key + "abcdefghijklmnopqrstuvwxyz0123456789";
 		String result = "";
-	    for (int i = 0; i < temp.length(); i++) {
-	        if(!result.contains(String.valueOf(temp.charAt(i)))) {
-	            result += String.valueOf(temp.charAt(i));
-	        }
-	    }
-	    
-	    for(int a=0;a<6;a++) {
-	    	for(int b=0;b<6;b++) {
-	    		substitute[a][b] = String.valueOf(result.charAt(a*6+b));
-	    	}
-	    }
-	    return substitute;
+		for (int i = 0; i < temp.length(); i++) {
+			if (!result.contains(String.valueOf(temp.charAt(i)))) {
+				result += String.valueOf(temp.charAt(i));
+			}
+		}
+
+		for (int a = 0; a < 6; a++) {
+			for (int b = 0; b < 6; b++) {
+				substitute[a][b] = String.valueOf(result.charAt(a * 6 + b));
+			}
+		}
+		return substitute;
 	}
 
 	private static Point findPos(char c) {
@@ -108,53 +109,53 @@ public class Adfgvx {
 
 	private static String columnarTransposition(String text, String key) {
 		String transposeKey = VICSequencing.encode(key.toUpperCase());
-		final int row = (int) Math.ceil((float)text.length()/(float)key.length());
+		final int row = (int) Math.ceil((float) text.length() / (float) key.length());
 		String curr;
-		
+
 		String[] temp = new String[key.length()];
 		for (int a = 0; a < transposeKey.length(); a++) {
 			int index = Character.getNumericValue(transposeKey.charAt(a));
 
 			curr = "";
-			for(int b=0;b<row;b++) {
-				if(b*key.length() +a < text.length()) {
-					curr += text.charAt(b*key.length() +a);
+			for (int b = 0; b < row; b++) {
+				if (b * key.length() + a < text.length()) {
+					curr += text.charAt(b * key.length() + a);
 				}
 			}
-			
-			temp[index-1] = curr;
-			
+
+			temp[index - 1] = curr;
+
 		}
-		
+
 		String res = "";
-		
-		for(int a=0;a<key.length();a++) {
+
+		for (int a = 0; a < key.length(); a++) {
 			res += temp[a];
-		}	
+		}
 		return res;
 	}
-	
+
 	private static String reverseColTranspose(String text, String key) {
-		final int row = (int) Math.ceil((float)text.length()/(float)key.length());
+		final int row = (int) Math.ceil((float) text.length() / (float) key.length());
 		final int col = key.length();
-		int toPad = row*col - text.length();
-		
+		int toPad = row * col - text.length();
+
 		String transposeKey = VICSequencing.encode(key.toUpperCase());
-		
-		String[] temp = new String[col];	
+
+		String[] temp = new String[col];
 
 		int textPointer = 0;
-		for(int a=1; a<=col ;a++) {
-			for(int b=0; b<col ;b++) {
+		for (int a = 1; a <= col; a++) {
+			for (int b = 0; b < col; b++) {
 				int index = Character.getNumericValue(transposeKey.charAt(b));
-				if(a == index) {
+				if (a == index) {
 					String curr = "";
-					if(b >= col-toPad) {
-						curr = text.substring(textPointer,textPointer+row-1)+" ";
-						textPointer+=row-1;
+					if (b >= col - toPad) {
+						curr = text.substring(textPointer, textPointer + row - 1) + " ";
+						textPointer += row - 1;
 					} else {
-						curr = text.substring(textPointer,textPointer+row);
-						textPointer+=row;
+						curr = text.substring(textPointer, textPointer + row);
+						textPointer += row;
 					}
 					temp[b] = curr;
 				}
@@ -162,14 +163,14 @@ public class Adfgvx {
 		}
 
 		String res = "";
-		
-		for(int a=0;a<row;a++) {
-			for(int b=0;b<col;b++) {
-				if(temp[b].charAt(a) != ' ') {
-					res+=temp[b].charAt(a);
+
+		for (int a = 0; a < row; a++) {
+			for (int b = 0; b < col; b++) {
+				if (temp[b].charAt(a) != ' ') {
+					res += temp[b].charAt(a);
 				}
 			}
-		}	
+		}
 
 		return res;
 	}
