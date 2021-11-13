@@ -10,20 +10,21 @@ public class Adfgvx {
 	private static String[][] substitute;
 	private static String[] code = {"A", "D", "F", "G", "V", "X"};
 
-	public void main(String[] args) {
+	public static void main(String[] args) {	
 	}
 
 
 	//	KEY size must be < 10
-	public static String adfgvx(String inputText, String key, final Mode mode) {
-		if (key.length() >= 10) {
+//	public static String adfgvx(String inputText, String key, final Mode mode) {
+	public static String adfgvx(String inputText, String key1, String key2, final Mode mode) {
+		if (key1.length() >= 10 || key2.length() >= 10) {
 			return "Key size larger than 10, choose smaller key";
 		}
 		try {
 			inputText = inputText.toLowerCase();
 			String output = null;
 
-			String substitute[][] = polibiusSquare(key);
+			String substitute[][] = polibiusSquare(key1);
 
 			if (mode == Mode.ENCRYPT) {
 				Point p;
@@ -39,17 +40,14 @@ public class Adfgvx {
 				}
 				output = res.toString();
 
-				return columnarTransposition(output, key);
+				return columnarTransposition(output, key2);
+	
 			}
-
 			if (mode == Mode.DECRYPT) {
 				StringBuilder res = new StringBuilder();
 				Point p;
 
-				String input = reverseColTranspose(inputText, key);
-
-//				System.out.println(input);
-
+				String input = reverseColTranspose(inputText, key2);
 				for (int i = 0; i < input.length(); ) {
 					if (input.charAt(i) == ' ') {
 						res.append(input.charAt(i));
@@ -86,6 +84,8 @@ public class Adfgvx {
 				substitute[a][b] = String.valueOf(result.charAt(a * 6 + b));
 			}
 		}
+
+		
 		return substitute;
 	}
 
@@ -122,16 +122,17 @@ public class Adfgvx {
 					curr += text.charAt(b * key.length() + a);
 				}
 			}
-
+			
 			temp[index - 1] = curr;
 
 		}
-
 		String res = "";
 
 		for (int a = 0; a < key.length(); a++) {
 			res += temp[a];
 		}
+		
+		
 		return res;
 	}
 
