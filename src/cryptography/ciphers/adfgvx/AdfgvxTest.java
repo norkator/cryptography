@@ -12,7 +12,7 @@ public class AdfgvxTest {
 
 	@Test
 	public void runTest() {
-		assertEquals("SAURAVKUMARISTHEKING", Adfgvx.adfgvx(Adfgvx.adfgvx("SAURAVKUMARISTHEKING",  "cargo", "privacy", Mode.ENCRYPT),  "cargo", "privacy", Mode.DECRYPT));
+		assertEquals("SAURAVKUMARISTHEKING", Adfgvx.adfgvx(Adfgvx.adfgvx("SAURAVKUMARISTHEKING", "cargo", "privacy", Mode.ENCRYPT), "cargo", "privacy", Mode.DECRYPT));
 		assertEquals("Key size larger than 10, choose smaller key", Adfgvx.adfgvx("HELLOWORLD", "abcdeabcde", "cargo", Mode.ENCRYPT));
 	}
 }

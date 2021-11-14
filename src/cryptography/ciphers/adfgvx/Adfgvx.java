@@ -10,7 +10,7 @@ public class Adfgvx {
 	private static String[][] substitute;
 	private static String[] code = {"A", "D", "F", "G", "V", "X"};
 
-	public static void main(String[] args) {	
+	public static void main(String[] args) {
 	}
 
 
@@ -41,7 +41,7 @@ public class Adfgvx {
 				output = res.toString();
 
 				return columnarTransposition(output, key2);
-	
+
 			}
 			if (mode == Mode.DECRYPT) {
 				StringBuilder res = new StringBuilder();
@@ -85,7 +85,7 @@ public class Adfgvx {
 			}
 		}
 
-		
+
 		return substitute;
 	}
 
@@ -122,7 +122,7 @@ public class Adfgvx {
 					curr += text.charAt(b * key.length() + a);
 				}
 			}
-			
+
 			temp[index - 1] = curr;
 
 		}
@@ -131,8 +131,8 @@ public class Adfgvx {
 		for (int a = 0; a < key.length(); a++) {
 			res += temp[a];
 		}
-		
-		
+
+
 		return res;
 	}
 
