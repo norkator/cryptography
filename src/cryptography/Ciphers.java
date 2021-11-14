@@ -90,8 +90,8 @@ public class Ciphers {
 		System.out.println("Gronsfeld decrypt: " + Gronsfeld.gronsfeld("IJNPR", "15243", Mode.DECRYPT));
 
 		// Adfgvx
-		System.out.println("Adfgvx encrypt: " + Adfgvx.adfgvx("HELLOWORLD", Mode.ENCRYPT));
-		System.out.println("Adfgvx decrypt: " + Adfgvx.adfgvx("DDAVDXDXFFGVFFFXDXAG", Mode.DECRYPT));
+		System.out.println("Adfgvx encrypt: " + Adfgvx.adfgvx("ATTACK AT 1200AM", "cargo", "privacy", Mode.ENCRYPT));
+		System.out.println("Adfgvx decrypt: " + Adfgvx.adfgvx("GAVDDAVFGAVFADGFDADVDFGAADVF", "cargo", "privacy", Mode.DECRYPT));
 
 		// Playfair
 		System.out.println("Playfair encrypt: " + Playfair.playfair("HELLOWORLDTEST", "ISFAIR", true, Mode.ENCRYPT));
