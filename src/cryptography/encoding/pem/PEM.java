@@ -1,6 +1,5 @@
 package cryptography.encoding.pem;
 
-import javax.xml.bind.DatatypeConverter;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.Base64;
