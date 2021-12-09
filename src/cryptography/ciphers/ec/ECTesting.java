@@ -1,5 +1,6 @@
 package cryptography.ciphers.ec;
 
+import cryptography.encoding.pem.PEM;
 import java.security.*;
 
 public class ECTesting {
@@ -10,8 +11,10 @@ public class ECTesting {
 
 
 		KeyPair keypair = EC.generateECDSAPrime256V1KeyPair();
-		System.out.println(keypair.getPrivate());
-		System.out.println(keypair.getPublic());
+
+		System.out.println(PEM.ECPrivateKeyToPEMFormat(keypair.getPrivate()));
+		System.out.println(PEM.PublicKeyToPEMFormat(keypair.getPublic()));
+
 
 	}
 
