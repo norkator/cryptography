@@ -21,6 +21,8 @@ Table of contents
 * [Encoding](#encoding)
 * [Hashes](#hashes)
 * [Random](#random)
+* [Certificates](#certificates)
+* [Signatures](#signatures)
 * [Installation](#installation)
 * [Running tests](#running-tests)
     * [Automatically](#automatically)
@@ -135,6 +137,22 @@ of numbers or symbols that cannot be reasonably predicted better than by a rando
 ##### [Dummy - Bytes](https://github.com/norkator/Cryptography/blob/master/src/cryptography/random/dummy/Dummy.java)
 ##### [Secure Random - Strong / SHA1PRNG](https://github.com/norkator/Cryptography/blob/master/src/cryptography/random/secureRandom/SecureRandom.java)
 
+
+Certificates
+============
+In computer security, an attribute certificate, or authorization certificate (AC) is a digital document containing 
+attributes associated to the holder by the issuer. When the associated attributes are mainly used for the purpose of 
+authorization, AC is called authorization certificate. AC is standardized in X.509. RFC 5755 further specifies the 
+usage for authorization purpose in the Internet.
+
+##### [X509](https://github.com/norkator/Cryptography/blob/master/src/cryptography/certificates/X509.java)
+
+
+Signatures
+============
+mathematical scheme for verifying the authenticity of digital messages or documents. A valid digital signature, 
+where the prerequisites are satisfied, gives a recipient very strong reason to believe that the message was created 
+by a known sender (authentication), and that the message was not altered in transit (integrity).
 
 <br>
 
