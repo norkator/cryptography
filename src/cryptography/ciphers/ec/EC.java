@@ -7,7 +7,7 @@ import org.bouncycastle.jce.spec.ECParameterSpec;
 import java.security.*;
 
 /**
- * Elliptic curve using Bouncy Castlye provider
+ * Elliptic curve using Bouncy Castle provider
  */
 public class EC {
 
