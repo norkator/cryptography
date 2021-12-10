@@ -2,6 +2,8 @@ package cryptography.encoding.pem;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.security.cert.CertificateEncodingException;
+import java.security.cert.X509Certificate;
 import java.util.Base64;
 
 public class PEM {
@@ -32,13 +34,13 @@ public class PEM {
 
 	/**
 	 * @param certificate created from key pair
-	 * @return public key in PEM format
+	 * @return certificate in PEM format
 	 */
-	// public static String PublicKeyToPEMFormat(Certificate certificate) {
-	// 	return "-----BEGIN CERTIFICATE-----\n" +
-	//	new String(encoder.encode(certificate.getEncoded())) +
-	// 		"\n-----END CERTIFICATE----";
-	// }
+	public static String X509CertificateToPEMFormat(X509Certificate certificate) throws CertificateEncodingException {
+		return "-----BEGIN CERTIFICATE-----\n" +
+			new String(encoder.encode(certificate.getEncoded())) +
+			"\n-----END CERTIFICATE----";
+	}
 
 
 }
