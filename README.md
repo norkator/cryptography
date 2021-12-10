@@ -180,7 +180,10 @@ External libraries
 #### core-1.58.0.0.jar | prov-1.58.0.0.jar | bcpg-jdk15on-1.58.0.0.jar | bcpkix-jdk15on-1.58.0.0.jar (Spongy Castle)
 * Providing tons of newer strong Cryptographic methods. See https://rtyley.github.io/spongycastle/ and http://www.bouncycastle.org/java.html
 
-### bcprov-jdk15on-166
+### bcprov-jdk15on-170
+* BouncyCastle signed cryptography provider
+
+### bcpkix-jdk15on-170
 * BouncyCastle signed cryptography provider
 
 #### org.junit_4.13.0.v20200204-1500.jar | core-1.3.0.jar
@@ -204,7 +207,8 @@ Every time new external jar library is added, it must be also added to `build.xm
     <pathelement location="jar/bcpg-jdk15on-1.58.0.0.jar"/>
     <pathelement location="jar/org.junit_4.13.0.v20200204-1500.jar"/>
     <pathelement location="jar/core-1.3.0.jar"/>
-    <pathelement location="jar/bcprov-jdk15on-166"/>
+    <pathelement location="jar/bcprov-jdk15on-170"/>
+    <pathelement location="jar/bcpkix-jdk15on-170"/>
 </path>
 ```
 
