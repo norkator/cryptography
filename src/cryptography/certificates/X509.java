@@ -1,6 +1,5 @@
 package cryptography.certificates;
 
-import cryptography.random.secureRandom.SecureRandom;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
 import org.bouncycastle.cert.X509CertificateHolder;
@@ -14,6 +13,7 @@ import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 import java.math.BigInteger;
 import java.security.KeyPair;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.time.Duration;
@@ -37,7 +37,7 @@ public class X509 {
 	public static X509Certificate createCertificate(
 		final KeyPair keyPair, final String signatureAlgorithm, final String commonName, final int validityDays
 	) throws CertificateException, NoSuchAlgorithmException, OperatorCreationException {
-		BigInteger serial = new BigInteger(64, SecureRandom.secureRandomStrongBytes(16));
+		BigInteger serial = new BigInteger(64, new SecureRandom());
 		X500Name x500Name = new X500Name("CN=" + commonName);
 		final Instant now = Instant.now();
 		final Date from = Date.from(now);
