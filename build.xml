@@ -22,6 +22,7 @@
     	<pathelement location="jar/core-1.3.0.jar"/>
 		<pathelement location="jar/bcprov-jdk15on-170.jar"/>
 		<pathelement location="jar/bcpkix-jdk15on-170.jar"/>
+		<pathelement location="jar/bcutil-jdk15on-170.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
