@@ -21,6 +21,8 @@ Table of contents
 * [Encoding](#encoding)
 * [Hashes](#hashes)
 * [Random](#random)
+* [Certificates](#certificates)
+* [Signatures](#signatures)
 * [Installation](#installation)
 * [Running tests](#running-tests)
     * [Automatically](#automatically)
@@ -136,6 +138,22 @@ of numbers or symbols that cannot be reasonably predicted better than by a rando
 ##### [Secure Random - Strong / SHA1PRNG](https://github.com/norkator/Cryptography/blob/master/src/cryptography/random/secureRandom/SecureRandom.java)
 
 
+Certificates
+============
+In computer security, an attribute certificate, or authorization certificate (AC) is a digital document containing 
+attributes associated to the holder by the issuer. When the associated attributes are mainly used for the purpose of 
+authorization, AC is called authorization certificate. AC is standardized in X.509. RFC 5755 further specifies the 
+usage for authorization purpose in the Internet.
+
+##### [X509](https://github.com/norkator/Cryptography/blob/master/src/cryptography/certificates/X509.java)
+
+
+Signatures
+============
+mathematical scheme for verifying the authenticity of digital messages or documents. A valid digital signature, 
+where the prerequisites are satisfied, gives a recipient very strong reason to believe that the message was created 
+by a known sender (authentication), and that the message was not altered in transit (integrity).
+
 <br>
 
 Installation
@@ -180,7 +198,10 @@ External libraries
 #### core-1.58.0.0.jar | prov-1.58.0.0.jar | bcpg-jdk15on-1.58.0.0.jar | bcpkix-jdk15on-1.58.0.0.jar (Spongy Castle)
 * Providing tons of newer strong Cryptographic methods. See https://rtyley.github.io/spongycastle/ and http://www.bouncycastle.org/java.html
 
-### bcprov-jdk15on-166
+### bcprov-jdk15on-170
+* BouncyCastle signed cryptography provider
+
+### bcpkix-jdk15on-170
 * BouncyCastle signed cryptography provider
 
 #### org.junit_4.13.0.v20200204-1500.jar | core-1.3.0.jar
@@ -204,7 +225,8 @@ Every time new external jar library is added, it must be also added to `build.xm
     <pathelement location="jar/bcpg-jdk15on-1.58.0.0.jar"/>
     <pathelement location="jar/org.junit_4.13.0.v20200204-1500.jar"/>
     <pathelement location="jar/core-1.3.0.jar"/>
-    <pathelement location="jar/bcprov-jdk15on-166"/>
+    <pathelement location="jar/bcprov-jdk15on-170"/>
+    <pathelement location="jar/bcpkix-jdk15on-170"/>
 </path>
 ```
 
