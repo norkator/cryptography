@@ -7,13 +7,14 @@ import cryptography.other.fileTools.PEMToKey;
 import org.junit.Test;
 
 import java.security.PrivateKey;
+import java.security.PublicKey;
 
 import static org.junit.Assert.assertEquals;
 
 public class PEMTest {
 
 	@Test
-	public void runTest() throws Exception {
+	public void privateKey() throws Exception {
 
 		String PEMContentsOriginal = "-----BEGIN EC PRIVATE KEY-----\n" +
 			"MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgfLXrITJ2RIoAQhIs\n" +
@@ -25,6 +26,21 @@ public class PEMTest {
 		PrivateKey privateKey = PEMToKey.getPemPrivateKey(PEMContentsOriginal, "ECDSA");
 
 		String PEMContents = PEM.ECPrivateKeyToPEMFormat(privateKey);
+
+		assertEquals(PEMContentsOriginal, PEMContents);
+	}
+
+	@Test
+	public void publicKey() throws Exception {
+
+		String PEMContentsOriginal = "-----BEGIN PUBLIC KEY-----\n" +
+			"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEVQ6XXBFwG9mAqijwD2DN9Pgq62l0\n" +
+			"oJmXwpptVDHsonyZ3Wl4J5DHBKfRVgD7KUPEwN9lEMjBqVGNSYbI7KP3mw==\n" +
+			"-----END PUBLIC KEY-----";
+
+		PublicKey publicKey = PEMToKey.getPemPublicKey(PEMContentsOriginal, "ECDSA");
+
+		String PEMContents = PEM.PublicKeyToPEMFormat(publicKey);
 
 		assertEquals(PEMContentsOriginal, PEMContents);
 	}
