@@ -68,12 +68,16 @@ import cryptography.hashes.xor.XorTest;
 import cryptography.random.dummy.DummyTest;
 import cryptography.random.secureRandom.SecureRandomTest;
 import cryptography.padding.pad.PadTest;
+import cryptography.signatures.jwt.JWTTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({
+	// --------------------------
+	// Certificates
+	// # no test cases yet
 	// --------------------------
 	// Ciphers
 	CaesarTest.class,
@@ -145,12 +149,18 @@ import org.junit.runners.Suite.SuiteClasses;
 	XorTest.class,
 	KupynaTest.class,
 	// --------------------------
+	// Other
+	// # no test cases yet
+	// --------------------------
+	// Padding
+	PadTest.class,
+	// --------------------------
 	// Random
 	DummyTest.class,
 	SecureRandomTest.class,
 	// --------------------------
-	// Padding
-	PadTest.class,
+	// Signatures
+	JWTTest.class,
 })
 
 public class JunitTestSuite {

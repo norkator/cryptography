@@ -53,4 +53,28 @@ public class JWT {
 		return verifier.verify(token);
 	}
 
+
+	/**
+	 * Verify elliptic curve based JWT
+	 * # this is meant for test case
+	 *
+	 * @param publicPem of key pair
+	 * @param issuer    party name
+	 * @param token     of created jwt
+	 * @return boolean result
+	 */
+	public static boolean isVerifiedECDSA256Jwt(String publicPem, String issuer, final String token) throws InvalidKeySpecException, NoSuchAlgorithmException {
+		try {
+			ECKey publicKey = (ECKey) PEMToKey.getPemPublicKey(publicPem, "ECDSA");
+			Algorithm algorithm = Algorithm.ECDSA256(publicKey);
+			JWTVerifier verifier = com.auth0.jwt.JWT.require(algorithm)
+				.withIssuer(issuer)
+				.build();
+			verifier.verify(token);
+			return true;
+		} catch (JWTVerificationException e) {
+			return false;
+		}
+	}
+
 }

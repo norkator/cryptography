@@ -16,6 +16,7 @@ public class JWTTesting {
 
 		String issuer = "nitramite";
 
+
 		KeyPair keypair = EC.generateECDSAPrime256V1KeyPair();
 
 		String privatePem = PEM.ECPrivateKeyToPEMFormat(keypair.getPrivate());
