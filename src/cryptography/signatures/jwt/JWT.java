@@ -28,7 +28,9 @@ public class JWT {
 		Algorithm algorithm = Algorithm.ECDSA256(privateKey);
 		return com.auth0.jwt.JWT.create()
 			.withIssuer(issuer)
-			// .withArrayClaim() Todo.. implement easy way to give claims
+			.withClaim("test claim", "test claim value")
+			// .withNotBefore()
+			// .withExpiresAt()
 			.sign(algorithm);
 	}
 

@@ -154,6 +154,8 @@ mathematical scheme for verifying the authenticity of digital messages or docume
 where the prerequisites are satisfied, gives a recipient very strong reason to believe that the message was created 
 by a known sender (authentication), and that the message was not altered in transit (integrity).
 
+##### [JWT - Json Web Token](https://github.com/norkator/Cryptography/blob/master/src/cryptography/signatures/jwt/JWT.java)
+
 <br>
 
 Installation
