@@ -23,6 +23,7 @@
 		<pathelement location="jar/bcprov-jdk15on-170.jar"/>
 		<pathelement location="jar/bcpkix-jdk15on-170.jar"/>
 		<pathelement location="jar/bcutil-jdk15on-170.jar"/>
+		<pathelement location="jar/java-jwt-3.1.0.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
