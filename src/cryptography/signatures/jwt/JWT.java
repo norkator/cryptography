@@ -21,11 +21,9 @@ public class JWT {
 	 * @param privatePem of EC keypair
 	 * @param issuer     party name
 	 * @return json web token
-	 * @throws JWTCreationException
-	 * @throws InvalidKeySpecException
-	 * @throws NoSuchAlgorithmException
+	 * @throws JWTCreationException if jwt creation fails
 	 */
-	public static String createECDSA256Jwt(String privatePem, String issuer) throws Exception { // Todo.. too wide exception
+	public static String createECDSA256Jwt(String privatePem, String issuer) throws InvalidKeySpecException, NoSuchAlgorithmException {
 		ECKey privateKey = (ECKey) PEMToKey.getPemPrivateKey(privatePem, "ECDSA");
 		Algorithm algorithm = Algorithm.ECDSA256(privateKey);
 		return com.auth0.jwt.JWT.create()
@@ -43,10 +41,8 @@ public class JWT {
 	 * @param token     of created jwt
 	 * @return DecodedJWT including claims
 	 * @throws JWTVerificationException thrown if verification fails
-	 * @throws InvalidKeySpecException
-	 * @throws NoSuchAlgorithmException
 	 */
-	public static DecodedJWT verifyECDSA256Jwt(String publicPem, String issuer, final String token) throws Exception { // Todo.. too wide exception
+	public static DecodedJWT verifyECDSA256Jwt(String publicPem, String issuer, final String token) throws JWTVerificationException, InvalidKeySpecException, NoSuchAlgorithmException {
 		ECKey publicKey = (ECKey) PEMToKey.getPemPublicKey(publicPem, "ECDSA");
 		Algorithm algorithm = Algorithm.ECDSA256(publicKey);
 		JWTVerifier verifier = com.auth0.jwt.JWT.require(algorithm)
