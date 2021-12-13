@@ -3,8 +3,10 @@ package cryptography.other.fileTools;
 import org.spongycastle.jce.provider.BouncyCastleProvider;
 
 import java.security.KeyFactory;
+import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
@@ -13,7 +15,7 @@ public class PEMToKey {
 
 	private static Base64.Decoder decoder = Base64.getMimeDecoder();
 
-	public static PrivateKey getPemPrivateKey(String pemContents, String algorithm) throws Exception {
+	public static PrivateKey getPemPrivateKey(String pemContents, String algorithm) throws NoSuchAlgorithmException, InvalidKeySpecException {
 		String privateKeyPEM = pemContents.replace("-----BEGIN PRIVATE KEY-----", "");
 		privateKeyPEM = privateKeyPEM.replace("-----END PRIVATE KEY-----", "");
 		privateKeyPEM = privateKeyPEM.replace("-----BEGIN EC PRIVATE KEY-----", "");
@@ -26,7 +28,7 @@ public class PEMToKey {
 		return kf.generatePrivate(spec);
 	}
 
-	public static PublicKey getPemPublicKey(String pemContents, String algorithm) throws Exception {
+	public static PublicKey getPemPublicKey(String pemContents, String algorithm) throws NoSuchAlgorithmException, InvalidKeySpecException {
 		String publicPEM = pemContents.replace("-----BEGIN PUBLIC KEY-----", "");
 		publicPEM = publicPEM.replace("-----END PUBLIC KEY-----", "");
 
