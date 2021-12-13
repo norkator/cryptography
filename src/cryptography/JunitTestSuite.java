@@ -3,6 +3,8 @@
  */
 package cryptography;
 
+import cryptography.ciphers.ec.ECTest;
+import cryptography.ciphers.onetimepad.OneTimePadTest;
 import cryptography.ciphers.vic.VICTest;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
 import cryptography.ciphers.aes.AESTest;
@@ -33,6 +35,7 @@ import cryptography.converters.binaryHex.BinaryHexTest;
 import cryptography.converters.binaryInteger.BinaryIntegerTest;
 import cryptography.converters.binaryText.BinaryTextTest;
 import cryptography.converters.compliment.ComplimentTest;
+import cryptography.encoding.pem.PEMTest;
 import cryptography.encoding.vicSequencing.VICSequencingTest;
 import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.encoding.adaptiveHuffman.AdaptiveHuffmanTest;
@@ -101,6 +104,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	AESTest.class,
 	EllipticCurveTest.class,
 	VICTest.class,
+	OneTimePadTest.class,
+	ECTest.class,
 	// --------------------------
 	// Converters
 	BinaryDecimalTest.class,
@@ -122,6 +127,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	RleTest.class,
 	KoblitzTest.class,
 	VICSequencingTest.class,
+	PEMTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
