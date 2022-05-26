@@ -93,6 +93,7 @@ Encoding is used to represent data in ASCII string format by translating the dat
 ##### [Adaptive Huffman](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/adaptiveHuffman/AdaptiveHuffman.java)
 ##### [Base16](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base16/Base16.java)
 ##### [Base32](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base32/Base32.java)
+##### [Base58](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base58/Base58.java)
 ##### [Base64](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base64/Base64.java)
 ##### [Base85](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base85/Base85.java)
 ##### [Base91](https://github.com/norkator/Cryptography/blob/master/src/cryptography/encoding/base91/Base91.java)

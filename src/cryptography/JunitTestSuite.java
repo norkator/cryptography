@@ -35,6 +35,7 @@ import cryptography.converters.binaryHex.BinaryHexTest;
 import cryptography.converters.binaryInteger.BinaryIntegerTest;
 import cryptography.converters.binaryText.BinaryTextTest;
 import cryptography.converters.compliment.ComplimentTest;
+import cryptography.encoding.base58.Base58Test;
 import cryptography.encoding.pem.PEMTest;
 import cryptography.encoding.vicSequencing.VICSequencingTest;
 import cryptography.encoding.a1z26.A1z26Test;
@@ -122,6 +123,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	Base16Test.class,
 	A1z26Test.class,
 	Base32Test.class,
+	Base58Test.class,
 	Base64Test.class,
 	Base85Test.class,
 	Base91Test.class,
