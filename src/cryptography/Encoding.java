@@ -1,6 +1,7 @@
 package cryptography;
 
 
+import cryptography.encoding.base58.Base58;
 import cryptography.encoding.vicSequencing.VICSequencing;
 import cryptography.encoding.a1z26.A1z26;
 import cryptography.encoding.base16.Base16;
@@ -29,6 +30,10 @@ public class Encoding {
 		// Base32
 		System.out.println("Base32 encode: " + Base32.base32("HELLO", Mode.ENCODE));
 		System.out.println("Base32 decode: " + Base32.base32("JBCUYTCP", Mode.DECODE));
+
+		// Base58
+		System.out.println("Base58 encode: " + Base58.encodeFromString("HELLO"));
+		System.out.println("Base58 decode: " + Base58.decodeToString("99v1Y8E"));
 
 		// Base64
 		System.out.println("Base64 encode: " + Base64.base64("HELLO", Mode.ENCODE));
