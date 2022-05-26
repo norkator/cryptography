@@ -5,7 +5,7 @@ package cryptography.encoding.base58;
  * Copyright 2018 Andreas Schildbach
  *
  * From https://github.com/bitcoinj/bitcoinj/blob/master/core/src/main/java/org/bitcoinj/core/Base58.java
- * Added decodeToString function to return string instead of byte array
+ * Added encodeFromString and decodeToString functions to use directly strings instead of byte arrays
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,6 +136,10 @@ public class Base58 {
 
 	public static BigInteger decodeToBigInteger(String input) {
 		return new BigInteger(1, decode(input));
+	}
+
+	public static String encodeFromString(String input) {
+		return encode(input.getBytes());
 	}
 
 	public static String decodeToString(String input) {
