@@ -4,6 +4,7 @@
 package cryptography;
 
 import cryptography.ciphers.ec.ECTest;
+import cryptography.ciphers.navajo.NavajoTest;
 import cryptography.ciphers.onetimepad.OneTimePadTest;
 import cryptography.ciphers.vic.VICTest;
 import cryptography.ciphers.adfgvx.AdfgvxTest;
@@ -111,6 +112,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	VICTest.class,
 	OneTimePadTest.class,
 	ECTest.class,
+	NavajoTest.class,
 	// --------------------------
 	// Converters
 	BinaryDecimalTest.class,

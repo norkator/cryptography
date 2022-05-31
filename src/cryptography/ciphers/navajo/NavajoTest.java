@@ -15,6 +15,8 @@ public class NavajoTest {
 			result.contains("TSE-NILL")
 		);
 
+		assertEquals("TSAH-AS-ZIH BESH-DO-TLIZ ", Navajo.encrypt("YZ"));
+
 		assertEquals("AA", Navajo.decrypt("WOL-LA-CHEE TSE-NILL"));
 	}
 
