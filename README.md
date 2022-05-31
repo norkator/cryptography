@@ -63,6 +63,7 @@ representation of the information, known as plaintext, into an alternative form 
 ##### [IDEA](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/idea/IDEA.java)
 ##### [Keyword](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/keyword/Keyword.java)
 ##### [Khazad - 128](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/khazad/KhazadMethod.java)
+##### [Navajo](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/navajo/Navajo.java)
 ##### [OneTimePad | Vernam](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/onetimepad/OneTimePad.java)
 ##### [Playfair](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/playfair/Playfair.java)
 ##### [Porta](https://github.com/norkator/Cryptography/blob/master/src/cryptography/ciphers/porta/Porta.java)
