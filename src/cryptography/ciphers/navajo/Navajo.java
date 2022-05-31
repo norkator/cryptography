@@ -41,6 +41,7 @@ public class Navajo {
 
 
 	public static String encrypt(String input) {
+		input = input.toUpperCase();
 		Map<String, String[]> map = getNavajoMap();
 		StringBuilder sb = new StringBuilder();
 

@@ -9,6 +9,7 @@ import cryptography.ciphers.atbash.Atbash;
 import cryptography.ciphers.caesar.Caesar;
 import cryptography.ciphers.cast.CAST;
 import cryptography.ciphers.idea.IDEA;
+import cryptography.ciphers.navajo.Navajo;
 import cryptography.ciphers.railfence.RailFence;
 import cryptography.ciphers.rc.RC;
 import cryptography.ciphers.scytale.Scytale;
@@ -225,6 +226,9 @@ public class Ciphers {
 			System.out.println(e.toString());
 		}
 
+		// Navajo
+		System.out.println("Navajo encrypt: " + Navajo.encrypt("CRYPTOGRAPHY"));
+		System.out.println("Navajo decrypt: " + Navajo.decrypt("MOASI GAH TSAH-AS-ZIH CLA-GI-AIH THAN-ZIE NE-AHS-JAH AH-TAD DAH-NES-TSA BE-LA-SANA CLA-GI-AIH CHA TSAH-AS-ZIH"));
 
 	}
 
