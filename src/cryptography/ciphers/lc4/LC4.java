@@ -31,8 +31,8 @@ public class LC4 {
 			char[] kC = key.toCharArray();
 			for (int i = 0; i < kC.length; i++) {
 				char c = kC[i];
-				int Px = alphabet.indexOf(c) %size;
-				int Py = (int) Math.floor(alphabet.indexOf(c) /size);
+				int Px = alphabet.indexOf(c) % size;
+				int Py = (int) Math.floor(alphabet.indexOf(c) / size);
 
 
 				// for (let shiftedRight = 0; shiftedRight < Px; shiftedRight++)
@@ -88,14 +88,37 @@ public class LC4 {
 		}
 	}
 
+
 	private static void randomElement() {
 	}
 
-	private static void shiftRowRight() {
+
+	/**
+	 * @param mode    algorithm selection
+	 * @param row     index of row to shift
+	 * @param markerI row of the marker in the state
+	 * @param markerJ column of the marker in the state
+	 * @param state   matrix
+	 * @return updated state matrix
+	 */
+	private static int[][] shiftRowRight(LC4Mode mode, int row, int markerI, int markerJ, int[][] state) {
+		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
+
+		state[row] = [
+		state[row][state[row].length - 1],
+        	...state[row].slice(0, -1)
+    	]
+
+
+		if (marker.i == row) marker.j = (marker.j + 1) % size;
+
+		return state;
 	}
+
 
 	private static void shiftColumnDown() {
 	}
+
 
 	/**
 	 * Return the coordinates of given search element in the state matrix
@@ -104,7 +127,7 @@ public class LC4 {
 	 * @param state     matrix [ 1, 17, 23, 30, 12, 25 ], [ 19, 31, 20, 22, 28, 29 ], ...
 	 * @return position vector in the form [`row`, `column`]
 	 */
-	private static int[] position(int character, String[] state) {
+	private static int[] position(int character, int[][] state) {
 		int[] vector = {0, 0};
 		for (int row = 0; row < state.length; row++) {
 			int column = state[row].indexOf(character);
