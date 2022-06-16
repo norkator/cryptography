@@ -7,13 +7,29 @@ import java.util.Random;
  */
 public class LC4 {
 
-	public static String encrypt(String msg) {
+	final static String ALPHABET = "#_23456789abcdefghijklmnopqrstuvwxyz";
+	final static String ALPHABET_LS47 = "_abcdefghijklmnopqrstuvwxyz.0123456789,-+*/:?!'()";
+	final static int GRID_SIZE = 6;
+	final static int GRID_SIZE_LS47 = 7;
+
+
+	public static String encrypt(LC4Mode mode, String msg) {
+		String alphabet = mode.equals(LC4Mode.ALPHABET_LS47) ? ALPHABET_LS47 : ALPHABET;
+		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
+
+		char[] msgA = msg.toCharArray();
+		for (int i = 0; i < msgA.length; i++) {
+			char msgC = msgA[i];
+			int code = alphabet.indexOf(msgC);
+
+			//        let [row, col] = position(code, state);
+		}
 
 		return null;
 	}
 
 
-	public static String decrypt(String msg) {
+	public static String decrypt(LC4Mode mode, String msg) {
 
 		return null;
 	}
@@ -46,7 +62,24 @@ public class LC4 {
 	private static void shiftColumnDown() {
 	}
 
-	private static void position() {
+	/**
+	 * Return the coordinates of given search element in the state matrix
+	 * @param c search element
+	 * @param state matrix
+	 * @return position vector in the form [`row`, `column`]
+	 */
+	private static int[] position(char c, String[] state) {
+		int[] vector = {0, 0};
+		for (int row = 0; row < state.length; row++) {
+			int column = state[row].indexOf(c);
+
+			if (column > -1) {
+				vector[0] = row;
+				vector[1] = column;
+				break;
+			}
+		}
+		return vector;
 	}
 
 }
