@@ -1,5 +1,6 @@
 package cryptography.ciphers.lc4;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -11,6 +12,40 @@ public class LC4 {
 	final static String ALPHABET_LS47 = "_abcdefghijklmnopqrstuvwxyz.0123456789,-+*/:?!'()";
 	final static int GRID_SIZE = 6;
 	final static int GRID_SIZE_LS47 = 7;
+
+
+	public void initState(LC4Mode mode, String key) {
+		String alphabet = mode.equals(LC4Mode.ALPHABET_LS47) ? ALPHABET_LS47 : ALPHABET;
+		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
+		char[] characters = key.length() == size * size ? key.toCharArray() : alphabet.toCharArray();
+
+		int[][] S = new int[size][size];
+		Arrays.fill(S, new int[size]);
+
+		for (int k = 0; k < alphabet.length(); k++) {
+			int t = (int) Math.floor(k / size);
+			S[t][k % size] = alphabet.indexOf(characters[k]);
+		}
+
+		if (key.length() != size * size) {
+			char[] kC = key.toCharArray();
+			for (int i = 0; i < kC.length; i++) {
+				char c = kC[i];
+				int Px = alphabet.indexOf(c) %size;
+				int Py = (int) Math.floor(alphabet.indexOf(c) /size);
+
+
+				// for (let shiftedRight = 0; shiftedRight < Px; shiftedRight++)
+				// 	shiftRowRight(S, i % size, {}, mode);
+
+				// for (let shiftedDown = 0; shiftedDown < Py; shiftedDown++)
+				// 	shiftColumnDown(S, i % size, {}, mode);
+
+			}
+		}
+
+		return S;
+	}
 
 
 	public static String encrypt(LC4Mode mode, String msg) {
@@ -64,14 +99,15 @@ public class LC4 {
 
 	/**
 	 * Return the coordinates of given search element in the state matrix
-	 * @param c search element
-	 * @param state matrix
+	 *
+	 * @param character search element
+	 * @param state     matrix [ 1, 17, 23, 30, 12, 25 ], [ 19, 31, 20, 22, 28, 29 ], ...
 	 * @return position vector in the form [`row`, `column`]
 	 */
-	private static int[] position(char c, String[] state) {
+	private static int[] position(int character, String[] state) {
 		int[] vector = {0, 0};
 		for (int row = 0; row < state.length; row++) {
-			int column = state[row].indexOf(c);
+			int column = state[row].indexOf(character);
 
 			if (column > -1) {
 				vector[0] = row;
