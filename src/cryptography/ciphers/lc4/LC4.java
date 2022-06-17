@@ -14,7 +14,7 @@ public class LC4 {
 	final static int GRID_SIZE_LS47 = 7;
 
 
-	public void initState(LC4Mode mode, String key) {
+	public static int[][] initState(LC4Mode mode, String key) {
 		String alphabet = mode.equals(LC4Mode.ALPHABET_LS47) ? ALPHABET_LS47 : ALPHABET;
 		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
 		char[] characters = key.length() == size * size ? key.toCharArray() : alphabet.toCharArray();
@@ -34,17 +34,27 @@ public class LC4 {
 				int Px = alphabet.indexOf(c) % size;
 				int Py = (int) Math.floor(alphabet.indexOf(c) / size);
 
+				for (int shiftedRight = 0; shiftedRight < Px; shiftedRight++) {
+					shiftRowRight(mode, i % size, 0, 0, S);
+				}
 
-				// for (let shiftedRight = 0; shiftedRight < Px; shiftedRight++)
-				// 	shiftRowRight(S, i % size, {}, mode);
-
-				// for (let shiftedDown = 0; shiftedDown < Py; shiftedDown++)
-				// 	shiftColumnDown(S, i % size, {}, mode);
+				for (int shiftedDown = 0; shiftedDown < Py; shiftedDown++) {
+					shiftColumnDown(mode, i % size, 0, 0, S);
+				}
 
 			}
 		}
 
-		// return S;
+
+		for (int[] ints : S) {
+			for (int anInt : ints) {
+				System.out.print(anInt + ", ");
+			}
+			System.out.println("");
+		}
+
+
+		return S;
 	}
 
 
@@ -105,9 +115,9 @@ public class LC4 {
 		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
 
 		int[] ordered = new int[state[row].length];
-		int j, last;
 		ordered[0] = state[row][state[row].length - 1];
-		for (j = 1; j < state[row].length; j++) {
+		//noinspection ManualArrayCopy
+		for (int j = 1; j < state[row].length; j++) {
 			ordered[j] = state[row][j - 1];
 		}
 		state[row] = ordered;
@@ -118,7 +128,25 @@ public class LC4 {
 	}
 
 
-	private static void shiftColumnDown() {
+	public static int[][] shiftColumnDown(LC4Mode mode, int col, int markerI, int markerJ, int[][] state) {
+		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
+		// int shiftRow = size - 1;
+		// int last = state[state.length][0];
+
+		int[] shifted = new int[state.length];
+
+		shifted[0] = state[state.length - 1][0];
+		for (int j = 1; j < state.length; j++) {
+			shifted[j] = state[j - 1][0];
+		}
+		for (int i = 0; i < state.length; i++) {
+			state[i][0] = shifted[i];
+			// System.out.println(state[i][0] + ", ");
+		}
+
+		if (markerJ == col) markerI = (markerI + 1) % size;
+
+		return state;
 	}
 
 
