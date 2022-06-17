@@ -44,7 +44,7 @@ public class LC4 {
 			}
 		}
 
-		return S;
+		// return S;
 	}
 
 
@@ -101,16 +101,18 @@ public class LC4 {
 	 * @param state   matrix
 	 * @return updated state matrix
 	 */
-	private static int[][] shiftRowRight(LC4Mode mode, int row, int markerI, int markerJ, int[][] state) {
+	public static int[][] shiftRowRight(LC4Mode mode, int row, int markerI, int markerJ, int[][] state) {
 		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
 
-		state[row] = [
-		state[row][state[row].length - 1],
-        	...state[row].slice(0, -1)
-    	]
+		int[] ordered = new int[state[row].length];
+		int j, last;
+		ordered[0] = state[row][state[row].length - 1];
+		for (j = 1; j < state[row].length; j++) {
+			ordered[j] = state[row][j - 1];
+		}
+		state[row] = ordered;
 
-
-		if (marker.i == row) marker.j = (marker.j + 1) % size;
+		if (markerI == row) markerJ = (markerJ + 1) % size;
 
 		return state;
 	}
@@ -128,17 +130,19 @@ public class LC4 {
 	 * @return position vector in the form [`row`, `column`]
 	 */
 	private static int[] position(int character, int[][] state) {
-		int[] vector = {0, 0};
-		for (int row = 0; row < state.length; row++) {
-			int column = state[row].indexOf(character);
+		// int[] vector = {0, 0};
+		// for (int row = 0; row < state.length; row++) {
+		// 	int column = state[row].indexOf(character);
 
-			if (column > -1) {
-				vector[0] = row;
-				vector[1] = column;
-				break;
-			}
-		}
-		return vector;
+		// 	if (column > -1) {
+		// 		vector[0] = row;
+		// 		vector[1] = column;
+		// 		break;
+		// 	}
+		// }
+		// return vector;
+
+		return null;
 	}
 
 }
