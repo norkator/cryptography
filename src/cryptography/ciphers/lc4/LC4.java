@@ -20,39 +20,43 @@ public class LC4 {
 		char[] characters = key.length() == size * size ? key.toCharArray() : alphabet.toCharArray();
 
 		int[][] S = new int[size][size];
-		Arrays.fill(S, new int[size]);
+
+//		Array.fill was initializing with references, exact value needs to be store as elements
+		for(int a=0;a<size;a++) {
+			for(int b=0;b<size;b++) {
+				S[a][b] = 0;
+			}
+		}
 
 		for (int k = 0; k < alphabet.length(); k++) {
 			int t = (int) Math.floor(k / size);
 			S[t][k % size] = alphabet.indexOf(characters[k]);
 		}
-
+		
+		
 		if (key.length() != size * size) {
-			char[] kC = key.toCharArray();
-			for (int i = 0; i < kC.length; i++) {
-				char c = kC[i];
-				int Px = alphabet.indexOf(c) % size;
-				int Py = (int) Math.floor(alphabet.indexOf(c) / size);
-
-				for (int shiftedRight = 0; shiftedRight < Px; shiftedRight++) {
+			int i = 0;
+			for(char ch:key.toCharArray()) {
+	            int Px = alphabet.indexOf(ch) % size;
+	            int Py = (int) Math.floor(alphabet.indexOf(ch)/size);
+	            
+	            for (int shiftedRight = 0; shiftedRight < Px; shiftedRight++) {
 					shiftRowRight(mode, i % size, 0, 0, S);
 				}
 
 				for (int shiftedDown = 0; shiftedDown < Py; shiftedDown++) {
 					shiftColumnDown(mode, i % size, 0, 0, S);
 				}
-
+				i++;
 			}
 		}
 
-
-		for (int[] ints : S) {
-			for (int anInt : ints) {
-				System.out.print(anInt + ", ");
+		for(int a=0;a<S.length;a++) {
+			for(int b=0;b<S[a].length;b++) {
+				System.out.print(S[a][b]+",");
 			}
-			System.out.println("");
+			System.out.println();
 		}
-
 
 		return S;
 	}
@@ -135,12 +139,12 @@ public class LC4 {
 
 		int[] shifted = new int[state.length];
 
-		shifted[0] = state[state.length - 1][0];
+		shifted[0] = state[state.length - 1][col];
 		for (int j = 1; j < state.length; j++) {
-			shifted[j] = state[j - 1][0];
+			shifted[j] = state[j - 1][col];
 		}
 		for (int i = 0; i < state.length; i++) {
-			state[i][0] = shifted[i];
+			state[i][col] = shifted[i];
 			// System.out.println(state[i][0] + ", ");
 		}
 
