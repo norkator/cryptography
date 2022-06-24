@@ -21,9 +21,9 @@ public class LC4 {
 
 		int[][] S = new int[size][size];
 
-//		Array.fill was initializing with references, exact value needs to be store as elements
-		for(int a=0;a<size;a++) {
-			for(int b=0;b<size;b++) {
+		// Array.fill was initializing with references, exact value needs to be store as elements
+		for (int a = 0; a < size; a++) {
+			for (int b = 0; b < size; b++) {
 				S[a][b] = 0;
 			}
 		}
@@ -32,15 +32,15 @@ public class LC4 {
 			int t = (int) Math.floor(k / size);
 			S[t][k % size] = alphabet.indexOf(characters[k]);
 		}
-		
-		
+
+
 		if (key.length() != size * size) {
 			int i = 0;
-			for(char ch:key.toCharArray()) {
-	            int Px = alphabet.indexOf(ch) % size;
-	            int Py = (int) Math.floor(alphabet.indexOf(ch)/size);
-	            
-	            for (int shiftedRight = 0; shiftedRight < Px; shiftedRight++) {
+			for (char ch : key.toCharArray()) {
+				int Px = alphabet.indexOf(ch) % size;
+				int Py = (int) Math.floor(alphabet.indexOf(ch) / size);
+
+				for (int shiftedRight = 0; shiftedRight < Px; shiftedRight++) {
 					shiftRowRight(mode, i % size, 0, 0, S);
 				}
 
@@ -51,9 +51,9 @@ public class LC4 {
 			}
 		}
 
-		for(int a=0;a<S.length;a++) {
-			for(int b=0;b<S[a].length;b++) {
-				System.out.print(S[a][b]+",");
+		for (int a = 0; a < S.length; a++) {
+			for (int b = 0; b < S[a].length; b++) {
+				System.out.print(S[a][b] + ",");
 			}
 			System.out.println();
 		}
@@ -71,7 +71,7 @@ public class LC4 {
 			char msgC = msgA[i];
 			int code = alphabet.indexOf(msgC);
 
-			//        let [row, col] = position(code, state);
+			// let [row, col] = position(code, state);
 		}
 
 		return null;
@@ -79,7 +79,6 @@ public class LC4 {
 
 
 	public static String decrypt(LC4Mode mode, String msg) {
-
 		return null;
 	}
 
