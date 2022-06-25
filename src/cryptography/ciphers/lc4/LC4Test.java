@@ -39,4 +39,26 @@ public class LC4Test {
 		assertEquals(1, initState[0][0]);
 	}
 
+	@Test
+	public void Position() {
+		int[][] state = new int[][]{
+			{17, 23, 30, 12, 25, 16},
+			{10, 31, 20, 22, 28, 29},
+			{14, 15, 26, 27, 34, 6},
+			{11, 32, 21, 33, 5, 0},
+			{1, 13, 3, 4, 8, 9},
+			{19, 18, 7, 24, 35, 2}
+		};
+		int[] vector = LC4.position(32, state);
+		assertEquals(3, vector[0]);
+		assertEquals(1, vector[1]);
+	}
+
+	@Test
+	public void EncryptMessage() {
+		int[][] state = LC4.initState(LC4Mode.ALPHABET, "testing");
+		String encrypted = LC4.encrypt(LC4Mode.ALPHABET, state, 0, 0, "test input");
+		assertEquals("ju9__#j_m9", encrypted);
+	}
+
 }

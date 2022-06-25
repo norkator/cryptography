@@ -1,6 +1,7 @@
 package cryptography.ciphers.lc4;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -14,6 +15,13 @@ public class LC4 {
 	final static int GRID_SIZE_LS47 = 7;
 
 
+	/**
+	 * Initializes state matrix
+	 *
+	 * @param mode of cipher
+	 * @param key  for matrix
+	 * @return matrix
+	 */
 	public static int[][] initState(LC4Mode mode, String key) {
 		String alphabet = mode.equals(LC4Mode.ALPHABET_LS47) ? ALPHABET_LS47 : ALPHABET;
 		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
@@ -51,34 +59,47 @@ public class LC4 {
 			}
 		}
 
-		for (int a = 0; a < S.length; a++) {
-			for (int b = 0; b < S[a].length; b++) {
-				System.out.print(S[a][b] + ",");
-			}
-			System.out.println();
-		}
+		// for (int a = 0; a < S.length; a++) {
+		// 	for (int b = 0; b < S[a].length; b++) {
+		// 		System.out.print(S[a][b] + ",");
+		// 	}
+		// 	System.out.println();
+		// }
 
 		return S;
 	}
 
 
-	public static String encrypt(LC4Mode mode, String msg) {
+	/**
+	 * Encrypt message
+	 *
+	 * @param mode    of cipher
+	 * @param state   which is matrix
+	 * @param markerI 0
+	 * @param markerJ 0
+	 * @param msg     to cipher
+	 * @return cipher text
+	 */
+	public static String encrypt(LC4Mode mode, int[][] state, int markerI, int markerJ, String msg) {
 		String alphabet = mode.equals(LC4Mode.ALPHABET_LS47) ? ALPHABET_LS47 : ALPHABET;
 		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
+		StringBuilder sb = new StringBuilder();
 
 		char[] msgA = msg.toCharArray();
 		for (int i = 0; i < msgA.length; i++) {
 			char msgC = msgA[i];
 			int code = alphabet.indexOf(msgC);
 
-			// let [row, col] = position(code, state);
+			int[] rowCol = position(code, state);
+
+
 		}
 
-		return null;
+		return sb.toString();
 	}
 
 
-	public static String decrypt(LC4Mode mode, String msg) {
+	public static String decrypt(LC4Mode mode, int[][] state, int markerI, int markerJ, String msg) {
 		return null;
 	}
 
@@ -156,24 +177,19 @@ public class LC4 {
 	/**
 	 * Return the coordinates of given search element in the state matrix
 	 *
-	 * @param character search element
+	 * @param character is number to search for from state
 	 * @param state     matrix [ 1, 17, 23, 30, 12, 25 ], [ 19, 31, 20, 22, 28, 29 ], ...
 	 * @return position vector in the form [`row`, `column`]
 	 */
-	private static int[] position(int character, int[][] state) {
-		// int[] vector = {0, 0};
-		// for (int row = 0; row < state.length; row++) {
-		// 	int column = state[row].indexOf(character);
-
-		// 	if (column > -1) {
-		// 		vector[0] = row;
-		// 		vector[1] = column;
-		// 		break;
-		// 	}
-		// }
-		// return vector;
-
-		return null;
+	public static int[] position(int character, int[][] state) {
+		for (int row = 0; row < state.length; row++) {
+			for (int column = 0; column < state[row].length; column++) {
+				if (state[row][column] == character) {
+					return new int[]{row, column};
+				}
+			}
+		}
+		return new int[]{-1, -1};
 	}
 
 }
