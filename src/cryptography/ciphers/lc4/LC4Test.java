@@ -7,6 +7,12 @@ import static org.junit.Assert.assertEquals;
 public class LC4Test {
 
 	@Test
+	public void EscapeStringTest() {
+		String escaped = LC4.escapeString("Test input");
+		assertEquals("test_input", escaped);
+	}
+
+	@Test
 	public void ShiftRightTest() {
 		int[][] rightShifted = LC4.shiftRowRight(LC4Mode.ALPHABET, 0, 0, 0, new int[][]{
 			{17, 23, 30, 12, 25, 16},

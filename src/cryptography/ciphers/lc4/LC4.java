@@ -85,14 +85,28 @@ public class LC4 {
 		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
 		StringBuilder sb = new StringBuilder();
 
+		msg = escapeString(msg);
+
 		char[] msgA = msg.toCharArray();
 		for (int i = 0; i < msgA.length; i++) {
 			char msgC = msgA[i];
 			int code = alphabet.indexOf(msgC);
 
 			int[] rowCol = position(code, state);
+			int x = (int) ((rowCol[0] + Math.floor(state[markerI][markerJ] / size)) % size);
+			int y = (rowCol[1] + (state[markerI][markerJ] % size)) % size;
+			int out = state[x][y];
 
+			shiftRowRight(mode, rowCol[0], markerI, markerJ, state);
+			if (x == rowCol[0]) y = (y + 1) % size;
 
+			shiftColumnDown(mode, y, markerI, markerJ, state);
+			if (y == rowCol[1]) rowCol[0] = (rowCol[0] + 1) % size;
+
+			markerI = (int) ((markerI + Math.floor(out / size)) % size);
+			markerJ = (markerJ + (out % size)) % size;
+
+			sb.append(alphabet.toCharArray()[out]);
 		}
 
 		return sb.toString();
@@ -123,7 +137,17 @@ public class LC4 {
 	}
 
 
-	private static void randomElement() {
+	public static String escapeString(String msg) {
+		return msg
+			.replace("/\u00dc/g", "Ue")
+			.replace("/\u00fc/g", "ue")
+			.replace("/\u00c4/g", "Ae")
+			.replace("/\u00e4/g", "ae")
+			.replace("/\u00d6/g", "Oe")
+			.replace("/\u00f6/g", "oe")
+			.replace("/\u00df/g", "ss")
+			.replace(" ", "_")
+			.toLowerCase();
 	}
 
 
@@ -189,7 +213,7 @@ public class LC4 {
 				}
 			}
 		}
-		return new int[]{-1, -1};
+		return new int[]{};
 	}
 
 }
