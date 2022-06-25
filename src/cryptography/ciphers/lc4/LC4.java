@@ -111,8 +111,50 @@ public class LC4 {
 	}
 
 
+	/**
+	 * Decrypt message
+	 *
+	 * @param mode    of cipher
+	 * @param state   which is matrix
+	 * @param markerI 0
+	 * @param markerJ 0
+	 * @param msg     to cipher
+	 * @return cipher text
+	 */
 	public static String decrypt(LC4Mode mode, int[][] state, int markerI, int markerJ, String msg) {
-		return null;
+		String alphabet = mode.equals(LC4Mode.ALPHABET_LS47) ? ALPHABET_LS47 : ALPHABET;
+		int size = mode.equals(LC4Mode.ALPHABET_LS47) ? GRID_SIZE_LS47 : GRID_SIZE;
+
+		StringBuilder sb = new StringBuilder();
+		char[] msgA = msg.toCharArray();
+		for (int i = 0; i < msgA.length; i++) {
+			char msgC = msgA[i];
+			int code = alphabet.indexOf(msgC);
+
+			int[] rowCol = position(code, state);
+
+			int row = (int) ((rowCol[0] - Math.floor(state[markerI][markerJ] / size)) % size);
+			int col = (rowCol[1] - (state[markerI][markerJ] % size)) % size;
+
+			if (row < 0) row += size;
+			if (col < 0) col += size;
+
+			int out = state[row][col];
+
+			shiftRowRight(mode, row, markerI, markerJ, state);
+			if (rowCol[0] == row) rowCol[1] = (rowCol[1] + 1) % size;
+
+			shiftColumnDown(mode, rowCol[1], markerI, markerJ, state);
+
+			if (rowCol[1] == col) row = (row + 1) % size;
+
+			markerI = (int) ((markerI + Math.floor(code / size)) % size);
+			markerJ = (markerJ + (code % size)) % size;
+
+			sb.append(alphabet.toCharArray()[out]);
+		}
+
+		return sb.toString();
 	}
 
 
