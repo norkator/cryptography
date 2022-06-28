@@ -74,4 +74,11 @@ public class LC4Test {
 		assertEquals("test_input", encrypted);
 	}
 
+	// @Test
+	// public void EncryptLS47Message() {
+	// 	int[][] state = LC4.initState(LC4Mode.ALPHABET_LS47, "testing");
+	// 	String encrypted = LC4.encrypt(LC4Mode.ALPHABET_LS47, state, 0, 0, "test input");
+	// 	assertEquals("e9egl2*5z0", encrypted);
+	// }
+
 }
