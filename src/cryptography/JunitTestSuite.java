@@ -39,6 +39,7 @@ import cryptography.converters.binaryText.BinaryTextTest;
 import cryptography.converters.compliment.ComplimentTest;
 import cryptography.encoding.base58.Base58Test;
 import cryptography.encoding.pem.PEMTest;
+import cryptography.encoding.pigLatin.PigLatinTest;
 import cryptography.encoding.vicSequencing.VICSequencingTest;
 import cryptography.encoding.a1z26.A1z26Test;
 import cryptography.encoding.adaptiveHuffman.AdaptiveHuffmanTest;
@@ -138,6 +139,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	KoblitzTest.class,
 	VICSequencingTest.class,
 	PEMTest.class,
+	PigLatinTest.class,
 	// --------------------------
 	// Hashes
 	AdlerTest.class,
