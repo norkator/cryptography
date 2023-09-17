@@ -12,17 +12,19 @@ public class PBKDF2 {
 	public static void main(String[] args) {
 	}
 
-	public static String createHash(String password, String salt, int iterations, int dkLen)
-			throws NoSuchAlgorithmException, InvalidKeySpecException {
+	public static String createHash(
+		PBKDF2HmacOption hmacAlgorithm, String password, String salt, int iterations, int dkLen
+	) throws NoSuchAlgorithmException, InvalidKeySpecException {
 		byte[] saltBytes = salt.getBytes(StandardCharsets.UTF_8);
-		byte[] hash = pbkdf2(password.toCharArray(), saltBytes, iterations, dkLen);
+		byte[] hash = pbkdf2(hmacAlgorithm, password.toCharArray(), saltBytes, iterations, dkLen);
 		return toHex(hash);
 	}
 
-	private static byte[] pbkdf2(char[] password, byte[] salt, int iterations, int bits)
-			throws NoSuchAlgorithmException, InvalidKeySpecException {
+	private static byte[] pbkdf2(
+		PBKDF2HmacOption hmacAlgorithm, char[] password, byte[] salt, int iterations, int bits
+	) throws NoSuchAlgorithmException, InvalidKeySpecException {
 		PBEKeySpec spec = new PBEKeySpec(password, salt, iterations, bits);
-		SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+		SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2With" + hmacAlgorithm.name());
 		return skf.generateSecret(spec).getEncoded();
 	}
 
